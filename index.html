@@ -56,9 +56,10 @@
   <div id="cards"></div>
   <div class="footer">
     "Nosso DCF" é o cálculo interno com base no Raio-X, corrigido quando já verificado. "Alvo analistas" é o
-    preço-alvo médio de mercado — não é o mesmo cálculo, serve para comparar as duas perspetivas. A NVDA está
-    no cartão novo, em teste — as restantes mantêm o formato anterior até o teste ser validado. KO, PG, CL,
-    COST, MA, V, JNJ e BRK-B ainda não estão aqui — entram depois de validarmos o formato novo.
+    preço-alvo médio de mercado — não é o mesmo cálculo, serve para comparar as duas perspetivas. "Score
+    combinado" junta Termómetro, DCF e consenso de analistas — substitui o antigo selo "Preço a confirmar".
+    QLYS, AVGO, ARM, ISRG, CHKP, FTNT e PANW ainda estão no formato anterior — entram no formato novo quando
+    tivermos o Raio-X atualizado delas.
   </div>
 </div>
 
@@ -108,6 +109,86 @@ const COMPANIES = [
     avisoTermometro:"Termómetro interno instável (88→59) — dado sem correção prevista pelo Clareza.",
     relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/NVDA.jpg",
     data:"09 set 2026" },
+
+  { ticker:"KO", nome:"Coca-Cola", quadrante:"vigiar", tag:null, formatoNovo:true,
+    setor:"Consumer", origem:"WL Valor e Qualidade",
+    qualidade:67, qualidadeLeitura:"Boa",
+    preco:88.36, dcf:48.83, dcfNota:"não verificado — parte do padrão em 5 empresas",
+    alvoAnalistas:95.75, termometro:24,
+    veredito:"Cara", scoreCombinado:29,
+    avisoTermometro:null,
+    relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/KO.jpg",
+    data:"09 set 2026" },
+
+  { ticker:"PG", nome:"Procter & Gamble", quadrante:"buffett", tag:null, formatoNovo:true,
+    setor:"Consumer", origem:"WL Valor e Qualidade",
+    qualidade:68, qualidadeLeitura:"Boa",
+    preco:145.59, dcf:243.38, dcfNota:"otimista vs. consenso — parte do padrão em 5 empresas",
+    alvoAnalistas:157.78, termometro:50,
+    veredito:"Barata", scoreCombinado:69,
+    avisoTermometro:null,
+    relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/PG.jpg",
+    data:"09 set 2026" },
+
+  { ticker:"CL", nome:"Colgate-Palmolive", quadrante:"buffett", tag:null, formatoNovo:true,
+    setor:"Consumer", origem:"WL Valor e Qualidade",
+    qualidade:66, qualidadeLeitura:"Boa — capital próprio anómalo (ROE 631%)",
+    preco:88.41, dcf:170.36, dcfNota:"provavelmente empolado pelo baixo capital próprio",
+    alvoAnalistas:97.78, termometro:38,
+    veredito:"Barata", scoreCombinado:66,
+    avisoTermometro:"P/E real (34,8x) está acima da própria história — leitura mais cautelosa do que o score isolado sugere.",
+    relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/CL.jpg",
+    data:"09 set 2026" },
+
+  { ticker:"COST", nome:"Costco", quadrante:"vigiar", tag:null, formatoNovo:true,
+    setor:"Consumer", origem:"WL Valor e Qualidade",
+    qualidade:65, qualidadeLeitura:"Excelente",
+    preco:910.18, dcf:480.71, dcfNota:"não verificado externamente",
+    alvoAnalistas:1101.78, termometro:22,
+    veredito:"Cara", scoreCombinado:32,
+    avisoTermometro:null,
+    relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/COST.jpg",
+    data:"09 set 2026" },
+
+  { ticker:"MA", nome:"Mastercard", quadrante:"buffett", tag:null, formatoNovo:true,
+    setor:"Finance", origem:"WL Valor e Qualidade",
+    qualidade:85, qualidadeLeitura:"Excelente",
+    preco:570.89, dcf:583.66, dcfNota:"alinhado com o consenso",
+    alvoAnalistas:670.94, termometro:47,
+    veredito:"Barata", scoreCombinado:56,
+    avisoTermometro:"Subiu de Vigiar para Zona Buffett ao incluir o consenso no score (antes 49,5/100, mesmo no limiar).",
+    relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/MA.jpg",
+    data:"09 set 2026" },
+
+  { ticker:"V", nome:"Visa", quadrante:"vigiar", tag:null, formatoNovo:true,
+    setor:"Finance", origem:"WL Valor e Qualidade",
+    qualidade:83, qualidadeLeitura:"Excelente",
+    preco:368.64, dcf:239.66, dcfNota:"não verificado — parte do padrão em 5 empresas",
+    alvoAnalistas:422.24, termometro:30,
+    veredito:"Cara", scoreCombinado:37,
+    avisoTermometro:null,
+    relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/V.jpg",
+    data:"09 set 2026" },
+
+  { ticker:"JNJ", nome:"Johnson & Johnson", quadrante:"vigiar", tag:null, formatoNovo:true,
+    setor:"Saúde", origem:"WL Valor e Qualidade",
+    qualidade:69, qualidadeLeitura:"Boa",
+    preco:269.12, dcf:267.43, dcfNota:"alinhado com o consenso",
+    alvoAnalistas:284.79, termometro:31,
+    veredito:"Neutra", scoreCombinado:45,
+    avisoTermometro:null,
+    relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/JNJ.jpg",
+    data:"09 set 2026" },
+
+  { ticker:"BRK-B", nome:"Berkshire Hathaway", quadrante:"vigiar", tag:"Preço indeterminado", formatoNovo:true,
+    setor:"Finance / Diversificado", origem:"WL Valor e Qualidade",
+    qualidade:50, qualidadeLeitura:"No limiar — volatilidade de ganhos de investimento, não operacional",
+    preco:505.89, dcf:183.10, dcfNota:"muito discrepante do preço",
+    alvoAnalistas:604.00, termometro:45,
+    veredito:"Indeterminado", scoreCombinado:33,
+    avisoTermometro:"Preço-alvo dos analistas confirmado como erro no Raio-X (mín=máx=média=$604). Score usa estimativa corrigida (~$525).",
+    relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/BRK-B.jpg",
+    data:"09 set 2026" },
 ];
 
 const GROUPS = [
@@ -132,6 +213,7 @@ function getTargetInfo(c) {
 function veredictColor(v) {
   if (v === "Barata") return "#0F6E56";
   if (v === "Cara") return "#A32D2D";
+  if (v === "Indeterminado") return "#5F5E5A";
   return "#8A6300";
 }
 
