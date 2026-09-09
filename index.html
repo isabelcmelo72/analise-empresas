@@ -1,150 +1,126 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Ser Riquinho — Resumo</title>
-<link rel="icon" href="data:,">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qualidade & Preço</title>
 <style>
   * { box-sizing: border-box; }
-  body {
-    font-family: Arial, sans-serif;
-    background: #F5F4F0;
-    margin: 0;
-    padding: 16px 12px 40px;
-  }
-  .wrap { max-width: 480px; margin: 0 auto; }
-  .title { font-size: 20px; font-weight: 700; color: #0C2340; }
-  .subtitle { font-size: 12.5px; color: #5F5E5A; margin-top: 2px; margin-bottom: 14px; }
-  .tabs { display: flex; gap: 6px; margin-bottom: 14px; flex-wrap: wrap; }
-  .tab {
-    flex: 1 1 auto; min-width: 78px; padding: 8px 6px; border-radius: 8px;
-    border: 1px solid #E4E2DA; background: #FFFFFF; font-weight: 700; font-size: 12px;
-    cursor: pointer; text-align: center;
-  }
-  .tab .count { font-weight: 400; font-size: 10.5px; color: #8A8880; }
-  .card {
-    border: 1px solid #E4E2DA; border-radius: 10px; padding: 14px 16px;
-    margin-bottom: 10px; background: #FFFFFF;
-  }
-  .card-top { display: flex; justify-content: space-between; align-items: baseline; }
-  .rank { font-size: 12px; font-weight: 700; color: #B0AEA6; margin-right: 6px; }
-  .ticker { font-weight: 700; font-size: 17px; color: #0C2340; }
-  .nome { font-size: 13px; color: #5F5E5A; margin-left: 8px; }
-  .preco { font-size: 15px; font-weight: 600; color: #0C2340; }
-  .setor-origem { margin-top: 3px; font-size: 11.5px; color: #8A8880; }
-  .qualidade-row { margin-top: 8px; display: flex; align-items: center; gap: 6px; font-size: 12px; }
-  .qualidade-badge {
-    display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 20px;
-    border-radius: 5px; background: #0C2340; color: #FFFFFF; font-weight: 700; font-size: 11px;
-  }
-  .qualidade-texto { color: #5F5E5A; }
-  .tag {
-    margin-top: 6px; display: inline-block; font-size: 11px; padding: 2px 8px;
-    border-radius: 6px; font-weight: 600;
-  }
-  .nota {
-    margin-top: 6px; font-size: 11px; padding: 6px 8px; border-radius: 6px;
-    background: #FBF1DC; color: #8A6300; line-height: 1.4;
-  }
-  .grid2 { margin-top: 10px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-  .label { font-size: 10px; color: #8A8880; text-transform: uppercase; letter-spacing: 0.3px; }
-  .valor { font-size: 14px; font-weight: 600; }
-  .valor-nota { font-size: 10.5px; color: #8A8880; line-height: 1.3; }
-  .distancia { margin-top: 10px; font-size: 12.5px; }
-  .ultima { margin-top: 8px; font-size: 10.5px; color: #B0AEA6; }
-  .empty { color: #8A8880; font-size: 13px; text-align: center; margin-top: 30px; }
-  .footer { margin-top: 20px; font-size: 10.5px; color: #B0AEA6; line-height: 1.5; }
+  body { margin:0; font-family: Arial, sans-serif; background:#F5F4F0; color:#1A1A1A; }
+  .wrap { max-width:480px; margin:0 auto; padding:16px 12px 40px; }
+  .hdr-title { font-size:20px; font-weight:700; color:#0C2340; }
+  .hdr-sub { font-size:12.5px; color:#5F5E5A; margin-top:2px; }
+  .tabs { display:flex; gap:6px; margin:14px 0; flex-wrap:wrap; }
+  .tab { flex:1 1 auto; min-width:78px; padding:8px 6px; border-radius:8px; border:1px solid #E4E2DA;
+         background:#FFFFFF; font-weight:700; font-size:12px; cursor:pointer; text-align:center; }
+  .tab .n { font-weight:400; font-size:10.5px; color:#8A8880; }
+  .tab.active { border-width:2px; }
+  .card { border:1px solid #E4E2DA; border-radius:10px; padding:14px 16px; margin-bottom:10px; background:#FFFFFF; }
+  .row-top { display:flex; justify-content:space-between; align-items:baseline; }
+  .rank { font-size:12px; font-weight:700; color:#B0AEA6; margin-right:6px; }
+  .ticker { font-weight:700; font-size:17px; color:#0C2340; }
+  .nome { font-size:13px; color:#5F5E5A; margin-left:8px; }
+  .preco { font-size:15px; font-weight:600; color:#0C2340; }
+  .sub { font-size:11.5px; color:#8A8880; margin-top:2px; }
+  .qbadge { display:inline-flex; align-items:center; justify-content:center; width:28px; height:20px; border-radius:5px;
+            background:#0C2340; color:#FFFFFF; font-weight:700; font-size:11px; margin-right:6px; }
+  .qline { margin-top:8px; display:flex; align-items:center; font-size:12px; }
+  .tag { margin-top:6px; display:inline-block; font-size:11px; padding:2px 8px; border-radius:6px; font-weight:600; }
+  .nota { margin-top:6px; font-size:11px; padding:6px 8px; border-radius:6px; background:#FBF1DC; color:#8A6300; line-height:1.4; }
+  .grid2 { margin-top:10px; display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+  .label { font-size:10px; color:#8A8880; text-transform:uppercase; letter-spacing:0.3px; }
+  .val { font-size:14px; font-weight:600; color:#1A1A1A; }
+  .dcfnota { font-size:10.5px; color:#8A8880; line-height:1.3; }
+  .dist { margin-top:10px; font-size:12.5px; }
+  .lastdt { margin-top:8px; font-size:10.5px; color:#B0AEA6; }
+  .empty { color:#8A8880; font-size:13px; text-align:center; margin-top:30px; }
+  .footer { margin-top:20px; font-size:10.5px; color:#B0AEA6; line-height:1.5; }
+  /* NewCard (formato novo) */
+  .stats3 { margin-top:10px; display:flex; justify-content:space-between; border-top:1px solid #E4E2DA;
+            border-bottom:1px solid #E4E2DA; padding:10px 0; }
+  .stats3 .lbl { font-size:11px; color:#8A8880; }
+  .stats3 .v { font-size:16px; font-weight:700; }
+  .numrow { margin-top:8px; display:flex; gap:14px; font-size:10.5px; color:#8A8880; flex-wrap:wrap; }
+  .warn2 { margin-top:8px; display:flex; gap:6px; font-size:11px; color:#8A6300; line-height:1.4; }
+  .btn { margin-top:12px; width:100%; padding:9px 0; border-radius:8px; border:1px solid #D8D6CC;
+         background:#FAFAF7; color:#0C2340; font-size:12.5px; font-weight:600; text-align:center;
+         text-decoration:none; display:block; cursor:pointer; }
+  .btn.disabled { color:#B0AEA6; cursor:default; }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="title">Ser Riquinho</div>
-  <div class="subtitle">Resumo de classificação — atualizado 01 set 2026</div>
+  <div class="hdr-title">Qualidade & Preço</div>
+  <div class="hdr-sub">Raio-X (Clareza) + verificação externa — atualizado 09 set 2026</div>
   <div class="tabs" id="tabs"></div>
   <div id="cards"></div>
   <div class="footer">
     "Nosso DCF" é o cálculo interno com base no Raio-X, corrigido quando já verificado. "Alvo analistas" é o
-    preço-alvo médio de mercado — não é o mesmo cálculo, serve para comparar as duas perspetivas. KO, PG e
-    BRK-B ainda não estão aqui — precisam de reclassificação neste sistema antes de entrar.
+    preço-alvo médio de mercado — não é o mesmo cálculo, serve para comparar as duas perspetivas. A NVDA está
+    no cartão novo, em teste — as restantes mantêm o formato anterior até o teste ser validado. KO, PG, CL,
+    COST, MA, V, JNJ e BRK-B ainda não estão aqui — entram depois de validarmos o formato novo.
   </div>
 </div>
 
 <script>
 const COMPANIES = [
-  {
-    ticker: "QLYS", nome: "Qualys", quadrante: "buffett", tag: null,
-    setor: "Cibersegurança", origem: "Robótica e Cibersegurança",
-    qualidade: 88, qualidadeLeitura: "Excecional",
-    preco: 176.89, dcf: 266.81, dcfNota: "otimista vs. fontes externas (~$165-173)",
-    alvoAnalistas: 179.80, data: "01 set 2026",
-  },
-  {
-    ticker: "AVGO", nome: "Broadcom", quadrante: "vigiar", tag: null,
-    setor: "Semicondutores", origem: "Carteira Particular",
-    qualidade: 85, qualidadeLeitura: "Excelente",
-    preco: 370.34, dcf: 181.76, dcfNota: "não verificado externamente",
-    alvoAnalistas: 503.07, data: "01 set 2026",
-  },
-  {
-    ticker: "ARM", nome: "Arm Holdings", quadrante: "vigiar", tag: null,
-    setor: "Semicondutores (design)", origem: "RUI",
-    qualidade: 81, qualidadeLeitura: "Boa (rentabilidade só neutra)",
-    preco: 234.86, dcf: 9.34, dcfNota: "confirmado externamente (dispersão $9–63)",
-    alvoAnalistas: 366.75, data: "01 set 2026",
-  },
-  {
-    ticker: "ISRG", nome: "Intuitive Surgical", quadrante: "vigiar", tag: null,
-    setor: "Saúde / Robótica cirúrgica", origem: "Robótica e Cibersegurança",
-    qualidade: 85, qualidadeLeitura: "Excelente",
-    preco: 376.86, dcf: 128.41, dcfNota: "não verificado externamente",
-    alvoAnalistas: 491.15, data: "01 set 2026",
-  },
-  {
-    ticker: "CHKP", nome: "Check Point", quadrante: "vigiar", tag: null,
-    setor: "Cibersegurança", origem: "Robótica e Cibersegurança",
-    qualidade: 65, qualidadeLeitura: "Boa",
-    preco: 134.90, dcf: null, dcfNota: "DCF do Raio-X invalidado — erro confirmado",
-    alvoAnalistas: 146.30, data: "01 set 2026",
-  },
-  {
-    ticker: "FTNT", nome: "Fortinet", quadrante: "vigiar", tag: null,
-    setor: "Cibersegurança", origem: "Robótica e Cibersegurança",
-    qualidade: 92, qualidadeLeitura: "Excelente",
-    preco: 161.23, dcf: 66.19, dcfNota: "não verificado externamente",
-    alvoAnalistas: 159.39, data: "01 set 2026",
-  },
-  {
-    ticker: "PANW", nome: "Palo Alto Networks", quadrante: "descartada", tag: "Evitar — qualidade a confirmar",
-    setor: "Cibersegurança", origem: "Robótica e Cibersegurança",
-    qualidade: 68, qualidadeLeitura: "Prejuízo GAAP no trimestre — não confiar no score médio",
-    preco: 382.13, dcf: 150.47, dcfNota: "prejuízo GAAP no trimestre distorce leitura",
-    alvoAnalistas: 380.38, data: "01 set 2026",
-  },
-  {
-    ticker: "NVDA", nome: "NVIDIA", quadrante: "buffett", tag: null,
-    setor: "Semicondutores / IA", origem: "Carteira Particular",
-    qualidade: 96, qualidadeLeitura: "Excelente",
-    preco: 220.78, dcf: 247.42, dcfNota: "confirmado e reforçado externamente (GuruFocus: $384,95, +44%)",
-    alvoAnalistas: 345.21, data: "26 ago 2026",
-    nota: "Termómetro interno ainda instável (88→59, sem resposta do Clareza) — mas qualidade e preço confirmados por fonte externa independente (GuruFocus GF Score 90-95, GF Value +44%). Aviso da própria GuruFocus: classificação \"Possible Value Trap\" — 4 sinais de alerta não especificados. Barata nos números não é garantia de ausência de risco.",
-  },
+  { ticker:"QLYS", nome:"Qualys", quadrante:"buffett", tag:null,
+    setor:"Cibersegurança", origem:"Robótica e Cibersegurança",
+    qualidade:88, qualidadeLeitura:"Excecional",
+    preco:176.89, dcf:266.81, dcfNota:"otimista vs. fontes externas (~$165-173)",
+    alvoAnalistas:179.80, data:"01 set 2026" },
+  { ticker:"AVGO", nome:"Broadcom", quadrante:"vigiar", tag:null,
+    setor:"Semicondutores", origem:"Carteira Particular",
+    qualidade:85, qualidadeLeitura:"Excelente",
+    preco:370.34, dcf:181.76, dcfNota:"não verificado externamente",
+    alvoAnalistas:503.07, data:"01 set 2026" },
+  { ticker:"ARM", nome:"Arm Holdings", quadrante:"vigiar", tag:null,
+    setor:"Semicondutores (design)", origem:"RUI",
+    qualidade:81, qualidadeLeitura:"Boa (rentabilidade só neutra)",
+    preco:234.86, dcf:9.34, dcfNota:"confirmado externamente (dispersão $9–63)",
+    alvoAnalistas:366.75, data:"01 set 2026" },
+  { ticker:"ISRG", nome:"Intuitive Surgical", quadrante:"vigiar", tag:null,
+    setor:"Saúde / Robótica cirúrgica", origem:"Robótica e Cibersegurança",
+    qualidade:85, qualidadeLeitura:"Excelente",
+    preco:376.86, dcf:128.41, dcfNota:"não verificado externamente",
+    alvoAnalistas:491.15, data:"01 set 2026" },
+  { ticker:"CHKP", nome:"Check Point", quadrante:"vigiar", tag:null,
+    setor:"Cibersegurança", origem:"Robótica e Cibersegurança",
+    qualidade:65, qualidadeLeitura:"Boa",
+    preco:134.90, dcf:null, dcfNota:"DCF do Raio-X invalidado — erro confirmado",
+    alvoAnalistas:146.30, data:"01 set 2026" },
+  { ticker:"FTNT", nome:"Fortinet", quadrante:"vigiar", tag:null,
+    setor:"Cibersegurança", origem:"Robótica e Cibersegurança",
+    qualidade:92, qualidadeLeitura:"Excelente",
+    preco:161.23, dcf:66.19, dcfNota:"não verificado externamente",
+    alvoAnalistas:159.39, data:"01 set 2026" },
+  { ticker:"PANW", nome:"Palo Alto Networks", quadrante:"descartada", tag:"Evitar — qualidade a confirmar",
+    setor:"Cibersegurança", origem:"Robótica e Cibersegurança",
+    qualidade:68, qualidadeLeitura:"Prejuízo GAAP no trimestre — não confiar no score médio",
+    preco:382.13, dcf:150.47, dcfNota:"prejuízo GAAP no trimestre distorce leitura",
+    alvoAnalistas:380.38, data:"01 set 2026" },
+  { ticker:"NVDA", nome:"NVIDIA", quadrante:"buffett", tag:null, formatoNovo:true,
+    setor:"Semicondutores / IA", origem:"Carteira Particular",
+    qualidade:96, qualidadeLeitura:"Excelente",
+    preco:220.78, dcf:247.42, dcfNota:"confirmado e reforçado externamente (GuruFocus: $384,95, +44%)",
+    alvoAnalistas:345.21, termometro:59,
+    veredito:"Barata", scoreCombinado:74,
+    avisoTermometro:"Termómetro interno instável (88→59) — dado sem correção prevista pelo Clareza.",
+    relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/NVDA.jpg",
+    data:"09 set 2026" },
 ];
 
 const GROUPS = [
-  { key: "buffett", label: "Zona Buffett", color: "#0F6E56", bg: "#E8F3EA" },
-  { key: "vigiar", label: "Vigiar", color: "#8A6300", bg: "#FBF1DC" },
-  { key: "descartada", label: "Descartadas", color: "#A32D2D", bg: "#FBEAEA" },
-  { key: "pendente", label: "Pendente", color: "#5F5E5A", bg: "#EDECE8" },
+  { key:"buffett", label:"Zona Buffett", color:"#0F6E56", bg:"#E8F3EA" },
+  { key:"vigiar", label:"Vigiar", color:"#8A6300", bg:"#FBF1DC" },
+  { key:"descartada", label:"Descartadas", color:"#A32D2D", bg:"#FBEAEA" },
+  { key:"pendente", label:"Pendente", color:"#5F5E5A", bg:"#EDECE8" },
 ];
-
-let active = "buffett";
 
 function fmt(n) {
   if (n === null || n === undefined) return "—";
   return "$" + n.toLocaleString("pt-PT", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
-
 function getTargetInfo(c) {
   const targets = [];
   if (c.dcf) targets.push(c.dcf);
@@ -153,68 +129,105 @@ function getTargetInfo(c) {
   const distancia = conservador ? ((c.preco - conservador) / conservador) * 100 : null;
   return { conservador, distancia };
 }
+function veredictColor(v) {
+  if (v === "Barata") return "#0F6E56";
+  if (v === "Cara") return "#A32D2D";
+  return "#8A6300";
+}
+
+let active = "buffett";
 
 function renderTabs() {
-  const counts = Object.fromEntries(GROUPS.map((g) => [g.key, COMPANIES.filter((c) => c.quadrante === g.key).length]));
-  const tabsEl = document.getElementById("tabs");
-  tabsEl.innerHTML = "";
-  GROUPS.forEach((g) => {
+  const el = document.getElementById("tabs");
+  el.innerHTML = "";
+  GROUPS.forEach(g => {
+    const count = COMPANIES.filter(c => c.quadrante === g.key).length;
     const btn = document.createElement("div");
-    btn.className = "tab";
+    btn.className = "tab" + (active === g.key ? " active" : "");
     btn.style.color = g.color;
-    btn.style.border = active === g.key ? `2px solid ${g.color}` : "1px solid #E4E2DA";
     btn.style.background = active === g.key ? g.bg : "#FFFFFF";
-    btn.innerHTML = `${g.label}<div class="count">${counts[g.key]}</div>`;
+    btn.style.borderColor = active === g.key ? g.color : "#E4E2DA";
+    btn.innerHTML = g.label + '<div class="n">' + count + "</div>";
     btn.onclick = () => { active = g.key; render(); };
-    tabsEl.appendChild(btn);
+    el.appendChild(btn);
   });
 }
 
-function cardHtml(c, rank) {
+function cardOldHtml(c, rank) {
   const { conservador, distancia } = getTargetInfo(c);
-  const group = GROUPS.find((g) => g.key === c.quadrante);
-  let html = `<div class="card">`;
-  html += `<div class="card-top"><div><span class="rank">#${rank}</span><span class="ticker">${c.ticker}</span><span class="nome">${c.nome}</span></div><span class="preco">${fmt(c.preco)}</span></div>`;
-  html += `<div class="setor-origem">${c.setor} · ${c.origem}</div>`;
-  html += `<div class="qualidade-row"><span class="qualidade-badge">${c.qualidade}</span><span class="qualidade-texto">Qualidade do negócio — ${c.qualidadeLeitura}</span></div>`;
-  if (c.tag) {
-    html += `<div class="tag" style="background:${group.bg};color:${group.color}">${c.tag}</div>`;
-  }
-  if (c.nota) {
-    html += `<div class="nota">⚠ ${c.nota}</div>`;
-  }
-  html += `<div class="grid2">`;
-  html += `<div><div class="label">Nosso DCF</div><div class="valor" style="color:${c.dcf ? '#1A1A1A' : '#A32D2D'}">${fmt(c.dcf)}</div><div class="valor-nota">${c.dcfNota}</div></div>`;
-  html += `<div><div class="label">Alvo analistas</div><div class="valor" style="color:#1A1A1A">${fmt(c.alvoAnalistas)}</div><div class="valor-nota">consenso de mercado</div></div>`;
-  html += `</div>`;
+  const group = GROUPS.find(g => g.key === c.quadrante);
+  let tagHtml = "";
+  if (c.tag) tagHtml = `<div class="tag" style="background:${group.bg};color:${group.color}">${c.tag}</div>`;
+  let notaHtml = "";
+  if (c.nota) notaHtml = `<div class="nota">⚠ ${c.nota}</div>`;
+  let distHtml = "";
   if (distancia !== null) {
-    const color = distancia > 0 ? "#A32D2D" : "#0F6E56";
-    const texto = distancia > 0
-      ? `${distancia.toFixed(0)}% acima do alvo mais conservador (${fmt(conservador)})`
-      : `${Math.abs(distancia).toFixed(0)}% abaixo do alvo mais conservador (${fmt(conservador)}) — dentro da zona`;
-    html += `<div class="distancia" style="color:${color}">${texto}</div>`;
+    distHtml = distancia > 0
+      ? `<div class="dist" style="color:#A32D2D">${distancia.toFixed(0)}% acima do alvo mais conservador (${fmt(conservador)})</div>`
+      : `<div class="dist" style="color:#0F6E56">${Math.abs(distancia).toFixed(0)}% abaixo do alvo mais conservador (${fmt(conservador)}) — dentro da zona</div>`;
   }
-  html += `<div class="ultima">Última análise: ${c.data}</div>`;
-  html += `</div>`;
-  return html;
+  return `
+  <div class="card">
+    <div class="row-top">
+      <div><span class="rank">#${rank}</span><span class="ticker">${c.ticker}</span><span class="nome">${c.nome}</span></div>
+      <span class="preco">${fmt(c.preco)}</span>
+    </div>
+    <div class="sub">${c.setor} · ${c.origem}</div>
+    <div class="qline"><span class="qbadge">${c.qualidade}</span><span style="color:#5F5E5A">Qualidade do negócio — ${c.qualidadeLeitura}</span></div>
+    ${tagHtml}
+    ${notaHtml}
+    <div class="grid2">
+      <div><div class="label">Nosso DCF</div><div class="val" style="color:${c.dcf ? "#1A1A1A" : "#A32D2D"}">${fmt(c.dcf)}</div><div class="dcfnota">${c.dcfNota}</div></div>
+      <div><div class="label">Alvo analistas</div><div class="val">${fmt(c.alvoAnalistas)}</div><div class="dcfnota">consenso de mercado</div></div>
+    </div>
+    ${distHtml}
+    <div class="lastdt">Última análise: ${c.data}</div>
+  </div>`;
+}
+
+function cardNewHtml(c, rank) {
+  const vcolor = veredictColor(c.veredito);
+  const btnHtml = c.relatorioJpg
+    ? `<a class="btn" href="${c.relatorioJpg}" target="_blank" rel="noopener">Ver análise completa</a>`
+    : `<div class="btn disabled">Ver análise completa (a publicar)</div>`;
+  return `
+  <div class="card">
+    <div class="row-top">
+      <div><span class="rank">#${rank}</span><span class="ticker">${c.ticker}</span><span class="nome">${c.nome}</span></div>
+      <span class="preco">${fmt(c.preco)}</span>
+    </div>
+    <div class="sub">${c.setor} · ${c.origem}</div>
+    <div class="stats3">
+      <div><div class="lbl">Qualidade</div><div class="v" style="color:#1A1A1A">${c.qualidade}/100</div></div>
+      <div><div class="lbl">Preço</div><div class="v" style="color:${vcolor}">${c.veredito}</div></div>
+      <div style="text-align:right"><div class="lbl">Score combinado</div><div class="v" style="color:#1A1A1A">${c.scoreCombinado}/100</div></div>
+    </div>
+    <div class="numrow">
+      <span>Nosso DCF ${fmt(c.dcf)}</span>
+      <span>Alvo analistas ${fmt(c.alvoAnalistas)}</span>
+      <span>Termómetro ${c.termometro}</span>
+    </div>
+    ${c.avisoTermometro ? `<div class="warn2"><span>⚠</span><span>${c.avisoTermometro}</span></div>` : ""}
+    ${btnHtml}
+    <div class="lastdt">Última análise: ${c.data}</div>
+  </div>`;
 }
 
 function render() {
   renderTabs();
-  const list = COMPANIES.filter((c) => c.quadrante === active).sort((a, b) => {
-    const da = getTargetInfo(a).distancia;
-    const db = getTargetInfo(b).distancia;
+  const list = COMPANIES.filter(c => c.quadrante === active).sort((a, b) => {
+    const da = getTargetInfo(a).distancia, db = getTargetInfo(b).distancia;
     if (da === null && db === null) return 0;
     if (da === null) return 1;
     if (db === null) return -1;
     return da - db;
   });
-  const cardsEl = document.getElementById("cards");
+  const el = document.getElementById("cards");
   if (list.length === 0) {
-    cardsEl.innerHTML = `<div class="empty">Sem empresas neste grupo.</div>`;
+    el.innerHTML = '<div class="empty">Sem empresas neste grupo.</div>';
     return;
   }
-  cardsEl.innerHTML = list.map((c, i) => cardHtml(c, i + 1)).join("");
+  el.innerHTML = list.map((c, i) => c.formatoNovo ? cardNewHtml(c, i + 1) : cardOldHtml(c, i + 1)).join("");
 }
 
 render();
