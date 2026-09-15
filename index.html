@@ -58,7 +58,7 @@
     "Nosso DCF" é o cálculo interno com base no Raio-X, corrigido quando já verificado. "Alvo analistas" é o
     preço-alvo médio de mercado — não é o mesmo cálculo, serve para comparar as duas perspetivas. "Score
     combinado" junta Termómetro, DCF e consenso de analistas — substitui o antigo selo "Preço a confirmar".
-    QLYS, AVGO, ARM, ISRG, CHKP, FTNT e PANW ainda estão no formato anterior — entram no formato novo quando
+    QLYS, AVGO, ARM, ISRG, CHKP e FTNT ainda estão no formato anterior — entram no formato novo quando
     tivermos o Raio-X atualizado delas.
   </div>
 </div>
@@ -95,11 +95,15 @@ const COMPANIES = [
     qualidade:92, qualidadeLeitura:"Excelente",
     preco:161.23, dcf:66.19, dcfNota:"não verificado externamente",
     alvoAnalistas:159.39, data:"01 set 2026" },
-  { ticker:"PANW", nome:"Palo Alto Networks", quadrante:"descartada", tag:"Evitar — qualidade a confirmar",
+  { ticker:"PANW", nome:"Palo Alto Networks", quadrante:"vigiar", tag:"Reclassificada (ex-Evitar)", formatoNovo:true,
     setor:"Cibersegurança", origem:"Robótica e Cibersegurança",
-    qualidade:68, qualidadeLeitura:"Prejuízo GAAP no trimestre — não confiar no score médio",
-    preco:382.13, dcf:150.47, dcfNota:"prejuízo GAAP no trimestre distorce leitura",
-    alvoAnalistas:380.38, data:"01 set 2026" },
+    qualidade:82, qualidadeLeitura:"Excelente — revista (era 68)",
+    preco:368.70, dcf:150.47, dcfNota:"snapshot Raio-X anterior à subida recente",
+    alvoAnalistas:391.02, termometro:51,
+    veredito:"Cara", scoreCombinado:36,
+    avisoTermometro:"Preço muito volátil nas últimas 2 semanas — caiu após resultados, depois subiu 13% por rotação setorial. Recomenda-se Raio-X atualizado.",
+    relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/PANW.jpg",
+    data:"09 set 2026" },
   { ticker:"NVDA", nome:"NVIDIA", quadrante:"buffett", tag:null, formatoNovo:true,
     setor:"Semicondutores / IA", origem:"Carteira Particular",
     qualidade:96, qualidadeLeitura:"Excelente",
