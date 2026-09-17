@@ -58,7 +58,7 @@
     "Nosso DCF" é o cálculo interno com base no Raio-X, corrigido quando já verificado. "Alvo analistas" é o
     preço-alvo médio de mercado — não é o mesmo cálculo, serve para comparar as duas perspetivas. "Score
     combinado" junta Termómetro, DCF e consenso de analistas — substitui o antigo selo "Preço a confirmar".
-    QLYS, AVGO, ARM, ISRG, CHKP e FTNT ainda estão no formato anterior — entram no formato novo quando
+    QLYS, ARM, ISRG, CHKP e FTNT ainda estão no formato anterior — entram no formato novo quando
     tivermos o Raio-X atualizado delas.
   </div>
 </div>
@@ -70,11 +70,25 @@ const COMPANIES = [
     qualidade:88, qualidadeLeitura:"Excecional",
     preco:176.89, dcf:266.81, dcfNota:"otimista vs. fontes externas (~$165-173)",
     alvoAnalistas:179.80, data:"01 set 2026" },
-  { ticker:"AVGO", nome:"Broadcom", quadrante:"vigiar", tag:null,
+  { ticker:"AVGO", nome:"Broadcom", quadrante:"vigiar", tag:null, formatoNovo:true,
     setor:"Semicondutores", origem:"Carteira Particular",
-    qualidade:85, qualidadeLeitura:"Excelente",
-    preco:370.34, dcf:181.76, dcfNota:"não verificado externamente",
-    alvoAnalistas:503.07, data:"01 set 2026" },
+    qualidade:88, qualidadeLeitura:"Excelente",
+    preco:339.51, dcf:175.28, dcfNota:"pessimista — cancela com consenso muito otimista",
+    alvoAnalistas:509.61, termometro:20,
+    veredito:"Neutra", scoreCombinado:41,
+    avisoTermometro:"Erro de dados históricos (receita Q2 FY26) ainda por corrigir pelo Clareza — ver relatório completo.",
+    relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/AVGO.jpg",
+    data:"09 set 2026" },
+
+  { ticker:"MU", nome:"Micron Technology", quadrante:"vigiar", tag:null, formatoNovo:true,
+    setor:"Semicondutores", origem:"Carteira Particular",
+    qualidade:85, qualidadeLeitura:"Excelente — negócio cíclico, no pico do ciclo",
+    preco:926.55, dcf:365.79, dcfNota:"pico de ciclo distorce leitura — ver nota",
+    alvoAnalistas:1547.71, termometro:33,
+    veredito:"Neutra", scoreCombinado:44,
+    avisoTermometro:"Reporta próximo trimestre a 30 de setembro — margens atuais no pico do ciclo de memória.",
+    relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/MU.jpg",
+    data:"09 set 2026" },
   { ticker:"ARM", nome:"Arm Holdings", quadrante:"vigiar", tag:null,
     setor:"Semicondutores (design)", origem:"RUI",
     qualidade:81, qualidadeLeitura:"Boa (rentabilidade só neutra)",
