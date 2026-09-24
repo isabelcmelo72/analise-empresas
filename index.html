@@ -207,11 +207,42 @@ const COMPANIES = [
     avisoTermometro:"Preço-alvo dos analistas confirmado como erro no Raio-X (mín=máx=média=$604). Score usa estimativa corrigida (~$525).",
     relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/BRK-B.jpg",
     data:"09 set 2026" },
+
+  { ticker:"IONQ", nome:"IonQ", quadrante:"armadilha", tag:null, formatoNovo:true,
+    setor:"Tecnologia (computação quântica)", origem:"WL Vasco",
+    qualidade:54, qualidadeLeitura:"Falha real — rentabilidade -573,6%, consistência 0",
+    preco:40.51, dcf:null, dcfNota:"não calculável — sem FCF positivo",
+    alvoAnalistas:62.75, termometro:69,
+    veredito:"Barata", scoreCombinado:85,
+    avisoTermometro:"Barata só num pilar (EV/EBITDA vs. setor); qualidade falha de forma real, não é distorção de dados.",
+    relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/IONQ.jpg",
+    data:"09 set 2026" },
+
+  { ticker:"RGTI", nome:"Rigetti Computing", quadrante:"descartada", tag:"Evitar", formatoNovo:true,
+    setor:"Tecnologia (computação quântica)", origem:"WL Vasco",
+    qualidade:28, qualidadeLeitura:"Muito fraca — receita a cair, margem -1.787%",
+    preco:16.53, dcf:null, dcfNota:"não calculável — sem FCF positivo",
+    alvoAnalistas:21.67, termometro:6,
+    veredito:"Cara", scoreCombinado:44,
+    avisoTermometro:"P/S de 411x — a valorização mais exigente de toda a carteira. Veredito mantido \"Cara\" apesar do score mecânico.",
+    relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/RGTI.jpg",
+    data:"09 set 2026" },
+
+  { ticker:"IBM", nome:"IBM", quadrante:"buffett", tag:null, formatoNovo:true,
+    setor:"Tecnologia", origem:"WL Vasco",
+    qualidade:61, qualidadeLeitura:"Boa",
+    preco:231.93, dcf:331.15, dcfNota:"alinhado com o consenso",
+    alvoAnalistas:256.69, termometro:67,
+    veredito:"Barata", scoreCombinado:73,
+    avisoTermometro:"Erro confirmado no veredito do trimestre (BATEU deveria ser FALHOU) — ver relatório completo.",
+    relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/IBM.jpg",
+    data:"09 set 2026" },
 ];
 
 const GROUPS = [
   { key:"buffett", label:"Zona Buffett", color:"#0F6E56", bg:"#E8F3EA" },
   { key:"vigiar", label:"Vigiar", color:"#8A6300", bg:"#FBF1DC" },
+  { key:"armadilha", label:"Armadilha de Valor", color:"#9C570F", bg:"#FDEBDB" },
   { key:"descartada", label:"Descartadas", color:"#A32D2D", bg:"#FBEAEA" },
   { key:"pendente", label:"Pendente", color:"#5F5E5A", bg:"#EDECE8" },
 ];
