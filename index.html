@@ -46,49 +46,239 @@
          background:#FAFAF7; color:#0C2340; font-size:12.5px; font-weight:600; text-align:center;
          text-decoration:none; display:block; cursor:pointer; }
   .btn.disabled { color:#B0AEA6; cursor:default; }
+  .btn.primary { background:#0C2340; color:#FFFFFF; border-color:#0C2340; }
+  /* Cartão formato novo (18 out 2026): Clareza vs Nossa leitura */
+  .cmp { margin-top:10px; border:1px solid #E4E2DA; border-radius:8px; overflow:hidden; font-size:12px; }
+  .cmp .r { display:grid; grid-template-columns:70px 1fr 1fr; }
+  .cmp .r > div { padding:6px 8px; }
+  .cmp .h { background:#F5F4F0; color:#8A8880; font-size:10px; text-transform:uppercase; letter-spacing:0.3px; }
+  .cmp .r + .r > div { border-top:1px solid #E4E2DA; }
+  .cmp .k { color:#8A8880; font-size:11px; }
+  .cmp .ours { font-weight:700; }
+  .semdif { margin-top:8px; font-size:11.5px; line-height:1.45; color:#3A3A38; }
+  .semdif b { color:#0C2340; }
+  details.ver { margin-top:8px; font-size:11px; color:#5F5E5A; line-height:1.45; }
+  details.ver summary { cursor:pointer; font-weight:600; color:#0C2340; }
+  details.ver ul { margin:6px 0 0; padding-left:16px; }
+  .fmtant { color:#B0AEA6; }
+  /* Aba "Como classificamos" */
+  .info h2 { font-size:15px; color:#0C2340; margin:18px 0 6px; }
+  .info p { font-size:13px; line-height:1.5; margin:6px 0; }
+  .info .small { font-size:11.5px; color:#5F5E5A; }
+  .quad { display:grid; grid-template-columns:1fr 1fr; gap:6px; margin:10px 0; }
+  .quad .q { border-radius:10px; padding:10px 10px; font-size:11.5px; line-height:1.4; border:1px solid transparent; }
+  .quad .q b { display:block; font-size:13px; margin-bottom:2px; }
+  .quad .ax { font-size:10.5px; color:#8A8880; text-align:center; text-transform:uppercase; letter-spacing:0.3px; align-self:center; }
+  table.t { width:100%; border-collapse:collapse; font-size:12px; margin:6px 0; background:#FFFFFF; border:1px solid #E4E2DA; border-radius:8px; }
+  table.t th { text-align:left; background:#F5F4F0; color:#8A8880; font-size:10px; text-transform:uppercase; letter-spacing:0.3px; padding:6px 8px; }
+  table.t td { padding:7px 8px; border-top:1px solid #E4E2DA; vertical-align:top; line-height:1.4; }
+  table.t td:first-child { font-weight:600; color:#0C2340; white-space:nowrap; padding-right:10px; }
+  .chips { display:flex; flex-wrap:wrap; gap:6px; margin:6px 0; }
+  .chip { font-size:11px; padding:3px 8px; border-radius:6px; background:#EDECE8; color:#3A3A38; font-weight:600; }
+  .ex { border:1px solid #E4E2DA; border-radius:10px; padding:10px 12px; margin:8px 0; background:#FFFFFF; font-size:12.5px; line-height:1.45; }
+  .ex b.t { font-size:13px; }
+  .gl { margin:6px 0; background:#FFFFFF; border:1px solid #E4E2DA; border-radius:10px; padding:4px 12px; }
+  .gl div { font-size:12.5px; line-height:1.45; padding:7px 0; border-top:1px solid #EFEEE8; }
+  .gl div:first-child { border-top:none; }
+  .gl b { color:#0C2340; }
+  .disc { margin-top:16px; font-size:11.5px; color:#8A6300; background:#FBF1DC; border-radius:8px; padding:8px 10px; line-height:1.4; }
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="hdr-title">Qualidade & Preço</div>
-  <div class="hdr-sub">Raio-X (Clareza) + verificação externa — atualizado 09 set 2026</div>
+  <div class="hdr-sub">Raio-X (Clareza) + verificação externa — atualizado <b>18 out 2026</b> (AVGO, INTU, MU, COST, THEON, ASML, JNJ) · restantes a <b>09 set 2026</b></div>
   <div class="tabs" id="tabs"></div>
   <div id="cards"></div>
-  <div class="footer">
-    "Nosso DCF" é o cálculo interno com base no Raio-X, corrigido quando já verificado. "Alvo analistas" é o
-    preço-alvo médio de mercado — não é o mesmo cálculo, serve para comparar as duas perspetivas. "Score
-    combinado" junta Termómetro, DCF e consenso de analistas — substitui o antigo selo "Preço a confirmar".
-    QLYS, ARM, ISRG, CHKP e FTNT ainda estão no formato anterior — entram no formato novo quando
-    tivermos o Raio-X atualizado delas.
+  <div id="info" class="info" style="display:none">
+    <h2 style="margin-top:6px">Como classificamos</h2>
+    <p>Cada empresa passa por dois filtros, <b>por esta ordem</b>: primeiro a qualidade do negócio, depois o preço. Se o negócio não é bom, o preço nem entra na conta. A classificação é <b>nossa</b>: partimos dos números do Clareza (Raio-X), confirmamos com fontes externas e, onde discordamos, mostramos os dois lado a lado.</p>
+
+    <div class="quad">
+      <div class="q" style="background:#E8F3EA;border-color:#0F6E56;color:#0F6E56"><b>Zona Buffett</b>Bom negócio a bom preço. Candidata a comprar.</div>
+      <div class="q" style="background:#FBF1DC;border-color:#8A6300;color:#8A6300"><b>Vigiar</b>Bom negócio, mas o preço está alto. Esperar por melhor preço.</div>
+      <div class="q" style="background:#FDEBDB;border-color:#9C570F;color:#9C570F"><b>Armadilha de Valor</b>Parece barata, mas o negócio não é fiável. O preço baixo engana.</div>
+      <div class="q" style="background:#FBEAEA;border-color:#A32D2D;color:#A32D2D"><b>Descartada</b>Negócio fraco e preço alto. Evitar.</div>
+    </div>
+    <p class="small">Em cima: qualidade alta (Zona Buffett e Vigiar). Em baixo: qualidade baixa (Armadilha de Valor e Descartada). À esquerda: preço baixo. À direita: preço alto. O corte da qualidade é a nota 50.</p>
+
+    <h2>Passo 1 — Qualidade do negócio</h2>
+    <table class="t">
+      <tr><th>Critério</th><th>A pergunta, em simples</th></tr>
+      <tr><td>Moat</td><td>Tem uma vantagem difícil de copiar (marca, tecnologia, custos de mudança)?</td></tr>
+      <tr><td>ROIC consistente</td><td>Ganha bem por cada euro que investe, ano após ano?</td></tr>
+      <tr><td>Dívida controlada</td><td>Consegue pagar a dívida sem aperto?</td></tr>
+      <tr><td>Previsibilidade</td><td>Os resultados são estáveis, ou dão saltos com o ciclo do negócio?</td></tr>
+    </table>
+    <p>O ponto de partida é a nota de Qualidade do Clareza (Rentabilidade 30%, Crescimento 25%, Saúde do balanço 25%, Consistência 20%). Falhar um dos critérios acima conta como qualidade <b>Fraca</b>, seja qual for a nota.</p>
+    <div class="chips">
+      <span class="chip">Excelente: 75 ou mais</span><span class="chip">Boa: 60 a 74</span><span class="chip">Razoável: 50 a 59</span><span class="chip">Fraca: abaixo de 50</span>
+    </div>
+
+    <h2>Passo 2 — Preço</h2>
+    <p>Só quem passa o Passo 1 é avaliado como barata ou cara. Olhamos para cinco verificações e damos um veredito de uma palavra.</p>
+    <table class="t">
+      <tr><th>Verificação</th><th>O que olhamos</th></tr>
+      <tr><td>1. Valuation do Clareza</td><td>Nota de 0 a 100: história da própria ação (35%), setor (25%), múltiplo face ao crescimento (20%) e DCF (20%).</td></tr>
+      <tr><td>2. P/L esperado e PEG</td><td>Quanto se paga pelo lucro dos próximos anos, e não só pelo do passado.</td></tr>
+      <tr><td>3. Alvo dos analistas</td><td>Quanto acima ou abaixo do preço fica o alvo médio.</td></tr>
+      <tr><td>4. FCF yield</td><td>A caixa que a empresa gera, em percentagem do preço.</td></tr>
+      <tr><td>5. DCF</td><td>Só conta se ficar entre metade e o dobro do alvo dos analistas. Fora disso, tratamo-lo como possível erro.</td></tr>
+    </table>
+    <div class="chips">
+      <span class="chip" style="background:#E8F3EA;color:#0F6E56">Muito barata</span><span class="chip" style="background:#E8F3EA;color:#0F6E56">Barata</span>
+      <span class="chip" style="background:#FBF1DC;color:#8A6300">Neutra</span><span class="chip" style="background:#FBEAEA;color:#A32D2D">Cara</span><span class="chip" style="background:#FBEAEA;color:#A32D2D">Muito cara</span>
+    </div>
+    <p class="small">Muito barata e Barata contam como preço baixo. Neutra, Cara e Muito cara contam como preço alto: só entra na Zona Buffett quem é claramente barata.</p>
+
+    <h2>Regras que seguimos</h2>
+    <table class="t">
+      <tr><td>Substituição manual</td><td>Se a nota média esconde um problema real (um prejuízo pontual, um negócio cíclico), podemos mudar a classificação automática. Explicamos sempre porquê no cartão.</td></tr>
+      <tr><td>Verificação</td><td>A receita e o EPS do último trimestre são confrontados com uma segunda fonte (comunicado oficial ou StockAnalysis).</td></tr>
+      <tr><td>Alarme do DCF</td><td>Se o DCF fica muito longe do alvo dos analistas, desconfiamos dos dados de base, não só do modelo.</td></tr>
+      <tr><td>Valores corrigidos</td><td>O valor original nunca desaparece: fica visível, com data, problema, fontes e conclusão.</td></tr>
+    </table>
+
+    <h2>Três exemplos reais</h2>
+    <div class="ex"><b class="t" style="color:#0F6E56">INTU — Zona Buffett.</b> Qualidade Excelente (ROIC real de 22,9%) e preço Barata: paga-se 13,7x o lucro esperado. O risco é a IA tirar clientes ao software tradicional, e é por isso que está barata.</div>
+    <div class="ex"><b class="t" style="color:#8A6300">AVGO — Vigiar.</b> Também é um negócio Excelente, mas o preço é Neutra: paga-se muito pelos lucros de hoje e o preço atual já assume um crescimento enorme.</div>
+    <div class="ex"><b class="t" style="color:#9C570F">MU — Armadilha de Valor.</b> O P/L esperado é de apenas 5x, o que parece uma pechincha. Mas são chips de memória, um negócio cíclico: em 2023 perdeu $5,83 mil milhões. O mercado paga pouco porque os lucros de agora são de pico.</div>
+
+    <h2>Glossário</h2>
+    <div class="gl">
+      <div><b>Alvo dos analistas.</b> Preço que os analistas dos bancos esperam para a ação daqui a um ano.</div>
+      <div><b>CAGR.</b> Taxa média de crescimento por ano, ao longo de vários anos.</div>
+      <div><b>Capitalização.</b> Valor total da empresa em bolsa: preço da ação vezes o número de ações.</div>
+      <div><b>Cobertura de juros.</b> Quantas vezes o lucro operacional paga os juros da dívida. Quanto mais, melhor.</div>
+      <div><b>Consenso.</b> Opinião média dos analistas: comprar, manter ou vender.</div>
+      <div><b>Consistência.</b> Nota do Clareza para a estabilidade dos resultados ao longo do tempo.</div>
+      <div><b>DCF.</b> Cálculo do que a empresa vale, projetando a caixa que vai gerar. É uma estimativa, não uma certeza.</div>
+      <div><b>Diluição.</b> A empresa emite ações novas e a tua fatia fica mais pequena.</div>
+      <div><b>Dívida/EBITDA.</b> Quantos anos de lucro operacional seriam precisos para pagar a dívida. Quanto menor, melhor. Escalas na ficha do Vasco.</div>
+      <div><b>EBITDA.</b> Lucro operacional antes de juros, impostos e amortizações. Aproxima a caixa que o negócio gera.</div>
+      <div><b>Empresa cíclica.</b> Os lucros sobem e descem com o ciclo do que vende, como os chips de memória.</div>
+      <div><b>EPS.</b> Lucro por ação.</div>
+      <div><b>EPS ajustado e GAAP.</b> GAAP é o lucro contabilístico oficial. O ajustado tira itens pontuais e costuma ser mais alto.</div>
+      <div><b>EV/EBITDA.</b> Valor da empresa, dívida incluída, a dividir pelo EBITDA. Compara empresas com dívidas diferentes.</div>
+      <div><b>FCF (fluxo de caixa livre).</b> Dinheiro que sobra depois de pagar as despesas e os investimentos.</div>
+      <div><b>FCF yield.</b> O FCF em percentagem do preço em bolsa, como uma renda da ação.</div>
+      <div><b>FCF/Lucro.</b> Quanto do lucro contabilístico se transforma em caixa real.</div>
+      <div><b>Formato anterior.</b> Cartões com Termómetro e Score combinado, que o Clareza já descontinuou.</div>
+      <div><b>Margem bruta.</b> Parte de cada euro vendido que sobra depois do custo direto do produto.</div>
+      <div><b>Margem de segurança.</b> Diferença entre o valor do DCF e o preço atual. Negativa quer dizer preço acima do valor calculado.</div>
+      <div><b>Margem líquida.</b> Parte de cada euro vendido que fica como lucro. Acima de 15% é forte.</div>
+      <div><b>Moat.</b> Vantagem competitiva difícil de copiar (marca, tecnologia, custos de mudança).</div>
+      <div><b>Momentum.</b> Como a ação evoluiu nos últimos meses, face ao S&amp;P 500.</div>
+      <div><b>Payout.</b> Percentagem do lucro que a empresa paga em dividendos. Acima de 80% é perigoso.</div>
+      <div><b>PEG.</b> P/L a dividir pelo crescimento do lucro. Quanto menor, melhor. Escalas na ficha do Vasco.</div>
+      <div><b>P/L.</b> Preço da ação a dividir pelo lucro por ação: quantos anos de lucro estás a pagar. Em inglês, P/E.</div>
+      <div><b>P/VPA.</b> Preço face ao valor contabilístico, o que a empresa tem nos livros.</div>
+      <div><b>Remuneração em ações.</b> Parte do pagamento dos gestores feita em ações. Custa aos acionistas mas não sai da caixa.</div>
+      <div><b>ROE.</b> Lucro a dividir pelo capital dos acionistas. Mede o retorno para quem é dono.</div>
+      <div><b>ROIC.</b> Lucro por cada euro investido no negócio. Acima de 15% é forte, abaixo de 5% é fraco.</div>
+      <div><b>Valuation.</b> Se a ação está cara ou barata face aos lucros, à história e ao setor.</div>
+      <div><b>WACC.</b> Custo médio do dinheiro que a empresa usa. O ROIC tem de o superar para criar valor.</div>
+    </div>
+
+    <a class="btn primary" href="indicadores.html#pagina2">Ficha de indicadores fundamentais (Vasco)</a>
+    <div class="disc">Ferramenta de estudo, não é aconselhamento financeiro.</div>
+  </div>
+  <div class="footer" id="footer">
+    <b>Dois formatos de cartão.</b> O <b>formato novo</b> (atualizado a 18 out 2026) mostra o Clareza e a
+    nossa leitura lado a lado, com as semelhanças e as diferenças. O <b>formato anterior</b> (09 set 2026 ou
+    antes) usa o Termómetro e o Score combinado, que o Clareza já descontinuou; as empresas nesse formato
+    ficam assim até trazermos o Raio-X atualizado delas.<br><br>
+    "Nosso DCF" é o cálculo do Clareza, corrigido quando já verificado; no formato novo só conta para a
+    nossa leitura se ficar entre metade e o dobro do alvo dos analistas. "Alvo analistas" é o preço-alvo
+    médio de mercado. "Score combinado" (formato anterior) junta Termómetro, DCF e consenso de analistas.
+    O preço de cada cartão é o da sua data de análise; no formato novo, o fecho de 16 out 2026.
+    Ferramenta de estudo, não é aconselhamento financeiro.
   </div>
 </div>
 
 <script>
 const COMPANIES = [
+  /* ===== Formato novo — atualizado a 18 out 2026 (preços: fecho de 16 out 2026) ===== */
+  { ticker:"INTU", nome:"Intuit", formato:3, quadrante:"buffett", tag:null,
+    setor:"Software (TurboTax, QuickBooks)", origem:"Empresa nova",
+    clQ:82, clQL:"Excelente", clP:91, clPL:"Muito barata", nosQ:"Excelente", nosP:"Barata",
+    preco:325.15, dcf:760.55, dcfFiavel:false, dcfNota:"otimista: 2,0x o alvo dos analistas, não conta",
+    alvoAnalistas:379.68, data:"18 out 2026",
+    semelhancas:"Os dois dizem que o negócio é excelente e o preço está baixo.",
+    diferencas:"Descemos de Muito barata para Barata: o P/L esperado (13,7x) e o PEG (1,09) são baixos, mas não extremos. O ROIC real é 22,9% (Clareza: 16,8%).",
+    notas:["A ação perdeu cerca de metade em 12 meses por receio de que a IA destrua o software tradicional. A previsão de crescimento da receita do próximo ano baixou para 9-10% e as unidades do TurboTax caíram 2%.","Próximos resultados: cerca de 19 nov 2026 (data estimada)."],
+    verificacao:["Receita do T4 (US$4,35 mil M) e EPS ajustado (US$4,03) conferem com o comunicado oficial.","DCF muito acima do alvo dos analistas (2,0x) com FCF 189% do lucro: o modelo parece contar a remuneração em ações como caixa."] },
+
+  { ticker:"AVGO", nome:"Broadcom", formato:3, quadrante:"vigiar", tag:null,
+    setor:"Semicondutores", origem:"Carteira Particular",
+    clQ:82, clQL:"Excelente", clP:20, clPL:"Cara", nosQ:"Excelente", nosP:"Neutra",
+    preco:328.75, dcf:171.69, dcfFiavel:false, dcfNota:"pessimista: 0,34x o alvo dos analistas, não conta",
+    alvoAnalistas:509.61, data:"18 out 2026",
+    semelhancas:"Os dois concordam que o negócio é excelente e que o preço não é de pechincha.",
+    diferencas:"O Clareza diz Cara (20/100). Nós dizemos Neutra: o preço assusta nos números dos últimos 12 meses (EV/EBITDA 30,7x), mas ronda 17x o EPS esperado para 2027, que exige um crescimento de receita de cerca de 64%. A margem bruta real é 75,5% (Clareza: 68,8%).",
+    notas:["Nota de qualidade do Clareza: 88 (09 set) → 82 (18 out). Preço: US$339,51 → US$328,75.","Resultados seguintes: dezembro (data por confirmar)."],
+    verificacao:["Erro corrigido pelo Clareza. Original (Raio-X de 09 set 2026): receita do T2 de US$1,1 mil M. Correto, segundo o comunicado oficial: US$22,187 mil M. Verificado a 18 out 2026; o Raio-X atual já mostra US$22,2 mil M.","Dividendo a crescer 10,2% por ano, yield de 0,79%."],
+    relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/AVGO.jpg", relatorioRotulo:"Ver análise anterior (09 set 2026)" },
+
+  { ticker:"MU", nome:"Micron Technology", formato:3, quadrante:"armadilha", tag:"Substituição manual da classificação",
+    setor:"Semicondutores (memória)", origem:"Carteira Particular",
+    clQ:79, clQL:"Excelente", clP:78, clPL:"Barata", nosQ:"Fraca (ciclo)", nosP:"Barata",
+    preco:878.84, dcf:1533.97, dcfFiavel:true, dcfNota:"coerente com o alvo dos analistas",
+    alvoAnalistas:1588.85, data:"18 out 2026",
+    semelhancas:"Os dois dizem que a ação está barata.",
+    diferencas:"Mudámos a qualidade de Excelente para Fraca por previsibilidade: a Consistência do próprio Clareza é 21 e a estabilidade da margem é 0. É uma substituição manual (regra da secção 4) e fica à tua aprovação.",
+    notas:["Os lucros de hoje são extraordinários, mas não são os normais da empresa. Em 2023 perdeu US$5,83 mil M (margem bruta de 2,7%); hoje a margem bruta é 80,7%. Os analistas esperam um EPS de US$176,55 em 2027 e depois só mais 15,8%.","Um P/L esperado de 5x é o mercado a dizer que isto é o pico do ciclo. O DCF passou de -61% (junho) para +75%: muda de sinal com os lucros.","Antes (09 set 2026): Vigiar, qualidade 85, preço US$926,55, DCF US$365,79."],
+    verificacao:["Receita (US$54,23 mil M) e EPS ajustado (US$33,42) conferem com o comunicado oficial.","Discrepâncias: ROIC 50,4% (Clareza) contra 93,4%; alvo mínimo dos analistas US$1.200 (Clareza) contra US$361 (S&P)."],
+    relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/MU.jpg", relatorioRotulo:"Ver análise anterior (09 set 2026)" },
+
+  { ticker:"COST", nome:"Costco", formato:3, quadrante:"vigiar", tag:null,
+    setor:"Consumo (retalho)", origem:"WL Valor e Qualidade",
+    clQ:66, clQL:"Boa", clP:19, clPL:"Muito cara", nosQ:"Excelente", nosP:"Cara",
+    preco:989.11, dcf:398.85, dcfFiavel:false, dcfNota:"0,36x o alvo dos analistas, não conta",
+    alvoAnalistas:1111.55, data:"18 out 2026",
+    semelhancas:"Os dois concordam que o preço está alto.",
+    diferencas:"Subimos a qualidade de Boa para Excelente: o Clareza dá nota 37 à rentabilidade porque as margens são baixas, mas esse é o modelo da empresa (ganha com as quotas de sócio). O ROIC real é 37,3% (Clareza: 18,6%) contra um custo de capital de 8,9%. Descemos o preço de Muito cara para Cara.",
+    notas:["Paga-se 47,6x o lucro (43x o esperado) por um crescimento de cerca de 10% ao ano. O alvo dos analistas (S&P: US$1.066,06) está só 7,8% acima do preço."],
+    verificacao:["Discrepância na receita do trimestre. Raio-X: US$93,9 mil M, 'falhou', +9,0% (são as vendas líquidas, comparadas com a receita total do ano anterior). Com US$1,85 mil M de quotas de sócio, a receita foi de cerca de US$95,75 mil M (+11,2%), acima da previsão de US$95,0 mil M. Fonte: 8-K da Costco, 24 set 2026."],
+    relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/COST.jpg", relatorioRotulo:"Ver análise anterior (09 set 2026)" },
+
+  { ticker:"THEON", nome:"Theon International", formato:3, quadrante:"vigiar", tag:null, moeda:"€",
+    setor:"Industriais (defesa)",
+    clQ:64, clQL:"Boa", clP:27, clPL:"Cara", nosQ:"Boa", nosP:"Neutra",
+    preco:29.52, dcf:7.40, dcfFiavel:false, dcfNota:"0,19x o alvo dos analistas, não conta",
+    alvoAnalistas:39.41, data:"18 out 2026",
+    semelhancas:"Os dois dizem que a qualidade é Boa.",
+    diferencas:"O Clareza não tem dados de analistas; a S&P tem 9, com alvo de €39,41 (mais 35%), P/L esperado de 18,2x e PEG de cerca de 1,0. Por isso passamos o preço de Cara para Neutra. O ROIC real é 20,3% (Clareza: 12,3%).",
+    notas:["Riscos: a dívida sobe com as aquisições, a margem de FCF é só 6% e o número de ações cresce 5,7% ao ano (diluição).","O 'crescimento do lucro de -66,9%/ano' do Raio-X é um erro: o lucro do 1.º semestre quase triplicou, para €74,3 M, embora com ganhos de justo valor."],
+    verificacao:["Margens e FCF yield (1,4%) conferem com a S&P.","Discrepâncias: receita do T2 de €126,9 M (+36,6%) no Raio-X contra €128,6 M (+38,4%) no relatório da empresa; funcionários 767 contra 1.044; dividend yield 0,93% contra 1,06%."] },
+
+  { ticker:"ASML", nome:"ASML", formato:3, quadrante:"vigiar", tag:null, moeda:"€", alvoMoeda:"$", precoRef:1641.52,
+    setor:"Semicondutores (equipamento)",
+    clQ:83, clQL:"Excelente", clP:16, clPL:"Muito cara", nosQ:"Excelente", nosP:"Cara",
+    preco:1477.20, dcf:826.86, dcfFiavel:false, dcfNota:"€ contra alvo em US$; muito abaixo, não conta",
+    alvoAnalistas:2152, data:"18 out 2026",
+    semelhancas:"Os dois dizem que o negócio é excelente e o preço está alto.",
+    diferencas:"Descemos o preço de Muito cara para Cara: o P/L esperado é 26x (o Clareza mostra 36x) e os 41 analistas da S&P veem um alvo de US$2.152, 31% acima do ADR (US$1.641,52). O Clareza não tem alvo.",
+    notas:["Guidance do T4: €14,2 a €15,2 mil M de vendas.","O lucro do T3 (€4,96 mil M) inclui um ganho de €509,7 M em investimentos, cerca de €1,3 por ação."],
+    verificacao:["Vendas do T3 (€11,66 mil M) e EPS (€12,95) conferem com o 6-K oficial.","Discrepâncias: receita de €11,8 mil M no Clareza contra €11,66 mil M; ROIC 37,2% contra 92,1%."] },
+
+  { ticker:"JNJ", nome:"Johnson & Johnson", formato:3, quadrante:"vigiar", tag:null,
+    setor:"Saúde", origem:"WL Valor e Qualidade",
+    clQ:68, clQL:"Boa", clP:17, clPL:"Muito cara", nosQ:"Boa", nosP:"Neutra",
+    preco:255.56, dcf:242.66, dcfFiavel:true, dcfNota:"0,85x o alvo dos analistas",
+    alvoAnalistas:284.33, data:"18 out 2026",
+    semelhancas:"Os dois dizem que a qualidade é Boa.",
+    diferencas:"O Clareza passou de Neutra (09 set) para Muito cara, mas a ação desceu 5% (US$269,12 → US$255,56). A causa é contabilística: encargos de cerca de US$7 mil M no T3 (talco, Firefly Bio, Sail) levaram o EPS GAAP a US$0,09. Com o EPS ajustado, o P/L esperado é 23x. Não é barata (a mediana de 5 anos é ~17x), mas o FCF yield de 3,6%, o alvo 9,3% acima e o DCF a só 5% do preço dão Neutra.",
+    notas:["ROIC real de 21,0% (Clareza: 14,7%) contra um custo de capital de 5,1%, e 64 anos seguidos a subir o dividendo. Crescimento lento; o litígio do talco volta a pesar."],
+    verificacao:["Vendas (US$25,4 mil M, +5,9%) e EPS ajustado (US$2,59) conferem com o comunicado oficial.","Discrepâncias: alvo mínimo US$260 e 40 analistas (Clareza) contra US$190 e 23 (S&P); crescimento do dividendo +5,6% contra +3,5%; FCF/lucro 74% (ano fiscal 2025) contra 138% nos últimos 12 meses."],
+    relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/JNJ.jpg", relatorioRotulo:"Ver análise anterior (09 set 2026)" },
+
+  /* ===== Formato anterior (Termómetro + Score combinado) ===== */
   { ticker:"QLYS", nome:"Qualys", quadrante:"buffett", tag:null,
     setor:"Cibersegurança", origem:"Robótica e Cibersegurança",
     qualidade:88, qualidadeLeitura:"Excecional",
     preco:176.89, dcf:266.81, dcfNota:"otimista vs. fontes externas (~$165-173)",
     alvoAnalistas:179.80, data:"01 set 2026" },
-  { ticker:"AVGO", nome:"Broadcom", quadrante:"vigiar", tag:null, formatoNovo:true,
-    setor:"Semicondutores", origem:"Carteira Particular",
-    qualidade:88, qualidadeLeitura:"Excelente",
-    preco:339.51, dcf:175.28, dcfNota:"pessimista — cancela com consenso muito otimista",
-    alvoAnalistas:509.61, termometro:20,
-    veredito:"Neutra", scoreCombinado:41,
-    avisoTermometro:"Erro de dados históricos (receita Q2 FY26) ainda por corrigir pelo Clareza — ver relatório completo.",
-    relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/AVGO.jpg",
-    data:"09 set 2026" },
-
-  { ticker:"MU", nome:"Micron Technology", quadrante:"vigiar", tag:null, formatoNovo:true,
-    setor:"Semicondutores", origem:"Carteira Particular",
-    qualidade:85, qualidadeLeitura:"Excelente — negócio cíclico, no pico do ciclo",
-    preco:926.55, dcf:365.79, dcfNota:"pico de ciclo distorce leitura — ver nota",
-    alvoAnalistas:1547.71, termometro:33,
-    veredito:"Neutra", scoreCombinado:44,
-    avisoTermometro:"Reporta próximo trimestre a 30 de setembro — margens atuais no pico do ciclo de memória.",
-    relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/MU.jpg",
-    data:"09 set 2026" },
   { ticker:"ARM", nome:"Arm Holdings", quadrante:"vigiar", tag:null,
     setor:"Semicondutores (design)", origem:"RUI",
     qualidade:81, qualidadeLeitura:"Boa (rentabilidade só neutra)",
@@ -158,16 +348,6 @@ const COMPANIES = [
     relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/CL.jpg",
     data:"09 set 2026" },
 
-  { ticker:"COST", nome:"Costco", quadrante:"vigiar", tag:null, formatoNovo:true,
-    setor:"Consumer", origem:"WL Valor e Qualidade",
-    qualidade:65, qualidadeLeitura:"Excelente",
-    preco:910.18, dcf:480.71, dcfNota:"não verificado externamente",
-    alvoAnalistas:1101.78, termometro:22,
-    veredito:"Cara", scoreCombinado:32,
-    avisoTermometro:null,
-    relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/COST.jpg",
-    data:"09 set 2026" },
-
   { ticker:"MA", nome:"Mastercard", quadrante:"buffett", tag:null, formatoNovo:true,
     setor:"Finance", origem:"WL Valor e Qualidade",
     qualidade:85, qualidadeLeitura:"Excelente",
@@ -186,16 +366,6 @@ const COMPANIES = [
     veredito:"Cara", scoreCombinado:37,
     avisoTermometro:null,
     relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/V.jpg",
-    data:"09 set 2026" },
-
-  { ticker:"JNJ", nome:"Johnson & Johnson", quadrante:"vigiar", tag:null, formatoNovo:true,
-    setor:"Saúde", origem:"WL Valor e Qualidade",
-    qualidade:69, qualidadeLeitura:"Boa",
-    preco:269.12, dcf:267.43, dcfNota:"alinhado com o consenso",
-    alvoAnalistas:284.79, termometro:31,
-    veredito:"Neutra", scoreCombinado:45,
-    avisoTermometro:null,
-    relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/JNJ.jpg",
     data:"09 set 2026" },
 
   { ticker:"BRK-B", nome:"Berkshire Hathaway", quadrante:"vigiar", tag:"Preço indeterminado", formatoNovo:true,
@@ -240,6 +410,7 @@ const COMPANIES = [
 ];
 
 const GROUPS = [
+  { key:"como", label:"Como classificamos", color:"#0C2340", bg:"#E6EBF2", info:true },
   { key:"buffett", label:"Zona Buffett", color:"#0F6E56", bg:"#E8F3EA" },
   { key:"vigiar", label:"Vigiar", color:"#8A6300", bg:"#FBF1DC" },
   { key:"armadilha", label:"Armadilha de Valor", color:"#9C570F", bg:"#FDEBDB" },
@@ -247,16 +418,18 @@ const GROUPS = [
   { key:"pendente", label:"Pendente", color:"#5F5E5A", bg:"#EDECE8" },
 ];
 
-function fmt(n) {
+function fmt(n, m) {
   if (n === null || n === undefined) return "—";
-  return "$" + n.toLocaleString("pt-PT", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  return (m || "$") + n.toLocaleString("pt-PT", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 function getTargetInfo(c) {
   const targets = [];
-  if (c.dcf) targets.push(c.dcf);
+  // Formato novo: o DCF só conta se for fiável (entre 0,5x e 2x o alvo dos analistas)
+  if (c.dcf && (c.formato !== 3 || c.dcfFiavel)) targets.push(c.dcf);
   if (c.alvoAnalistas) targets.push(c.alvoAnalistas);
   const conservador = targets.length ? Math.min(...targets) : null;
-  const distancia = conservador ? ((c.preco - conservador) / conservador) * 100 : null;
+  const ref = c.precoRef || c.preco;
+  const distancia = conservador ? ((ref - conservador) / conservador) * 100 : null;
   return { conservador, distancia };
 }
 function veredictColor(v) {
@@ -267,6 +440,7 @@ function veredictColor(v) {
 }
 
 let active = "buffett";
+const FIRST_SECTION = "como";
 
 function renderTabs() {
   const el = document.getElementById("tabs");
@@ -278,7 +452,7 @@ function renderTabs() {
     btn.style.color = g.color;
     btn.style.background = active === g.key ? g.bg : "#FFFFFF";
     btn.style.borderColor = active === g.key ? g.color : "#E4E2DA";
-    btn.innerHTML = g.label + '<div class="n">' + count + "</div>";
+    btn.innerHTML = g.label + '<div class="n">' + (g.info ? "regras e glossário" : count) + "</div>";
     btn.onclick = () => { active = g.key; render(); };
     el.appendChild(btn);
   });
@@ -312,7 +486,7 @@ function cardOldHtml(c, rank) {
       <div><div class="label">Alvo analistas</div><div class="val">${fmt(c.alvoAnalistas)}</div><div class="dcfnota">consenso de mercado</div></div>
     </div>
     ${distHtml}
-    <div class="lastdt">Última análise: ${c.data}</div>
+    <div class="lastdt">Última análise: ${c.data} <span class="fmtant">· formato anterior</span></div>
   </div>`;
 }
 
@@ -340,12 +514,56 @@ function cardNewHtml(c, rank) {
     </div>
     ${c.avisoTermometro ? `<div class="warn2"><span>⚠</span><span>${c.avisoTermometro}</span></div>` : ""}
     ${btnHtml}
-    <div class="lastdt">Última análise: ${c.data}</div>
+    <div class="lastdt">Última análise: ${c.data} <span class="fmtant">· formato anterior</span></div>
+  </div>`;
+}
+
+function cardV3Html(c, rank) {
+  const group = GROUPS.find(g => g.key === c.quadrante);
+  const m = c.moeda || "$";
+  const am = c.alvoMoeda || m;
+  const pcolor = v => (v === "Muito barata" || v === "Barata") ? "#0F6E56" : (v === "Neutra" ? "#8A6300" : "#A32D2D");
+  const qcolor = v => /^Fraca/.test(v) ? "#A32D2D" : "#1A1A1A";
+  const tagHtml = c.tag ? `<div class="tag" style="background:${group.bg};color:${group.color}">${c.tag}</div>` : "";
+  const notas = (c.notas || []).map(n => `<div class="warn2"><span>⚠</span><span>${n}</span></div>`).join("");
+  const ver = (c.verificacao || []).length
+    ? `<details class="ver"><summary>Verificação e discrepâncias (secção 7)</summary><ul>${c.verificacao.map(v => `<li>${v}</li>`).join("")}</ul></details>` : "";
+  const btnHtml = c.relatorioJpg
+    ? `<a class="btn" href="${c.relatorioJpg}" target="_blank" rel="noopener">${c.relatorioRotulo || "Ver análise completa"}</a>`
+    : `<div class="btn disabled">Ver análise completa (a publicar)</div>`;
+  const sub = c.origem ? `${c.setor} · ${c.origem}` : c.setor;
+  return `
+  <div class="card">
+    <div class="row-top">
+      <div><span class="rank">#${rank}</span><span class="ticker">${c.ticker}</span><span class="nome">${c.nome}</span></div>
+      <span class="preco">${fmt(c.preco, m)}</span>
+    </div>
+    <div class="sub">${sub}</div>
+    ${tagHtml}
+    <div class="cmp">
+      <div class="r h"><div></div><div>Clareza</div><div>Nossa leitura</div></div>
+      <div class="r"><div class="k">Qualidade</div><div>${c.clQ} · ${c.clQL}</div><div class="ours" style="color:${qcolor(c.nosQ)}">${c.nosQ}</div></div>
+      <div class="r"><div class="k">Preço</div><div>${c.clP} · ${c.clPL}</div><div class="ours" style="color:${pcolor(c.nosP)}">${c.nosP}</div></div>
+    </div>
+    <div class="semdif"><b>Semelhanças.</b> ${c.semelhancas}<br><b>Diferenças.</b> ${c.diferencas}</div>
+    <div class="grid2">
+      <div><div class="label">Nosso DCF</div><div class="val" style="color:${c.dcfFiavel ? "#1A1A1A" : "#8A8880"}">${fmt(c.dcf, m)}</div><div class="dcfnota">${c.dcfNota}</div></div>
+      <div><div class="label">Alvo analistas</div><div class="val">${fmt(c.alvoAnalistas, am)}</div><div class="dcfnota">consenso de mercado</div></div>
+    </div>
+    ${notas}
+    ${ver}
+    ${btnHtml}
+    <div class="lastdt">Última análise: ${c.data} · preço de 16 out 2026</div>
   </div>`;
 }
 
 function render() {
   renderTabs();
+  const isInfo = active === FIRST_SECTION;
+  document.getElementById("info").style.display = isInfo ? "block" : "none";
+  document.getElementById("cards").style.display = isInfo ? "none" : "block";
+  document.getElementById("footer").style.display = isInfo ? "none" : "block";
+  if (isInfo) return;
   const list = COMPANIES.filter(c => c.quadrante === active).sort((a, b) => {
     const da = getTargetInfo(a).distancia, db = getTargetInfo(b).distancia;
     if (da === null && db === null) return 0;
@@ -358,7 +576,7 @@ function render() {
     el.innerHTML = '<div class="empty">Sem empresas neste grupo.</div>';
     return;
   }
-  el.innerHTML = list.map((c, i) => c.formatoNovo ? cardNewHtml(c, i + 1) : cardOldHtml(c, i + 1)).join("");
+  el.innerHTML = list.map((c, i) => c.formato === 3 ? cardV3Html(c, i + 1) : (c.formatoNovo ? cardNewHtml(c, i + 1) : cardOldHtml(c, i + 1))).join("");
 }
 
 render();

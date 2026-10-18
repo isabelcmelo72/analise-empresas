@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Tabela de Indicadores Fundamentais</title>
+<style>
+  :root {
+    --p1-header: #1F4E5F; --p1-cat: #3B6E7D;
+    --p2-header: #6B2C39; --p2-cat: #9C4A5C;
+    --zebra: #EEF3F4; --text: #1E1E1E; --sub: #5A5A5A; --label: #3C3C3C;
+    --novo: #2E7D32; --divider: #D7DEDF; --nav-h: 52px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; padding: 0; background: #fff; color: var(--text);
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  header.top {
+    position: sticky; top: 0; z-index: 20; display: flex; height: var(--nav-h);
+    box-shadow: 0 1px 3px rgba(0,0,0,.15);
+  }
+  header.top a {
+    flex: 1; display: flex; align-items: center; justify-content: center;
+    color: #fff; text-decoration: none; font-weight: 700; font-size: 15px;
+    letter-spacing: .3px;
+  }
+  header.top a.p1 { background: var(--p1-header); }
+  header.top a.p2 { background: var(--p2-header); }
+
+  .page-title {
+    padding: 22px 20px 6px;
+  }
+  .page-title h1 { margin: 0 0 4px; font-size: 21px; }
+  .page-title p { margin: 0; font-size: 14.5px; color: var(--sub); font-style: italic; }
+  .pagina1 .page-title h1 { color: var(--p1-header); }
+  .pagina2 .page-title h1 { color: var(--p2-header); }
+
+  .cat {
+    position: sticky; top: var(--nav-h); z-index: 10;
+    color: #fff; font-weight: 700; font-size: 14px; letter-spacing: .3px;
+    padding: 10px 20px; margin-top: 14px;
+  }
+  .pagina1 .cat { background: var(--p1-cat); }
+  .pagina2 .cat { background: var(--p2-cat); }
+
+  .card { padding: 18px 20px 20px; border-bottom: 1px solid var(--divider); }
+  .card.zebra { background: var(--zebra); }
+  .ind-name { font-size: 19px; font-weight: 700; }
+  .novo { font-size: 12px; font-weight: 700; color: var(--novo); vertical-align: middle; }
+  .ind-sub { font-size: 14.5px; font-style: italic; color: var(--sub); margin-top: 2px; }
+  .label { font-size: 12.5px; font-weight: 700; color: var(--label); margin-top: 10px; }
+  .body { font-size: 15.5px; margin-top: 2px; line-height: 1.42; }
+  .body div { margin: 0; }
+
+  footer { text-align: center; font-size: 12.5px; color: #9a9a9a; padding: 28px 20px 40px; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <a class="p1" href="#pagina1">Página 1 — Original</a>
+  <a class="p2" href="#pagina2">Página 2 — Revista</a>
+</header>
+
+<section class="pagina1" id="pagina1">
+  <div class="page-title">
+    <h1>Página 1 — Tabela Original</h1>
+    <p>Indicadores, fórmulas e chave de interpretação, tal como preparados inicialmente.</p>
+  </div>
+  <div class="cat">INDICADORES DE PREÇO</div>
+  <div class="card">
+    <div class="ind-name">P/L ou P/E</div>
+    
+    <div class="label">FÓRMULA</div>
+    <div class="body"><div>Preço da Ação ÷ Lucro por Ação (EPS)</div></div>
+    <div class="label">INTERPRETAÇÃO</div>
+    <div class="body"><div>Quanto menor, melhor.</div></div>
+  </div>
+  <div class="card zebra">
+    <div class="ind-name">P/VPA ou P/B</div>
+    
+    <div class="label">FÓRMULA</div>
+    <div class="body"><div>Preço da Ação ÷ Valor Patrimonial por Ação</div><div>(Valor Patrimonial por Ação = Património Líquido ÷ Nº de Ações em Circulação)</div></div>
+    <div class="label">INTERPRETAÇÃO</div>
+    <div class="body"><div>&gt;1  Está caro</div><div>=1  Preço da ação correto</div><div>&lt;1  Oportunidade de investimento, porém pode significar que a empresa enfrenta desafios graves</div></div>
+  </div><div class="cat">INDICADOR DE CRESCIMENTO</div>
+  <div class="card">
+    <div class="ind-name">PEG</div>
+    
+    <div class="label">FÓRMULA</div>
+    <div class="body"><div>(P/L ÷ CAGR) ÷ 100</div><div>CAGR = (EPS Ano Atual ÷ EPS Ano Anterior) − 1</div></div>
+    <div class="label">INTERPRETAÇÃO</div>
+    <div class="body"><div>&gt;1  Está caro</div><div>=1  Preço da ação correto</div><div>&lt;1  Oportunidade de investimento</div></div>
+  </div><div class="cat">INDICADORES DE RENTABILIDADE</div>
+  <div class="card zebra">
+    <div class="ind-name">Margem Bruta</div>
+    
+    <div class="label">FÓRMULA</div>
+    <div class="body"><div>(Lucro Bruto ÷ Receita) × 100</div></div>
+    <div class="label">INTERPRETAÇÃO</div>
+    <div class="body"><div>Quanto maior, melhor.</div></div>
+  </div>
+  <div class="card">
+    <div class="ind-name">Margem EBITDA</div>
+    
+    <div class="label">FÓRMULA</div>
+    <div class="body"><div>(EBITDA ÷ Receita) × 100</div></div>
+    <div class="label">INTERPRETAÇÃO</div>
+    <div class="body"><div>Quanto maior, melhor.</div></div>
+  </div>
+  <div class="card zebra">
+    <div class="ind-name">Margem Líquida</div>
+    
+    <div class="label">FÓRMULA</div>
+    <div class="body"><div>(Lucro Líquido ÷ Receita) × 100</div></div>
+    <div class="label">INTERPRETAÇÃO</div>
+    <div class="body"><div>Quanto maior, melhor.</div></div>
+  </div>
+  <div class="card">
+    <div class="ind-name">ROE</div>
+    
+    <div class="label">FÓRMULA</div>
+    <div class="body"><div>Lucro Líquido ÷ Património Líquido</div></div>
+    <div class="label">INTERPRETAÇÃO</div>
+    <div class="body"><div>Quanto maior, melhor. Comparar com o setor.</div></div>
+  </div><div class="cat">INDICADORES DE ENDIVIDAMENTO</div>
+  <div class="card zebra">
+    <div class="ind-name">Dívida Líquida / EBITDA</div>
+    
+    <div class="label">FÓRMULA</div>
+    <div class="body"><div>Dívida Líquida ÷ EBITDA</div><div>(Dívida Líquida = Dívida Bruta − Caixa)</div></div>
+    <div class="label">INTERPRETAÇÃO</div>
+    <div class="body"><div>&lt;0 (dívida líquida negativa, EBITDA positivo) → o melhor cenário</div><div>&lt;0 (dívida líquida positiva, EBITDA negativo) → o pior cenário</div><div>0–5  Situação confortável, paga a dívida até 5 anos</div><div>&gt;5  Endividamento muito alto</div></div>
+  </div><div class="cat">INDICADORES DE LIQUIDEZ</div>
+  <div class="card">
+    <div class="ind-name">Current Ratio</div>
+    
+    <div class="label">FÓRMULA</div>
+    <div class="body"><div>Ativos Circulantes ÷ Passivos Circulantes</div></div>
+    <div class="label">INTERPRETAÇÃO</div>
+    <div class="body"><div>&gt;1 (idealmente 1,5–2)  Boa saúde financeira</div><div>=1  Cumpre obrigações, sem margem para imprevistos</div><div>&lt;1  Sinal de alerta</div></div>
+  </div>
+  <div class="card zebra">
+    <div class="ind-name">Cash Ratio</div>
+    
+    <div class="label">FÓRMULA</div>
+    <div class="body"><div>Caixa ÷ Passivos Circulantes</div></div>
+    <div class="label">INTERPRETAÇÃO</div>
+    <div class="body"><div>&gt;1  Sinal muito positivo de liquidez</div><div>=1  Caixa igual às dívidas de curto prazo</div><div>&lt;1  Sinal de alerta</div></div>
+  </div><div class="cat">INDICADORES DE DIVIDENDOS</div>
+  <div class="card">
+    <div class="ind-name">Dividend Yield</div>
+    
+    <div class="label">FÓRMULA</div>
+    <div class="body"><div>(Dividendo Anual por Ação ÷ Preço da Ação) × 100</div></div>
+    <div class="label">INTERPRETAÇÃO</div>
+    <div class="body"><div>2%–6%  Sustentável e atrativo</div><div>&gt;8%  Desconfiar — pode resultar de queda no preço ou de política insustentável</div></div>
+  </div>
+  <div class="card zebra">
+    <div class="ind-name">Payout Ratio</div>
+    
+    <div class="label">FÓRMULA</div>
+    <div class="body"><div>(Dividendo Anual por Ação ÷ EPS) × 100</div></div>
+    <div class="label">INTERPRETAÇÃO</div>
+    <div class="body"><div>&gt;80%  Insustentável a longo prazo</div><div>30%–70%  Abordagem equilibrada</div><div>&lt;30%  Empresa retém lucros para reinvestir</div></div>
+  </div><div class="cat">INDICADOR DE VOLATILIDADE</div>
+  <div class="card">
+    <div class="ind-name">Beta</div>
+    
+    <div class="label">FÓRMULA</div>
+    <div class="body"><div>Variação do preço da ação face ao mercado (ex.: S&amp;P 500)</div></div>
+    <div class="label">INTERPRETAÇÃO</div>
+    <div class="body"><div>&gt;1  Variações maiores que o mercado</div><div>=1  Move-se em linha com o mercado</div><div>0–1  Menos volátil que o mercado</div><div>&lt;0  Move-se em sentido oposto ao mercado</div></div>
+  </div>
+</section>
+
+<section class="pagina2" id="pagina2">
+  <div class="page-title">
+    <h1>Página 2 — Versão Revista e Ampliada</h1>
+    <p>Correções às interpretações demasiado rígidas e 4 indicadores adicionais (marcados NOVO).</p>
+  </div>
+  <div class="cat">INDICADORES DE PREÇO / VALORIZAÇÃO</div>
+  <div class="card">
+    <div class="ind-name">P/L (P/E)</div>
+    <div class="ind-sub">Preço pago por cada euro de lucro anual.</div>
+    <div class="label">FÓRMULA</div>
+    <div class="body"><div>Preço da Ação ÷ Lucro por Ação (EPS)</div></div>
+    <div class="label">INTERPRETAÇÃO</div>
+    <div class="body"><div>Sem valor fixo "bom" ou "mau" — compara sempre com a média do setor e o histórico da empresa. Muito baixo pode ser sinal de risco, não de pechincha.</div></div>
+  </div>
+  <div class="card zebra">
+    <div class="ind-name">P/VPA (P/B)</div>
+    <div class="ind-sub">O que o mercado paga por cada euro de património líquido.</div>
+    <div class="label">FÓRMULA</div>
+    <div class="body"><div>Preço da Ação ÷ Valor Patrimonial por Ação</div></div>
+    <div class="label">INTERPRETAÇÃO</div>
+    <div class="body"><div>Varia muito por setor (bancos e industriais têm P/B naturalmente mais baixo que tecnológicas) — usar sempre com comparação setorial, nunca como regra absoluta.</div></div>
+  </div>
+  <div class="card">
+    <div class="ind-name">EV/EBITDA <span class="novo">NOVO</span></div>
+    <div class="ind-sub">Quanto custa a empresa inteira (dívida incluída) face ao seu EBITDA.</div>
+    <div class="label">FÓRMULA</div>
+    <div class="body"><div>(Capitalização Bolsista + Dívida Líquida) ÷ EBITDA</div></div>
+    <div class="label">INTERPRETAÇÃO</div>
+    <div class="body"><div>Quanto menor, melhor. Mais fiável que o P/L para comparar empresas com níveis de dívida diferentes.</div></div>
+  </div><div class="cat">INDICADOR DE CRESCIMENTO</div>
+  <div class="card zebra">
+    <div class="ind-name">PEG</div>
+    <div class="ind-sub">Ajusta o P/L ao crescimento dos lucros da empresa.</div>
+    <div class="label">FÓRMULA</div>
+    <div class="body"><div>P/L ÷ Crescimento anual do EPS (%)</div></div>
+    <div class="label">INTERPRETAÇÃO</div>
+    <div class="body"><div>&lt;1  Crescimento "a desconto"</div><div>=1  Preço alinhado com o crescimento</div><div>&gt;1  Caro face ao crescimento</div></div>
+  </div><div class="cat">INDICADORES DE RENTABILIDADE</div>
+  <div class="card">
+    <div class="ind-name">Margem Bruta</div>
+    <div class="ind-sub">Ganho direto na venda, antes de custos indiretos.</div>
+    <div class="label">FÓRMULA</div>
+    <div class="body"><div>(Lucro Bruto ÷ Receita) × 100</div></div>
+    <div class="label">INTERPRETAÇÃO</div>
+    <div class="body"><div>Quanto maior, melhor.</div></div>
+  </div>
+  <div class="card zebra">
+    <div class="ind-name">Margem EBITDA</div>
+    <div class="ind-sub">Rentabilidade operacional, antes de juros, impostos e amortizações.</div>
+    <div class="label">FÓRMULA</div>
+    <div class="body"><div>(EBITDA ÷ Receita) × 100</div></div>
+    <div class="label">INTERPRETAÇÃO</div>
+    <div class="body"><div>Quanto maior, melhor.</div></div>
+  </div>
+  <div class="card">
+    <div class="ind-name">Margem Líquida</div>
+    <div class="ind-sub">Rentabilidade final, depois de todas as despesas.</div>
+    <div class="label">FÓRMULA</div>
+    <div class="body"><div>(Lucro Líquido ÷ Receita) × 100</div></div>
+    <div class="label">INTERPRETAÇÃO</div>
+    <div class="body"><div>Quanto maior, melhor.</div></div>
+  </div>
+  <div class="card zebra">
+    <div class="ind-name">ROE</div>
+    <div class="ind-sub">Retorno gerado sobre o capital dos acionistas.</div>
+    <div class="label">FÓRMULA</div>
+    <div class="body"><div>Lucro Líquido ÷ Património Líquido</div></div>
+    <div class="label">INTERPRETAÇÃO</div>
+    <div class="body"><div>Quanto maior, melhor — mas dívida elevada infla-o artificialmente. Cruzar sempre com o ROIC.</div></div>
+  </div>
+  <div class="card">
+    <div class="ind-name">ROIC <span class="novo">NOVO</span></div>
+    <div class="ind-sub">Retorno sobre todo o capital investido (dívida + capital próprio).</div>
+    <div class="label">FÓRMULA</div>
+    <div class="body"><div>NOPAT (lucro operacional após impostos) ÷ Capital Investido</div></div>
+    <div class="label">INTERPRETAÇÃO</div>
+    <div class="body"><div>Quanto maior, melhor. Se for menor que o custo de capital da empresa, está a destruir valor mesmo com lucro positivo.</div></div>
+  </div><div class="cat">INDICADORES DE ENDIVIDAMENTO</div>
+  <div class="card zebra">
+    <div class="ind-name">Dívida Líquida / EBITDA</div>
+    <div class="ind-sub">Anos de EBITDA necessários para pagar a dívida líquida.</div>
+    <div class="label">FÓRMULA</div>
+    <div class="body"><div>Dívida Líquida ÷ EBITDA</div><div>(Dívida Líquida = Dívida Bruta − Caixa)</div></div>
+    <div class="label">INTERPRETAÇÃO</div>
+    <div class="body"><div>&lt;0 com EBITDA positivo → melhor cenário (caixa líquida)</div><div>&lt;0 com EBITDA negativo → pior cenário</div><div>0–5  Confortável</div><div>&gt;5  Endividamento muito alto</div></div>
+  </div>
+  <div class="card">
+    <div class="ind-name">Rácio de Cobertura de Juros <span class="novo">NOVO</span></div>
+    <div class="ind-sub">Quantas vezes o lucro operacional cobre os juros da dívida.</div>
+    <div class="label">FÓRMULA</div>
+    <div class="body"><div>EBIT ÷ Juros Pagos</div></div>
+    <div class="label">INTERPRETAÇÃO</div>
+    <div class="body"><div>&lt;1,5  Risco</div><div>1,5–3  Aceitável</div><div>&gt;3  Confortável</div></div>
+  </div><div class="cat">INDICADORES DE LIQUIDEZ</div>
+  <div class="card zebra">
+    <div class="ind-name">Current Ratio</div>
+    <div class="ind-sub">Capacidade de pagar dívidas de curto prazo com ativos de curto prazo.</div>
+    <div class="label">FÓRMULA</div>
+    <div class="body"><div>Ativos Circulantes ÷ Passivos Circulantes</div></div>
+    <div class="label">INTERPRETAÇÃO</div>
+    <div class="body"><div>1,5–2  Boa saúde financeira</div><div>=1  Cumpre obrigações, sem margem para imprevistos</div><div>&lt;1  Sinal de alerta</div></div>
+  </div>
+  <div class="card">
+    <div class="ind-name">Cash Ratio</div>
+    <div class="ind-sub">Capacidade de pagar dívidas de curto prazo só com o dinheiro em caixa.</div>
+    <div class="label">FÓRMULA</div>
+    <div class="body"><div>Caixa ÷ Passivos Circulantes</div></div>
+    <div class="label">INTERPRETAÇÃO</div>
+    <div class="body"><div>&gt;1  Sinal muito positivo</div><div>=1  Caixa igual às dívidas de curto prazo</div><div>&lt;1  Sinal de alerta</div></div>
+  </div><div class="cat">INDICADOR DE FLUXO DE CAIXA</div>
+  <div class="card zebra">
+    <div class="ind-name">FCF Yield <span class="novo">NOVO</span></div>
+    <div class="ind-sub">Retorno em caixa real gerado, face ao preço pago pela empresa.</div>
+    <div class="label">FÓRMULA</div>
+    <div class="body"><div>Fluxo de Caixa Livre ÷ Capitalização Bolsista</div></div>
+    <div class="label">INTERPRETAÇÃO</div>
+    <div class="body"><div>Quanto maior, melhor. Mais difícil de manipular do que o lucro contabilístico — útil para confirmar se a margem líquida é "real".</div></div>
+  </div><div class="cat">INDICADORES DE DIVIDENDOS</div>
+  <div class="card">
+    <div class="ind-name">Dividend Yield</div>
+    <div class="ind-sub">Retorno em dividendos face ao preço pago pela ação.</div>
+    <div class="label">FÓRMULA</div>
+    <div class="body"><div>(Dividendo Anual por Ação ÷ Preço da Ação) × 100</div></div>
+    <div class="label">INTERPRETAÇÃO</div>
+    <div class="body"><div>2%–6%  Sustentável e atrativo</div><div>&gt;8%  Desconfiar — pode indicar queda no preço ou política insustentável</div></div>
+  </div>
+  <div class="card zebra">
+    <div class="ind-name">Payout Ratio</div>
+    <div class="ind-sub">Parte do lucro devolvida aos acionistas em vez de reinvestida.</div>
+    <div class="label">FÓRMULA</div>
+    <div class="body"><div>(Dividendo Anual por Ação ÷ EPS) × 100</div></div>
+    <div class="label">INTERPRETAÇÃO</div>
+    <div class="body"><div>&gt;80%  Insustentável a longo prazo</div><div>30%–70%  Abordagem equilibrada</div><div>&lt;30%  Empresa reinveste a maior parte dos lucros</div></div>
+  </div><div class="cat">INDICADOR DE VOLATILIDADE</div>
+  <div class="card">
+    <div class="ind-name">Beta</div>
+    <div class="ind-sub">Volatilidade da ação face ao mercado.</div>
+    <div class="label">FÓRMULA</div>
+    <div class="body"><div>Variação do preço da ação face a um índice de referência (ex.: S&amp;P 500)</div></div>
+    <div class="label">INTERPRETAÇÃO</div>
+    <div class="body"><div>&gt;1  Variações maiores que o mercado</div><div>=1  Move-se em linha com o mercado</div><div>0–1  Menos volátil</div><div>&lt;0  Move-se em sentido oposto — útil para diversificação, não é "melhor" em absoluto</div></div>
+  </div>
+</section>
+
+<footer>Tabela de Indicadores Fundamentais</footer>
+
+</body>
+</html>
