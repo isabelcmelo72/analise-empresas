@@ -82,14 +82,26 @@
   .gl div:first-child { border-top:none; }
   .gl b { color:#0C2340; }
   .disc { margin-top:16px; font-size:11.5px; color:#8A6300; background:#FBF1DC; border-radius:8px; padding:8px 10px; line-height:1.4; }
+  .cart { margin-left:8px; font-size:10.5px; font-weight:700; padding:2px 7px; border-radius:6px; background:#E6EBF2; color:#0C2340; white-space:nowrap; }
+  .entry { margin-top:10px; background:#0C2340; color:#FFFFFF; border-radius:10px; padding:12px 14px; display:flex; gap:14px; align-items:center; flex-wrap:wrap; }
+  .entry .el { font-size:11px; color:#B9C6DA; }
+  .entry .ev { font-size:28px; font-weight:700; line-height:1.15; }
+  .entry .eb { flex:1; min-width:170px; font-size:12px; line-height:1.4; }
+  .entry .es { font-size:11px; color:#B9C6DA; margin-top:3px; }
+  .noentry { margin-top:10px; background:#EDECE8; color:#5F5E5A; border-radius:8px; padding:8px 12px; font-size:12px; display:flex; gap:10px; justify-content:space-between; flex-wrap:wrap; }
+  .copybar { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:8px 0 10px; }
+  .copybar .btn { margin-top:0; }
+  .tscroll { overflow-x:auto; margin:6px 0; }
+  .tscroll table.t td:first-child { white-space:nowrap; }
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="hdr-title">Qualidade & Preço</div>
-  <div class="hdr-sub">Raio-X (Clareza) + verificação externa — atualizado <b>18 out 2026</b> (AVGO, INTU, MU, COST, THEON, ASML, JNJ) · restantes a <b>09 set 2026</b></div>
+  <div class="hdr-sub">Raio-X (Clareza) + verificação externa — atualizado a <b>30 out 2026</b> (GOOGL, MSFT, APH, MA, V, KO, PG, FTNT, AMD, LITE, AXTI, CRWD, NBIS) · <b>18 out 2026</b> (INTU, AVGO, MU, COST, THEON, ASML, JNJ) · restantes a 09 set 2026 ou antes</div>
   <div class="tabs" id="tabs"></div>
   <div id="cards"></div>
+  <div id="entradas" class="info" style="display:none"></div>
   <div id="info" class="info" style="display:none">
     <h2 style="margin-top:6px">Como classificamos</h2>
     <p>Cada empresa passa por dois filtros, <b>por esta ordem</b>: primeiro a qualidade do negócio, depois o preço. Se o negócio não é bom, o preço nem entra na conta. A classificação é <b>nossa</b>: partimos dos números do Clareza (Raio-X), confirmamos com fontes externas e, onde discordamos, mostramos os dois lado a lado.</p>
@@ -139,6 +151,17 @@
       <tr><td>Valores corrigidos</td><td>O valor original nunca desaparece: fica visível, com data, problema, fontes e conclusão.</td></tr>
     </table>
 
+    <h2>Preço de entrada</h2>
+    <p>Para as empresas boas (qualidade Excelente ou Boa) que estão em Zona Buffett ou Vigiar, calculamos o preço a que o lucro esperado justifica comprar: <b>lucro esperado por ação × 25</b> (qualidade Excelente) ou <b>× 20</b> (qualidade Boa). O lucro esperado é o consenso dos analistas para o ano fiscal em curso ainda por reportar; quando falta, estimamos e marcamos <b>provisório</b>.</p>
+    <p>O número fica <b>fixo até ao relatório seguinte</b> e recalcula-se em cada relatório. Não o comparamos aqui com a cotação, porque as cotações da app envelhecem: essa comparação faz-se no Radar, que tem cotações ao vivo. Armadilha de Valor, Descartadas e qualidade Razoável ficam sem preço de entrada. As empresas cíclicas (como a Micron) também, porque no pico do ciclo a fórmula dá números sem sentido.</p>
+
+    <h2>Em carteira</h2>
+    <p>Os cartões das empresas que a Isabel e o Rui Jorge têm mostram a etiqueta <b>Carteira Isabel</b> ou <b>Carteira Rui Jorge</b>. Para quem tem a empresa: Zona Buffett com a cotação abaixo do preço de entrada é sinal de reforço; Vigiar é manter sem reforçar até descer ao preço de entrada; Armadilha ou Descartada em carteira é reavaliar. As ações americanas grandes já contam indiretamente nos ETFs do S&amp;P 500 e do mundo.</p>
+
+    <h2>Registo de discrepâncias do Raio-X</h2>
+    <p class="small">Erros e distorções que encontrámos ao confrontar o Raio-X com os comunicados. O valor original nunca desaparece.</p>
+    <div id="discrep"></div>
+
     <h2>Três exemplos reais</h2>
     <div class="ex"><b class="t" style="color:#0F6E56">INTU — Zona Buffett.</b> Qualidade Excelente (ROIC real de 22,9%) e preço Barata: paga-se 13,7x o lucro esperado. O risco é a IA tirar clientes ao software tradicional, e é por isso que está barata.</div>
     <div class="ex"><b class="t" style="color:#8A6300">AVGO — Vigiar.</b> Também é um negócio Excelente, mas o preço é Neutra: paga-se muito pelos lucros de hoje e o preço atual já assume um crescimento enorme.</div>
@@ -147,6 +170,7 @@
     <h2>Glossário</h2>
     <div class="gl">
       <div><b>Alvo dos analistas.</b> Preço que os analistas dos bancos esperam para a ação daqui a um ano.</div>
+      <div><b>Carteira.</b> Empresas que a Isabel ou o Rui Jorge têm. Mostram a etiqueta no cartão.</div>
       <div><b>CAGR.</b> Taxa média de crescimento por ano, ao longo de vários anos.</div>
       <div><b>Capitalização.</b> Valor total da empresa em bolsa: preço da ação vezes o número de ações.</div>
       <div><b>Cobertura de juros.</b> Quantas vezes o lucro operacional paga os juros da dívida. Quanto mais, melhor.</div>
@@ -173,6 +197,8 @@
       <div><b>PEG.</b> P/L a dividir pelo crescimento do lucro. Quanto menor, melhor. Escalas na ficha do Vasco.</div>
       <div><b>P/L.</b> Preço da ação a dividir pelo lucro por ação: quantos anos de lucro estás a pagar. Em inglês, P/E.</div>
       <div><b>P/VPA.</b> Preço face ao valor contabilístico, o que a empresa tem nos livros.</div>
+      <div><b>Preço de entrada.</b> Lucro esperado por ação a multiplicar por 25 (qualidade Excelente) ou 20 (Boa). Marca o preço a que o lucro esperado justifica comprar.</div>
+      <div><b>Provisório.</b> Valor calculado com um lucro esperado estimado por nós, a recalcular quando houver consenso ou relatório novo.</div>
       <div><b>Remuneração em ações.</b> Parte do pagamento dos gestores feita em ações. Custa aos acionistas mas não sai da caixa.</div>
       <div><b>ROE.</b> Lucro a dividir pelo capital dos acionistas. Mede o retorno para quem é dono.</div>
       <div><b>ROIC.</b> Lucro por cada euro investido no negócio. Acima de 15% é forte, abaixo de 5% é fraco.</div>
@@ -184,19 +210,14 @@
     <div class="disc">Ferramenta de estudo, não é aconselhamento financeiro.</div>
   </div>
   <div class="footer" id="footer">
-    <b>Dois formatos de cartão.</b> O <b>formato novo</b> (atualizado a 18 out 2026) mostra o Clareza e a
-    nossa leitura lado a lado, com as semelhanças e as diferenças. O <b>formato anterior</b> (09 set 2026 ou
-    antes) usa o Termómetro e o Score combinado, que o Clareza já descontinuou; as empresas nesse formato
-    ficam assim até trazermos o Raio-X atualizado delas.<br><br>
-    "Nosso DCF" é o cálculo do Clareza, corrigido quando já verificado; no formato novo só conta para a
-    nossa leitura se ficar entre metade e o dobro do alvo dos analistas. "Alvo analistas" é o preço-alvo
-    médio de mercado. "Score combinado" (formato anterior) junta Termómetro, DCF e consenso de analistas.
-    O preço de cada cartão é o da sua data de análise; no formato novo, o fecho de 16 out 2026.
+    <b>Formatos de cartão.</b> O <b>formato novo</b> (30 e 18 out 2026) mostra o Clareza e a nossa leitura lado a lado, com as semelhanças e as diferenças, o preço de entrada e as etiquetas de carteira. O <b>formato anterior</b> (09 set 2026 ou antes) usa o Termómetro e o Score combinado, que o Clareza já descontinuou; essas empresas ficam assim até trazermos o Raio-X atualizado delas, mas já mostram o preço de entrada.<br><br>
+    "Nosso DCF" é o cálculo do Clareza, corrigido quando já verificado; no formato novo só conta para a nossa leitura se ficar entre metade e o dobro do alvo dos analistas. "Alvo analistas" é o preço-alvo médio de mercado. O preço de cada cartão é o da sua data de análise (indicada no rodapé do cartão).
     Ferramenta de estudo, não é aconselhamento financeiro.
   </div>
 </div>
 
 <script>
+/*DADOS_INICIO*/
 const COMPANIES = [
   /* ===== Formato novo — atualizado a 18 out 2026 (preços: fecho de 16 out 2026) ===== */
   { ticker:"INTU", nome:"Intuit", formato:3, quadrante:"buffett", tag:null,
@@ -227,7 +248,7 @@ const COMPANIES = [
     alvoAnalistas:1588.85, data:"18 out 2026",
     semelhancas:"Os dois dizem que a ação está barata.",
     diferencas:"Mudámos a qualidade de Excelente para Fraca por previsibilidade: a Consistência do próprio Clareza é 21 e a estabilidade da margem é 0. É uma substituição manual (regra da secção 4) e fica à tua aprovação.",
-    notas:["Os lucros de hoje são extraordinários, mas não são os normais da empresa. Em 2023 perdeu US$5,83 mil M (margem bruta de 2,7%); hoje a margem bruta é 80,7%. Os analistas esperam um EPS de US$176,55 em 2027 e depois só mais 15,8%.","Um P/L esperado de 5x é o mercado a dizer que isto é o pico do ciclo. O DCF passou de -61% (junho) para +75%: muda de sinal com os lucros.","Antes (09 set 2026): Vigiar, qualidade 85, preço US$926,55, DCF US$365,79."],
+    notas:["Os lucros de hoje são extraordinários, mas não são os normais da empresa. Em 2023 perdeu US$5,83 mil M (margem bruta de 2,7%); no último trimestre a margem bruta foi de 87,0% (80,7% no ano fiscal). Os analistas esperam um EPS de US$176,55 em 2027 e depois só mais 15,8%.","Um P/L esperado de 5x é o mercado a dizer que isto é o pico do ciclo. O DCF passou de -61% (junho) para +75%: muda de sinal com os lucros.","Antes (09 set 2026): Vigiar, qualidade 85, preço US$926,55, DCF US$365,79."],
     verificacao:["Receita (US$54,23 mil M) e EPS ajustado (US$33,42) conferem com o comunicado oficial.","Discrepâncias: ROIC 50,4% (Clareza) contra 93,4%; alvo mínimo dos analistas US$1.200 (Clareza) contra US$361 (S&P)."],
     relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/MU.jpg", relatorioRotulo:"Ver análise anterior (09 set 2026)" },
 
@@ -273,6 +294,147 @@ const COMPANIES = [
     verificacao:["Vendas (US$25,4 mil M, +5,9%) e EPS ajustado (US$2,59) conferem com o comunicado oficial.","Discrepâncias: alvo mínimo US$260 e 40 analistas (Clareza) contra US$190 e 23 (S&P); crescimento do dividendo +5,6% contra +3,5%; FCF/lucro 74% (ano fiscal 2025) contra 138% nos últimos 12 meses."],
     relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/JNJ.jpg", relatorioRotulo:"Ver análise anterior (09 set 2026)" },
 
+  /* ===== Formato 4 — atualizado a 30 out 2026 (com preço de entrada e carteiras) ===== */
+  { ticker:"GOOGL", nome:"Alphabet (Google)", formato:4, quadrante:"vigiar", tag:null,
+    setor:"Tecnologia (pesquisa, YouTube, nuvem)", origem:"Carteira Particular",
+    clQ:76, clQL:"Excelente", clP:69, clPL:"Barata", nosQ:"Excelente (no limite)", nosP:"Neutra",
+    preco:285.57, precoData:"29 out 2026, 12:37 em Nova Iorque", dcf:128.24, dcfFiavel:false, dcfNota:"0,30x o alvo dos analistas, não conta",
+    alvoAnalistas:430.96, data:"29 out 2026",
+    semelhancas:"Os dois dizem que o negócio é excelente. O Clareza dá 76, a um ponto do corte de 75.",
+    diferencas:"O Clareza diz Barata (P/L de 16,6x). Nós dizemos Neutra: o lucro dos últimos 12 meses está inflacionado por um ganho de $99 mil M em ações de outras empresas, e com o lucro limpo o P/L é cerca de 26x. O próprio Clareza avisa que o DCF contradiz os múltiplos.",
+    notas:["Resultados do T3 (28 out): receita $127,6 mil M (+25%), Google Cloud +103%. EPS $2,12 contra cerca de $3,00 previstos, por uma perda de $8,7 mil M em ações (−$0,55 por ação). A ação caiu 12% a 29 out.","Fluxo de caixa livre de −$9,1 mil M no trimestre: capex de $51,4 mil M, pago com dívida e ações novas, sem recompras. Previsão de capex de 2026 mantida em $195–205 mil M; em 2027 será 'significativamente' maior.","Preço de entrada provisório: o lucro esperado (≈$11,3) é estimativa nossa. Um consenso anterior ao relatório dava $11,89 (→ $297)."],
+    verificacao:["Receita ($127,6 mil M) e EPS ($2,12) do T3 conferem com o comunicado oficial.","Distorção (não é erro): o ganho de $99 mil M do T2 de 2026 fez o EPS desse trimestre subir a $9,11 e inflaciona o P/L (16,6x) e a margem líquida (50%) do Raio-X. Usamos o lucro limpo."],
+    relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/GOOGL.jpg" },
+
+  { ticker:"MSFT", nome:"Microsoft", formato:4, quadrante:"vigiar", tag:null,
+    setor:"Tecnologia (software e nuvem)", origem:"Carteira Particular",
+    clQ:79, clQL:"Excelente", clP:54, clPL:"Neutro", nosQ:"Excelente", nosP:"Neutra",
+    preco:531.01, precoData:"28 out 2026", dcf:313.75, dcfFiavel:true, dcfNota:"0,52x o alvo dos analistas, no limite",
+    alvoAnalistas:599.20, data:"29 out 2026",
+    semelhancas:"Os dois dizem que o negócio é excelente e o preço está no meio.",
+    diferencas:"Sem diferenças de leitura. O P/L esperado é 26,8x e o PEG 1,66; o FCF yield (1,5%) e o alvo (+12,8%) não chegam para chamar barata.",
+    notas:["T1 do ano fiscal 2027 (28 out): receita $92,3 mil M (+19%), EPS ajustado $4,89 (+18%), Azure +48%. Capex de $39,4 mil M, o dobro de há um ano. Subiu cerca de 3,8% fora de horas.","A diretora financeira diz que o fluxo de caixa livre se mantém positivo, mas admite recorrer a 'outras fontes de financiamento quando for vantajoso'."],
+    verificacao:["Receita ($92,3 mil M) e EPS ($4,89) conferem com o comunicado.","Preço de entrada provisório: o lucro esperado do ano fiscal 2027 (≈$20,4) é estimativa nossa, a partir dos $17,28 do ano passado mais cerca de 18%."] },
+
+  { ticker:"APH", nome:"Amphenol", formato:4, quadrante:"vigiar", tag:null,
+    setor:"Eletrónica (conectores e cabos)", origem:"Carteira Particular",
+    clQ:81, clQL:"Excelente", clP:53, clPL:"Neutro", nosQ:"Excelente", nosP:"Neutra",
+    preco:80.96, precoData:"29 out 2026", dcf:46.17, dcfFiavel:false, dcfNota:"0,34x o alvo dos analistas, não conta",
+    alvoAnalistas:134.67, data:"29 out 2026",
+    semelhancas:"Os dois dizem que o negócio é excelente e o preço está no meio.",
+    diferencas:"O P/L esperado é 30x com crescimento do lucro de 27% ao ano (PEG de 1,22), mas o FCF yield é só 2,6%. O DCF fica fora das contas.",
+    notas:["T3 2026: receita $10,2 mil M (+65%) e EPS ajustado $0,80 (+74%). Fabrica conectores e cabos; a IA nos centros de dados é o motor do crescimento.","O alvo dos analistas de $134,67 (+66%) é invulgarmente alto e pode estar desatualizado: não o usamos como argumento."],
+    verificacao:["Receita ($10,2 mil M) e EPS ajustado ($0,80) conferem com o comunicado (8-K).","Discrepância: o histórico de EPS por trimestre do Raio-X está em bases diferentes (Q1 $1,06, Q2 $0,68), provavelmente por um desdobramento de ações. Preço de entrada provisório: o lucro esperado (≈$2,80) é cálculo nosso."] },
+
+  { ticker:"MA", nome:"Mastercard", formato:4, quadrante:"vigiar", tag:null,
+    setor:"Finanças (pagamentos)", origem:"WL Valor e Qualidade",
+    clQ:85, clQL:"Excelente", clP:39, clPL:"Cara", nosQ:"Excelente", nosP:"Cara",
+    preco:635.70, precoData:"30 out 2026", dcf:555.42, dcfFiavel:true, dcfNota:"0,82x o alvo dos analistas",
+    alvoAnalistas:675.40, data:"30 out 2026",
+    semelhancas:"Os dois dizem que o negócio é excelente e o preço está alto.",
+    diferencas:"Sem diferenças: P/L esperado de 31,8x, PEG de 1,94, só 6% até ao alvo dos analistas e FCF yield de 2,9%. Em setembro estava em Zona Buffett pelo score antigo; com o formato novo é Vigiar.",
+    notas:["T3 2026 (29 out): receita $9,8 mil M (+14%) e EPS ajustado $5,31 (+21%), acima do previsto. Recomprou $3,0 mil M em ações. A ação sobe 4% hoje e está perto do máximo de 52 semanas.","Lucro esperado de 2026 ≈$20,6 ($14,94 dos nove meses mais ≈$5,65 estimado para o 4.º trimestre): preço de entrada provisório até haver consenso pós-relatório."],
+    verificacao:["Receita ($9,8 mil M) e EPS ajustado ($5,31) conferem com o comunicado (8-K, 29 out).","Discrepância (padrão conhecido): margem bruta de 100,0% no Raio-X. O P/B de 82x e o ROE de 253% não são erro: vêm das recompras."],
+    relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/MA.jpg", relatorioRotulo:"Ver análise anterior (09 set 2026)" },
+
+  { ticker:"V", nome:"Visa", formato:4, quadrante:"vigiar", tag:null,
+    setor:"Finanças (pagamentos)", origem:"WL Valor e Qualidade",
+    clQ:79, clQL:"Boa", clP:36, clPL:"Cara", nosQ:"Excelente", nosP:"Cara",
+    preco:401.86, precoData:"28 out 2026", dcf:225.89, dcfFiavel:true, dcfNota:"0,53x o alvo dos analistas, no limite",
+    alvoAnalistas:429.76, data:"29 out 2026",
+    semelhancas:"Os dois dizem que o preço está alto.",
+    diferencas:"Qualidade: o Clareza dá 79 (Boa, na escala dele); na nossa escala é Excelente (75 ou mais). P/L esperado 26,7x, FCF yield 2,9% e só 7% até ao alvo dos analistas.",
+    notas:["Ano fiscal 2027: prevê crescimento da receita de dois dígitos baixos, sem previsão de lucro. Cerca de 25% do volume vai a renegociação com bancos, o que pode subir os incentivos.","A qualidade baixou de 83 (set) para 79."],
+    verificacao:["Discrepâncias (padrão conhecido): margem bruta de 117% e 'Lucro FY2026: −100%' no Raio-X.","Preço de entrada provisório (≈$363): falta a previsão de lucro da empresa."],
+    relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/V.jpg", relatorioRotulo:"Ver análise anterior (09 set 2026)" },
+
+  { ticker:"KO", nome:"Coca-Cola", formato:4, quadrante:"vigiar", tag:null,
+    setor:"Consumo (bebidas)", origem:"WL Valor e Qualidade",
+    clQ:68, clQL:"Boa", clP:23, clPL:"Cara", nosQ:"Boa", nosP:"Cara",
+    preco:91.18, precoData:"28 out 2026", dcf:45.61, dcfFiavel:false, dcfNota:"0,47x o alvo dos analistas, não conta",
+    alvoAnalistas:96.75, data:"29 out 2026",
+    semelhancas:"Os dois dizem que a qualidade é Boa e o preço está alto.",
+    diferencas:"Sem diferenças: P/L esperado de 27,6x, FCF yield de 3,6% e só 6% até ao alvo dos analistas. O DCF fica fora das contas.",
+    notas:["Resultados do T3 a 27 out. A qualidade passou de 67 (set) para 68."],
+    verificacao:["Comunicado do T3 lido a 28 out; nenhum erro de receita ou EPS registado.","Discrepância (padrão conhecido): segmentação 'Pacific 88,8%' no Raio-X, que não bate com o comunicado."],
+    relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/KO.jpg", relatorioRotulo:"Ver análise anterior (09 set 2026)" },
+
+  { ticker:"PG", nome:"Procter & Gamble", formato:4, quadrante:"vigiar", tag:"Passou de Zona Buffett para Vigiar",
+    setor:"Consumo (bens do dia a dia)", origem:"WL Valor e Qualidade",
+    clQ:67, clQL:"Boa", clP:41, clPL:"Neutro", nosQ:"Boa", nosP:"Neutra",
+    preco:159.23, precoData:"28 out 2026", dcf:202.14, dcfFiavel:true, dcfNota:"1,21x o alvo dos analistas",
+    alvoAnalistas:166.78, data:"29 out 2026",
+    semelhancas:"Os dois dizem que a qualidade é Boa e o preço está no meio.",
+    diferencas:"Em setembro era Barata ($145,59). Com a ação 9% mais cara, o P/L esperado é 22,8x e só há 4,7% até ao alvo, por isso passa a Neutra. O FCF yield (4,2%) e o DCF (+27%) ainda são positivos.",
+    notas:["Passa de Zona Buffett para Vigiar nesta versão. O preço de entrada ($140) está cerca de 12% abaixo da cotação."],
+    verificacao:["Comunicado do T3 lido a 28 out; nenhum erro de receita ou EPS registado."],
+    relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/PG.jpg", relatorioRotulo:"Ver análise anterior (09 set 2026)" },
+
+  { ticker:"FTNT", nome:"Fortinet", formato:4, quadrante:"vigiar", tag:null,
+    setor:"Cibersegurança", origem:"Robótica e Cibersegurança",
+    clQ:85, clQL:"Excelente", clP:22, clPL:"Cara", nosQ:"Excelente", nosP:"Cara",
+    preco:174.08, precoData:"28 out 2026", dcf:63.53, dcfFiavel:false, dcfNota:"0,39x o alvo dos analistas, não conta",
+    alvoAnalistas:163.64, data:"29 out 2026",
+    semelhancas:"Os dois dizem que o negócio é excelente e o preço está alto.",
+    diferencas:"Sem diferenças: P/L esperado de 50x, alvo dos analistas 6% abaixo do preço e FCF yield de 2,7%.",
+    notas:["T3 (28 out): receita $2,08 mil M (+20%), EPS ajustado $0,91 e billings (faturação contratada) $2,34 mil M (+29%). A ação caiu 5,9% depois de reportar; não confirmámos a causa.","Qualidade 92 (set) → 85. Previsão do ano: EPS $3,54–3,58; preço de entrada = 25 × $3,56."],
+    verificacao:["Receita e EPS do T3 conferem com o comunicado da Fortinet."] },
+
+  { ticker:"AMD", nome:"Advanced Micro Devices", formato:4, quadrante:"vigiar", tag:null,
+    setor:"Semicondutores", origem:"WL Rui Jorge",
+    clQ:68, clQL:"Boa", clP:5, clPL:"Muito cara", nosQ:"Boa", nosP:"Muito cara",
+    preco:566.42, precoData:"29 out 2026", dcf:46.76, dcfFiavel:false, dcfNota:"0,07x o alvo dos analistas, não conta",
+    alvoAnalistas:627.14, data:"30 out 2026",
+    semelhancas:"Os dois dizem que a qualidade é Boa e o preço é muito alto.",
+    diferencas:"A única diferença é o DCF, que o Clareza usa e nós descartamos (fora de 0,5x a 2x o alvo). P/L esperado de 74x, FCF yield de 0,91% e só 10,7% até ao alvo dos analistas.",
+    notas:["Relatório a 3 nov, depois do fecho. A ação costuma mexer ±7% no dia seguinte (as opções antecipam ±11%); em fevereiro caiu 17% a bater as estimativas.","ROIC de 7,6% e estabilidade da margem de 15 são os pontos fracos. 84 vendas de administradores, nenhuma compra."],
+    verificacao:["Receita (11,5 mil M$) e EPS ajustado (1,66 $) do último trimestre conferem com o comunicado.","DCF do Raio-X (mantido): 46,76 $ (−92%; a 23 out era 46,36 $). Fontes externas: GF Value 293,92 $, TickerWorth 220,75 $, A.L. Capital 160,35 $. Conclusão: modelo conservador, não erro de dados; não é valor central."],
+    relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/AMD.jpg" },
+
+  { ticker:"LITE", nome:"Lumentum", formato:4, quadrante:"vigiar", tag:"Substituição manual da classificação",
+    setor:"Lasers e ótica para IA", origem:"WL Rui Jorge",
+    clQ:49, clQL:"Fraca", clP:5, clPL:"Muito cara", nosQ:"Boa (manual)", nosP:"Muito cara",
+    preco:919.53, precoData:"29 out 2026", dcf:39.65, dcfFiavel:false, dcfNota:"0,04x o alvo dos analistas, não conta",
+    alvoAnalistas:1116, data:"30 out 2026",
+    semelhancas:"Os dois dizem que o preço é muito alto.",
+    diferencas:"Discordamos na qualidade: o Clareza dá 49, um ponto abaixo do corte, por causa de uma perda única de $7,8 mil M sem saída de caixa. Sem ela o negócio é lucrativo, e tratamo-lo como Boa (regra de substituição manual, como a PANW).",
+    notas:["Relatório a 5 nov, depois do fecho. Guia do trimestre: receita $1,225–1,275 mil M e EPS $4,05–4,35 (consenso $4,22). Capacidade vendida até 2029.","A ação subiu 22% desde 23 out. 69 vendas de administradores, nenhuma compra."],
+    verificacao:["Receita ($1,006 mil M) e EPS ajustado ($3,23) do T4 fiscal conferem com o comunicado.","Discrepâncias: segmentação do Raio-X mostra $1,4 mil M contra $1,006 mil M do comunicado; a etiqueta 'Margens a cair' contradiz a margem bruta do trimestre (47,4%), a verificar. DCF do Raio-X (mantido): $39,65 (−96%); fontes externas: GF Value ≈$181–185, DCF Simply Wall St ≈$1.851. Não é valor central."],
+    relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/LITE.jpg" },
+
+  { ticker:"AXTI", nome:"AXT Inc.", formato:4, quadrante:"vigiar", tag:"Dados de pesquisa web, não do Raio-X",
+    setor:"Substratos para lasers (IA)", origem:"WL Rui Jorge",
+    clQ:null, clQL:"Sem Raio-X", clP:null, clPL:"Sem Raio-X", nosQ:"Razoável (estimada)", nosP:"Cara",
+    preco:60.88, precoData:"29 out 2026", dcf:null, dcfFiavel:false, dcfNota:"o DCF externo (1,54 $) não se aplica a uma empresa em expansão",
+    alvoAnalistas:77, data:"30 out 2026",
+    semelhancas:"Sem Clareza para comparar. A classificação é nossa, feita com dados da web, e fica provisória até haver Raio-X.",
+    diferencas:"Cara: cerca de 23 vezes as vendas e DCF que não conta. O alvo (MarketBeat: $77, Manter) dá +26%; outra fonte (Simply Wall St, 23 out) dá $91,60.",
+    notas:["T3 2026 (até 30 set): receita $73,4 M (+162%), margem bruta 56,0%, lucro líquido $25,7 M (EPS $0,39). Segundo trimestre seguido com lucro. A ação caiu 8% fora de horas.","Fabrica na China (licenças de exportação). A filial Tongmei recebe até $545 M de capital privado e a AXT põe $400 M."],
+    verificacao:["Receita e EPS do T3 conferem com duas fontes (comunicado/StockTitan e Investing.com).","Sem Raio-X: nada a corrigir. Atualizar para Raio-X quando existir."],
+    relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/AXTI.jpg" },
+
+  { ticker:"CRWD", nome:"CrowdStrike", formato:4, quadrante:"descartada", tag:"Evitar",
+    setor:"Cibersegurança", origem:"WL Rui Jorge",
+    clQ:46, clQL:"Fraca", clP:5, clPL:"Muito cara", nosQ:"Fraca", nosP:"Muito cara",
+    preco:261.15, precoData:"29 out 2026", dcf:26.90, dcfFiavel:false, dcfNota:"0,11x o alvo dos analistas, não conta",
+    alvoAnalistas:244.74, data:"30 out 2026",
+    semelhancas:"Os dois dizem que a qualidade é Fraca e o preço é muito alto.",
+    diferencas:"Concordamos. O ROIC negativo é em parte contabilístico (custo das ações dadas a funcionários), mas a consistência (0) falha de verdade. A cotação está 6% acima do alvo médio dos analistas.",
+    notas:["Relatório a 1 dez. A ação cai em 40% das vezes em que bate as estimativas.","100 vendas de administradores, nenhuma compra."],
+    verificacao:["Receita ($1,5 mil M) e EPS ajustado ($0,31) conferem com o comunicado.","DCF do Raio-X (mantido): $26,90 (−90%): modelo conservador em empresa de crescimento rápido; não investigado a fundo. Máximo histórico e mínimo de 52 semanas por confirmar."],
+    relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/CRWD.jpg" },
+
+  { ticker:"NBIS", nome:"Nebius Group", formato:4, quadrante:"descartada", tag:"Evitar",
+    setor:"Nuvem para IA", origem:"WL Rui Jorge",
+    clQ:32, clQL:"Fraca", clP:6, clPL:"Muito cara", nosQ:"Fraca", nosP:"Muito cara",
+    preco:171.99, precoData:"29 out 2026", dcf:null, dcfFiavel:false, dcfNota:"o Raio-X não tem DCF para esta empresa",
+    alvoAnalistas:284.33, data:"30 out 2026",
+    semelhancas:"Os dois dizem que a qualidade é Fraca e o preço é muito alto.",
+    diferencas:"Concordamos na conclusão. O Clareza assinala 'Receita a cair', o que está errado (a receita subiu 454%).",
+    notas:["Relatório a 11 nov, antes da abertura. Investimento previsto para 2026 de $20–25 mil M, muito acima da receita prevista ($3,0–3,4 mil M).","Queima caixa: FCF/lucro de −3.620%."],
+    verificacao:["Receita ($582,3 M) confere com o comunicado.","Discrepâncias: EPS −0,12 $ no Raio-X contra −0,68 $ no comunicado (bases diferentes); etiqueta 'Receita a cair' errada (a receita subiu 454%)."],
+    relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/NBIS.jpg" },
+
   /* ===== Formato anterior (Termómetro + Score combinado) ===== */
   { ticker:"QLYS", nome:"Qualys", quadrante:"buffett", tag:null,
     setor:"Cibersegurança", origem:"Robótica e Cibersegurança",
@@ -294,11 +456,6 @@ const COMPANIES = [
     qualidade:65, qualidadeLeitura:"Boa",
     preco:134.90, dcf:null, dcfNota:"DCF do Raio-X invalidado — erro confirmado",
     alvoAnalistas:146.30, data:"01 set 2026" },
-  { ticker:"FTNT", nome:"Fortinet", quadrante:"vigiar", tag:null,
-    setor:"Cibersegurança", origem:"Robótica e Cibersegurança",
-    qualidade:92, qualidadeLeitura:"Excelente",
-    preco:161.23, dcf:66.19, dcfNota:"não verificado externamente",
-    alvoAnalistas:159.39, data:"01 set 2026" },
   { ticker:"PANW", nome:"Palo Alto Networks", quadrante:"vigiar", tag:"Reclassificada (ex-Evitar)", formatoNovo:true,
     setor:"Cibersegurança", origem:"Robótica e Cibersegurança",
     qualidade:82, qualidadeLeitura:"Excelente — revista (era 68)",
@@ -318,54 +475,14 @@ const COMPANIES = [
     relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/NVDA.jpg",
     data:"09 set 2026" },
 
-  { ticker:"KO", nome:"Coca-Cola", quadrante:"vigiar", tag:null, formatoNovo:true,
-    setor:"Consumer", origem:"WL Valor e Qualidade",
-    qualidade:67, qualidadeLeitura:"Boa",
-    preco:88.36, dcf:48.83, dcfNota:"não verificado — parte do padrão em 5 empresas",
-    alvoAnalistas:95.75, termometro:24,
-    veredito:"Cara", scoreCombinado:29,
-    avisoTermometro:null,
-    relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/KO.jpg",
-    data:"09 set 2026" },
-
-  { ticker:"PG", nome:"Procter & Gamble", quadrante:"buffett", tag:null, formatoNovo:true,
-    setor:"Consumer", origem:"WL Valor e Qualidade",
-    qualidade:68, qualidadeLeitura:"Boa",
-    preco:145.59, dcf:243.38, dcfNota:"otimista vs. consenso — parte do padrão em 5 empresas",
-    alvoAnalistas:157.78, termometro:50,
-    veredito:"Barata", scoreCombinado:69,
-    avisoTermometro:null,
-    relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/PG.jpg",
-    data:"09 set 2026" },
-
   { ticker:"CL", nome:"Colgate-Palmolive", quadrante:"buffett", tag:null, formatoNovo:true,
     setor:"Consumer", origem:"WL Valor e Qualidade",
     qualidade:66, qualidadeLeitura:"Boa — capital próprio anómalo (ROE 631%)",
     preco:88.41, dcf:170.36, dcfNota:"provavelmente empolado pelo baixo capital próprio",
     alvoAnalistas:97.78, termometro:38,
     veredito:"Barata", scoreCombinado:66,
-    avisoTermometro:"P/E real (34,8x) está acima da própria história — leitura mais cautelosa do que o score isolado sugere.",
+    avisoTermometro:"Relatório de 30 out ainda por analisar (o Raio-X de 30 out é anterior ao relatório). Esse Raio-X já mostra preço Caro (35/100) a $93,16, acima do preço de entrada: pode passar a Vigiar. Cartão e preço de entrada a atualizar.",
     relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/CL.jpg",
-    data:"09 set 2026" },
-
-  { ticker:"MA", nome:"Mastercard", quadrante:"buffett", tag:null, formatoNovo:true,
-    setor:"Finance", origem:"WL Valor e Qualidade",
-    qualidade:85, qualidadeLeitura:"Excelente",
-    preco:570.89, dcf:583.66, dcfNota:"alinhado com o consenso",
-    alvoAnalistas:670.94, termometro:47,
-    veredito:"Barata", scoreCombinado:56,
-    avisoTermometro:"Subiu de Vigiar para Zona Buffett ao incluir o consenso no score (antes 49,5/100, mesmo no limiar).",
-    relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/MA.jpg",
-    data:"09 set 2026" },
-
-  { ticker:"V", nome:"Visa", quadrante:"vigiar", tag:null, formatoNovo:true,
-    setor:"Finance", origem:"WL Valor e Qualidade",
-    qualidade:83, qualidadeLeitura:"Excelente",
-    preco:368.64, dcf:239.66, dcfNota:"não verificado — parte do padrão em 5 empresas",
-    alvoAnalistas:422.24, termometro:30,
-    veredito:"Cara", scoreCombinado:37,
-    avisoTermometro:null,
-    relatorioJpg:"https://isabelcmelo72.github.io/analise-empresas/relatorios/V.jpg",
     data:"09 set 2026" },
 
   { ticker:"BRK-B", nome:"Berkshire Hathaway", quadrante:"vigiar", tag:"Preço indeterminado", formatoNovo:true,
@@ -409,23 +526,87 @@ const COMPANIES = [
     data:"09 set 2026" },
 ];
 
+const ENTRY = {
+  NVDA:{v:233,base:"25 × lucro esperado de ≈$9,32 por ação (Excelente)",val:"Fixo até ao relatório de 18 nov 2026"},
+  INTU:{v:595,base:"25 × lucro esperado de $23,80 por ação (Excelente)",val:"Fixo até ao relatório de cerca de 19 nov 2026 (data estimada)"},
+  QLYS:{v:191,base:"25 × lucro esperado de ≈$7,64 por ação (Excelente)",val:"Fixo até ao relatório de cerca de 4 nov 2026 (a confirmar)"},
+  IBM:{v:248,base:"20 × lucro esperado de ≈$12,40 por ação (Boa)",val:"Fixo até ao próximo relatório (data por confirmar). No limite: a cotação está perto"},
+  CL:{v:77,base:"20 × lucro esperado de ≈$3,85 por ação (Boa)",val:"A atualizar: relatório de 30 out por analisar"},
+  AVGO:{v:293,base:"25 × lucro esperado de ≈$11,72 por ação (Excelente)",val:"Fixo até ao relatório de dezembro 2026 (data por confirmar)"},
+  ISRG:{v:277,base:"25 × lucro esperado de ≈$11,08 por ação (Excelente)",val:"Fixo até ao próximo relatório (data por confirmar)"},
+  COST:{v:571,base:"25 × lucro esperado de ≈$22,84 por ação (Excelente)",val:"Fixo até ao relatório de dezembro 2026 (data por confirmar)"},
+  ASML:{v:1030,m:"€",base:"25 × lucro esperado de ≈€41,20 por ação (Excelente)",val:"Fixo até ao próximo relatório (data por confirmar)"},
+  FTNT:{v:89,base:"25 × lucro esperado de $3,56 por ação (Excelente; previsão da empresa $3,54–3,58)",val:"Fixo até ao próximo relatório (data por confirmar)"},
+  PANW:{v:104,prov:true,base:"25 × lucro esperado de ≈$4,16 por ação (Excelente)",val:"Provisório. Fixo até ao relatório de meados de nov 2026"},
+  MA:{v:515,prov:true,base:"25 × lucro esperado de ≈$20,60 por ação (Excelente): $14,94 dos nove meses + ≈$5,65 estimado",val:"Provisório até haver consenso pós-relatório. Fixo até ao próximo relatório"},
+  V:{v:363,prov:true,base:"25 × lucro esperado de ≈$14,52 por ação (Excelente)",val:"Provisório: falta a previsão de lucro da empresa"},
+  GOOGL:{v:283,prov:true,base:"25 × lucro esperado de ≈$11,30 por ação (Excelente, no limite). Consenso antigo: $11,89",val:"Provisório até haver consenso pós-resultados. Fixo até ao relatório do 4.º trimestre"},
+  MSFT:{v:510,prov:true,base:"25 × lucro esperado de ≈$20,40 por ação (Excelente; estimativa nossa)",val:"Provisório. Fixo até ao relatório do 2.º trimestre fiscal"},
+  APH:{v:70,prov:true,base:"25 × lucro esperado de ≈$2,80 por ação (Excelente; cálculo nosso)",val:"Provisório. Fixo até ao próximo relatório"},
+  AMD:{v:150,prov:true,base:"20 × lucro esperado de ≈$7,65 por ação (Boa)",val:"Provisório. Fixo até ao relatório de 3 nov 2026"},
+  LITE:{v:435,prov:true,base:"20 × lucro esperado de ≈$21,80 por ação (Boa por substituição manual; ano fiscal 2027)",val:"Provisório. Fixo até ao relatório de 5 nov 2026"},
+  ARM:{v:37,prov:true,base:"20 × lucro esperado de ≈$1,85 por ação (Boa)",val:"Provisório. Fixo até ao relatório de cerca de 4 nov 2026 (a confirmar)"},
+  CHKP:{v:209,prov:true,base:"20 × lucro esperado de ≈$10,45 por ação (Boa)",val:"Provisório. Fixo até ao relatório de 2 nov 2026"},
+  KO:{v:67,base:"20 × lucro esperado de ≈$3,35 por ação (Boa)",val:"Fixo até ao próximo relatório (data por confirmar)"},
+  JNJ:{v:222,base:"20 × lucro esperado de ≈$11,10 por ação (Boa)",val:"Fixo até ao próximo relatório (data por confirmar)"},
+  PG:{v:140,base:"20 × lucro esperado de ≈$7,00 por ação (Boa)",val:"Fixo até ao próximo relatório (data por confirmar)"},
+  THEON:{v:28.4,m:"€",base:"20 × lucro esperado de ≈€1,42 por ação (Boa)",val:"Fixo até ao próximo relatório (data por confirmar)"},
+};
+const SEM = {
+  MU:"negócio cíclico: a fórmula não se aplica no pico do ciclo (critério próprio a definir depois do relatório de dezembro)",
+  IONQ:"Armadilha de Valor, qualidade fraca",
+  RGTI:"descartada, qualidade fraca",
+  CRWD:"descartada, qualidade fraca (46)",
+  NBIS:"descartada, qualidade fraca (32)",
+  "BRK-B":"qualidade Razoável: só Boa ou Excelente têm preço de entrada",
+  AXTI:"qualidade Razoável (estimada, sem Raio-X)",
+};
+const CARTEIRA = {
+  GOOGL:["Isabel"], APH:["Isabel"], ASML:["Isabel"], AVGO:["Isabel"], MU:["Isabel"], MSFT:["Isabel"], THEON:["Isabel"],
+  NVDA:["Isabel","Rui Jorge"], AMD:["Rui Jorge"], LITE:["Rui Jorge"], AXTI:["Rui Jorge"], CRWD:["Rui Jorge"], NBIS:["Rui Jorge"],
+};
+const DISCREP = [
+  {data:"30 out 2026", emp:"MA", ind:"Margem bruta", errado:"100,0%", correto:"sem margem bruta comparável (padrão dos pagamentos)", fonte:"Raio-X 30 out; comunicado 29 out"},
+  {data:"29 out 2026", emp:"V", ind:"Margem bruta · Lucro FY2026", errado:"117% · −100%", correto:"valores impossíveis (correção por calcular)", fonte:"Raio-X 28 out"},
+  {data:"29 out 2026", emp:"KO", ind:"Segmentação de receita", errado:"Pacific 88,8%", correto:"não bate com o comunicado", fonte:"Raio-X 28 out"},
+  {data:"29 out 2026", emp:"APH", ind:"EPS histórico por trimestre", errado:"Q1 $1,06 · Q2 $0,68", correto:"bases diferentes (provável desdobramento de ações)", fonte:"Raio-X 29 out; 8-K T3"},
+  {data:"30 out 2026", emp:"LITE", ind:"Segmentação de receita", errado:"$1,4 mil M", correto:"$1,006 mil M", fonte:"Comunicado T4 fiscal 2026"},
+  {data:"30 out 2026", emp:"LITE", ind:"Etiqueta 'Margens a cair'", errado:"margens a cair", correto:"margem bruta subiu para 47,4% (a verificar)", fonte:"Comunicado T4 fiscal 2026"},
+  {data:"30 out 2026", emp:"NBIS", ind:"EPS do trimestre", errado:"−$0,12", correto:"−$0,68", fonte:"Comunicado de agosto"},
+  {data:"30 out 2026", emp:"NBIS", ind:"Etiqueta 'Receita a cair'", errado:"receita a cair", correto:"receita +454%", fonte:"Comunicado de agosto"},
+  {data:"24 set 2026", emp:"IBM", ind:"Veredito do EPS do 2.º trimestre", errado:"BATEU (estimado $2,93)", correto:"FALHOU (consenso $2,97)", fonte:"CNBC, 24/7 Wall St"},
+  {data:"24 set 2026", emp:"IBM", ind:"Dívida/EBITDA e etiqueta 'Receita a cair'", errado:"3,6x (inclui a IBM Financing) · receita a cair", correto:"valores exatos a acrescentar", fonte:"Raio-X de set"},
+  {data:"set 2026", emp:"BRK-B", ind:"Preço-alvo dos analistas", errado:"$604 (mín = máx = média)", correto:"≈$525 (estimativa corrigida)", fonte:"Raio-X de set"},
+  {data:"22 out 2026", emp:"ISRG", ind:"EPS do 1.º trimestre", errado:"valor do Raio-X a acrescentar", correto:"valor correto a acrescentar", fonte:"Raio-X de 22 out (a recuperar)"},
+  {data:"18 out 2026", emp:"AVGO", ind:"Receita do T2", errado:"$1,1 mil M", correto:"$22,187 mil M", fonte:"Comunicado oficial"},
+  {data:"18 out 2026", emp:"COST", ind:"Receita do trimestre", errado:"$93,9 mil M, 'falhou', +9,0%", correto:"≈$95,75 mil M, +11,2%", fonte:"8-K da Costco, 24 set"},
+  {data:"18 out 2026", emp:"MU", ind:"ROIC · alvo mínimo dos analistas", errado:"50,4% · $1.200", correto:"93,4% · $361", fonte:"S&P Capital IQ"},
+  {data:"18 out 2026", emp:"THEON", ind:"Receita do T2 · funcionários", errado:"€126,9 M · 767", correto:"€128,6 M · 1.044", fonte:"Relatório da empresa"},
+];
+/*DADOS_FIM*/
+
 const GROUPS = [
-  { key:"como", label:"Como classificamos", color:"#0C2340", bg:"#E6EBF2", info:true },
+  { key:"como", label:"Como classificamos", color:"#0C2340", bg:"#E6EBF2", view:"info" },
   { key:"buffett", label:"Zona Buffett", color:"#0F6E56", bg:"#E8F3EA" },
   { key:"vigiar", label:"Vigiar", color:"#8A6300", bg:"#FBF1DC" },
   { key:"armadilha", label:"Armadilha de Valor", color:"#9C570F", bg:"#FDEBDB" },
   { key:"descartada", label:"Descartadas", color:"#A32D2D", bg:"#FBEAEA" },
   { key:"pendente", label:"Pendente", color:"#5F5E5A", bg:"#EDECE8" },
+  { key:"entradas", label:"Preços de entrada", color:"#0C2340", bg:"#E6EBF2", view:"entradas" },
 ];
 
 function fmt(n, m) {
   if (n === null || n === undefined) return "—";
   return (m || "$") + n.toLocaleString("pt-PT", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
+function fmtEntrada(e) {
+  const m = e.m || "$";
+  const d = Number.isInteger(e.v) ? 0 : 2;
+  return (e.prov ? "≈" : "") + m + e.v.toLocaleString("pt-PT", { minimumFractionDigits: d, maximumFractionDigits: d });
+}
 function getTargetInfo(c) {
   const targets = [];
-  // Formato novo: o DCF só conta se for fiável (entre 0,5x e 2x o alvo dos analistas)
-  if (c.dcf && (c.formato !== 3 || c.dcfFiavel)) targets.push(c.dcf);
+  if (c.dcf && (!(c.formato >= 3) || c.dcfFiavel)) targets.push(c.dcf);
   if (c.alvoAnalistas) targets.push(c.alvoAnalistas);
   const conservador = targets.length ? Math.min(...targets) : null;
   const ref = c.precoRef || c.preco;
@@ -438,22 +619,46 @@ function veredictColor(v) {
   if (v === "Indeterminado") return "#5F5E5A";
   return "#8A6300";
 }
+function chipsHtml(c) {
+  return (CARTEIRA[c.ticker] || []).map(n => `<span class="cart">Carteira ${n}</span>`).join("");
+}
+function entryHtml(c) {
+  const e = ENTRY[c.ticker];
+  if (e) return `<div class="entry"><div><div class="el">Preço de entrada${e.prov ? " · provisório" : ""}</div><div class="ev">${fmtEntrada(e)}</div></div><div class="eb"><div>${e.base}</div><div class="es">${e.val}</div></div></div>`;
+  const s = SEM[c.ticker];
+  if (s) return `<div class="noentry"><span>Preço de entrada</span><span>Sem preço de entrada · ${s}</span></div>`;
+  return "";
+}
+function btnHtml(c) {
+  if (!c.relatorioJpg) return `<div class="btn disabled">Análise completa em preparação</div>`;
+  const antigo = !c.formato;
+  const rot = c.relatorioRotulo || (antigo ? `Ver análise anterior (${c.data})` : "Ver análise completa");
+  return `<a class="btn" href="${c.relatorioJpg}" target="_blank" rel="noopener">${rot}</a>`;
+}
+function headHtml(c, rank, m) {
+  return `<div class="row-top">
+      <div><span class="rank">#${rank}</span><span class="ticker">${c.ticker}</span><span class="nome">${c.nome}</span>${chipsHtml(c)}</div>
+      <span class="preco">${fmt(c.preco, m || "$")}</span>
+    </div>`;
+}
 
 let active = "buffett";
-const FIRST_SECTION = "como";
 
 function renderTabs() {
   const el = document.getElementById("tabs");
   el.innerHTML = "";
   GROUPS.forEach(g => {
-    const count = COMPANIES.filter(c => c.quadrante === g.key).length;
+    let n;
+    if (g.view === "info") n = "regras e glossário";
+    else if (g.view === "entradas") n = Object.keys(ENTRY).length;
+    else n = COMPANIES.filter(c => c.quadrante === g.key).length;
     const btn = document.createElement("div");
     btn.className = "tab" + (active === g.key ? " active" : "");
     btn.style.color = g.color;
     btn.style.background = active === g.key ? g.bg : "#FFFFFF";
     btn.style.borderColor = active === g.key ? g.color : "#E4E2DA";
-    btn.innerHTML = g.label + '<div class="n">' + (g.info ? "regras e glossário" : count) + "</div>";
-    btn.onclick = () => { active = g.key; render(); };
+    btn.innerHTML = g.label + '<div class="n">' + n + "</div>";
+    btn.onclick = () => { active = g.key; render(); window.scrollTo(0, 0); };
     el.appendChild(btn);
   });
 }
@@ -461,10 +666,8 @@ function renderTabs() {
 function cardOldHtml(c, rank) {
   const { conservador, distancia } = getTargetInfo(c);
   const group = GROUPS.find(g => g.key === c.quadrante);
-  let tagHtml = "";
-  if (c.tag) tagHtml = `<div class="tag" style="background:${group.bg};color:${group.color}">${c.tag}</div>`;
-  let notaHtml = "";
-  if (c.nota) notaHtml = `<div class="nota">⚠ ${c.nota}</div>`;
+  let tagHtml = c.tag ? `<div class="tag" style="background:${group.bg};color:${group.color}">${c.tag}</div>` : "";
+  let notaHtml = c.nota ? `<div class="nota">⚠ ${c.nota}</div>` : "";
   let distHtml = "";
   if (distancia !== null) {
     distHtml = distancia > 0
@@ -473,35 +676,30 @@ function cardOldHtml(c, rank) {
   }
   return `
   <div class="card">
-    <div class="row-top">
-      <div><span class="rank">#${rank}</span><span class="ticker">${c.ticker}</span><span class="nome">${c.nome}</span></div>
-      <span class="preco">${fmt(c.preco)}</span>
-    </div>
+    ${headHtml(c, rank)}
     <div class="sub">${c.setor} · ${c.origem}</div>
-    <div class="qline"><span class="qbadge">${c.qualidade}</span><span style="color:#5F5E5A">Qualidade do negócio — ${c.qualidadeLeitura}</span></div>
     ${tagHtml}
+    ${entryHtml(c)}
+    <div class="qline"><span class="qbadge">${c.qualidade}</span><span style="color:#5F5E5A">Qualidade do negócio — ${c.qualidadeLeitura}</span></div>
     ${notaHtml}
     <div class="grid2">
       <div><div class="label">Nosso DCF</div><div class="val" style="color:${c.dcf ? "#1A1A1A" : "#A32D2D"}">${fmt(c.dcf)}</div><div class="dcfnota">${c.dcfNota}</div></div>
       <div><div class="label">Alvo analistas</div><div class="val">${fmt(c.alvoAnalistas)}</div><div class="dcfnota">consenso de mercado</div></div>
     </div>
     ${distHtml}
+    ${btnHtml(c)}
     <div class="lastdt">Última análise: ${c.data} <span class="fmtant">· formato anterior</span></div>
   </div>`;
 }
 
 function cardNewHtml(c, rank) {
   const vcolor = veredictColor(c.veredito);
-  const btnHtml = c.relatorioJpg
-    ? `<a class="btn" href="${c.relatorioJpg}" target="_blank" rel="noopener">Ver análise completa</a>`
-    : `<div class="btn disabled">Ver análise completa (a publicar)</div>`;
   return `
   <div class="card">
-    <div class="row-top">
-      <div><span class="rank">#${rank}</span><span class="ticker">${c.ticker}</span><span class="nome">${c.nome}</span></div>
-      <span class="preco">${fmt(c.preco)}</span>
-    </div>
+    ${headHtml(c, rank)}
     <div class="sub">${c.setor} · ${c.origem}</div>
+    ${c.tag ? `<div class="tag" style="background:${GROUPS.find(g => g.key === c.quadrante).bg};color:${GROUPS.find(g => g.key === c.quadrante).color}">${c.tag}</div>` : ""}
+    ${entryHtml(c)}
     <div class="stats3">
       <div><div class="lbl">Qualidade</div><div class="v" style="color:#1A1A1A">${c.qualidade}/100</div></div>
       <div><div class="lbl">Preço</div><div class="v" style="color:${vcolor}">${c.veredito}</div></div>
@@ -513,7 +711,7 @@ function cardNewHtml(c, rank) {
       <span>Termómetro ${c.termometro}</span>
     </div>
     ${c.avisoTermometro ? `<div class="warn2"><span>⚠</span><span>${c.avisoTermometro}</span></div>` : ""}
-    ${btnHtml}
+    ${btnHtml(c)}
     <div class="lastdt">Última análise: ${c.data} <span class="fmtant">· formato anterior</span></div>
   </div>`;
 }
@@ -528,22 +726,19 @@ function cardV3Html(c, rank) {
   const notas = (c.notas || []).map(n => `<div class="warn2"><span>⚠</span><span>${n}</span></div>`).join("");
   const ver = (c.verificacao || []).length
     ? `<details class="ver"><summary>Verificação e discrepâncias (secção 7)</summary><ul>${c.verificacao.map(v => `<li>${v}</li>`).join("")}</ul></details>` : "";
-  const btnHtml = c.relatorioJpg
-    ? `<a class="btn" href="${c.relatorioJpg}" target="_blank" rel="noopener">${c.relatorioRotulo || "Ver análise completa"}</a>`
-    : `<div class="btn disabled">Ver análise completa (a publicar)</div>`;
   const sub = c.origem ? `${c.setor} · ${c.origem}` : c.setor;
+  const clq = c.clQ != null ? `${c.clQ} · ${c.clQL}` : c.clQL;
+  const clp = c.clP != null ? `${c.clP} · ${c.clPL}` : c.clPL;
   return `
   <div class="card">
-    <div class="row-top">
-      <div><span class="rank">#${rank}</span><span class="ticker">${c.ticker}</span><span class="nome">${c.nome}</span></div>
-      <span class="preco">${fmt(c.preco, m)}</span>
-    </div>
+    ${headHtml(c, rank, m)}
     <div class="sub">${sub}</div>
     ${tagHtml}
+    ${entryHtml(c)}
     <div class="cmp">
       <div class="r h"><div></div><div>Clareza</div><div>Nossa leitura</div></div>
-      <div class="r"><div class="k">Qualidade</div><div>${c.clQ} · ${c.clQL}</div><div class="ours" style="color:${qcolor(c.nosQ)}">${c.nosQ}</div></div>
-      <div class="r"><div class="k">Preço</div><div>${c.clP} · ${c.clPL}</div><div class="ours" style="color:${pcolor(c.nosP)}">${c.nosP}</div></div>
+      <div class="r"><div class="k">Qualidade</div><div>${clq}</div><div class="ours" style="color:${qcolor(c.nosQ)}">${c.nosQ}</div></div>
+      <div class="r"><div class="k">Preço</div><div>${clp}</div><div class="ours" style="color:${pcolor(c.nosP)}">${c.nosP}</div></div>
     </div>
     <div class="semdif"><b>Semelhanças.</b> ${c.semelhancas}<br><b>Diferenças.</b> ${c.diferencas}</div>
     <div class="grid2">
@@ -552,18 +747,71 @@ function cardV3Html(c, rank) {
     </div>
     ${notas}
     ${ver}
-    ${btnHtml}
-    <div class="lastdt">Última análise: ${c.data} · preço de 16 out 2026</div>
+    ${btnHtml(c)}
+    <div class="lastdt">Última análise: ${c.data} · preço de ${c.precoData || "16 out 2026"}</div>
   </div>`;
+}
+
+function copiar(texto, btn) {
+  const ok = () => { const t = btn.textContent; btn.textContent = "Copiado ✓"; setTimeout(() => btn.textContent = t, 1800); };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(texto).then(ok).catch(() => fallback());
+  } else fallback();
+  function fallback() {
+    const ta = document.createElement("textarea"); ta.value = texto; document.body.appendChild(ta); ta.select();
+    try { document.execCommand("copy"); ok(); } catch (e) { btn.textContent = "Não foi possível copiar"; }
+    document.body.removeChild(ta);
+  }
+}
+
+function entradaRows() {
+  const ordem = { buffett: 0, vigiar: 1 };
+  return COMPANIES.filter(c => ENTRY[c.ticker])
+    .sort((a, b) => (ordem[a.quadrante] ?? 9) - (ordem[b.quadrante] ?? 9) || a.ticker.localeCompare(b.ticker));
+}
+function renderEntradas() {
+  const rows = entradaRows();
+  const gm = { buffett: "Zona Buffett", vigiar: "Vigiar" };
+  const cor = { buffett: "#0F6E56", vigiar: "#8A6300" };
+  const linhas = rows.map(c => {
+    const e = ENTRY[c.ticker];
+    return `<tr><td>${c.ticker}</td><td>${c.nome}</td><td style="color:${cor[c.quadrante]};font-weight:600">${gm[c.quadrante]}</td><td>${e.m || "$"}</td><td style="font-weight:700">${fmtEntrada(e)}</td><td style="color:#5F5E5A">${e.val}</td></tr>`;
+  }).join("");
+  const sem = COMPANIES.filter(c => SEM[c.ticker]).sort((a, b) => a.ticker.localeCompare(b.ticker))
+    .map(c => `<tr><td>${c.ticker}</td><td>${c.nome}</td><td colspan="4" style="color:#5F5E5A">${SEM[c.ticker]}</td></tr>`).join("");
+  document.getElementById("entradas").innerHTML = `
+    <h2 style="margin-top:6px;font-size:15px;color:#0C2340">Preços de entrada</h2>
+    <p style="font-size:12.5px;line-height:1.5;margin:6px 0">Preço a que o lucro esperado justifica comprar: lucro esperado por ação × 25 (qualidade Excelente) ou × 20 (qualidade Boa). Número fixo até ao relatório seguinte. A comparação com a cotação faz-se no Radar, que tem cotações ao vivo. ≈ marca os valores provisórios.</p>
+    <div class="copybar">
+      <button class="btn primary" id="cp1">Copiar lista</button>
+      <button class="btn" id="cp2">Copiar só os tickers</button>
+    </div>
+    <div class="tscroll"><table class="t" style="min-width:560px">
+      <tr><th>Ticker</th><th>Empresa</th><th>Quadrante</th><th>Moeda</th><th>Preço de entrada</th><th>Validade</th></tr>${linhas}
+    </table></div>
+    <h2 style="font-size:14px;color:#0C2340;margin:16px 0 4px">Sem preço de entrada</h2>
+    <div class="tscroll"><table class="t" style="min-width:560px"><tr><th>Ticker</th><th>Empresa</th><th colspan="4">Motivo</th></tr>${sem}</table></div>
+    <p style="font-size:11px;color:#8A8880;margin-top:8px">"Copiar lista" copia ticker e preço separados por tabulação, para colar no Excel do Radar (decimais com vírgula). Ferramenta de estudo, não é aconselhamento financeiro.</p>`;
+  const lista = rows.map(c => c.ticker + "\t" + String(ENTRY[c.ticker].v).replace(".", ",")).join("\n");
+  const tick = rows.map(c => c.ticker).join("\n");
+  document.getElementById("cp1").onclick = function () { copiar(lista, this); };
+  document.getElementById("cp2").onclick = function () { copiar(tick, this); };
+}
+function renderDiscrep() {
+  document.getElementById("discrep").innerHTML = `<div class="tscroll"><table class="t" style="min-width:600px"><tr><th>Data</th><th>Empresa</th><th>Indicador</th><th>Valor do Raio-X</th><th>Valor correto</th><th>Fonte</th></tr>` +
+    DISCREP.map(d => `<tr><td>${d.data}</td><td>${d.emp}</td><td style="font-weight:400">${d.ind}</td><td>${d.errado}</td><td>${d.correto}</td><td style="font-weight:400;color:#5F5E5A">${d.fonte}</td></tr>`).join("") + `</table></div>`;
 }
 
 function render() {
   renderTabs();
-  const isInfo = active === FIRST_SECTION;
-  document.getElementById("info").style.display = isInfo ? "block" : "none";
-  document.getElementById("cards").style.display = isInfo ? "none" : "block";
-  document.getElementById("footer").style.display = isInfo ? "none" : "block";
-  if (isInfo) return;
+  const g = GROUPS.find(x => x.key === active);
+  const view = g.view || "cards";
+  document.getElementById("info").style.display = view === "info" ? "block" : "none";
+  document.getElementById("entradas").style.display = view === "entradas" ? "block" : "none";
+  document.getElementById("cards").style.display = view === "cards" ? "block" : "none";
+  document.getElementById("footer").style.display = view === "cards" ? "block" : "none";
+  if (view === "entradas") { renderEntradas(); return; }
+  if (view === "info") return;
   const list = COMPANIES.filter(c => c.quadrante === active).sort((a, b) => {
     const da = getTargetInfo(a).distancia, db = getTargetInfo(b).distancia;
     if (da === null && db === null) return 0;
@@ -572,13 +820,11 @@ function render() {
     return da - db;
   });
   const el = document.getElementById("cards");
-  if (list.length === 0) {
-    el.innerHTML = '<div class="empty">Sem empresas neste grupo.</div>';
-    return;
-  }
-  el.innerHTML = list.map((c, i) => c.formato === 3 ? cardV3Html(c, i + 1) : (c.formatoNovo ? cardNewHtml(c, i + 1) : cardOldHtml(c, i + 1))).join("");
+  if (list.length === 0) { el.innerHTML = '<div class="empty">Sem empresas neste grupo.</div>'; return; }
+  el.innerHTML = list.map((c, i) => c.formato >= 3 ? cardV3Html(c, i + 1) : (c.formatoNovo ? cardNewHtml(c, i + 1) : cardOldHtml(c, i + 1))).join("");
 }
 
+renderDiscrep();
 render();
 </script>
 </body>
