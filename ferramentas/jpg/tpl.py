@@ -52,5 +52,5 @@ def render(d,out):
     o+=f'<div class="foot">{d["rodape"]}</div></body></html>'
     open(out+'.html','w',encoding='utf-8').write(o)
     with sync_playwright() as p:
-        b=p.chromium.launch();pg=b.new_page(viewport={'width':540,'height':800},device_scale_factor=3)
+        b=p.chromium.launch();pg=b.new_page(viewport={'width':540,'height':800},device_scale_factor=2)
         pg.goto('file://'+__import__('os').path.abspath(out+'.html'));pg.screenshot(path=out+'.jpg',full_page=True,type='jpeg',quality=92);b.close()
