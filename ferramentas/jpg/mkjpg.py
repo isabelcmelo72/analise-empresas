@@ -15,6 +15,7 @@ def make(e,outdir='out'):
     t=e['ticker'];c=C[t];m=c.get('moeda','$');am=c.get('alvoMoeda',m)
     col,bg,lab=Q[c['quadrante']]
     if t=='AXTI': lab='VIGIAR (provisória) — qualidade Razoável estimada'
+    elif e.get('banner') and c['quadrante']!='armadilha': lab=lab+' (provisória)'
     chips=['Carteira '+n for n in D['CARTEIRA'].get(t,[])]
     if c.get('tag'): chips.append(c['tag'])
     en=D['ENTRY'].get(t);sem=D['SEM'].get(t)
@@ -27,7 +28,7 @@ def make(e,outdir='out'):
          ('Preço (nossa leitura)',c['nosP'],pcls(c['nosP'])),
          ('Clareza: preço',(f"{clp}/100 · {c['clPL']}" if clp else html.escape(c['clPL'])),'a' if clp else ''),
          ('Nosso DCF'+(' (conta)' if c['dcfFiavel'] else ' (não conta)'),num(c['dcf'],m) if c.get('dcf') else 'n/d',''),
-         ('Alvo analistas',num(c['alvoAnalistas'],am),''),('Última análise',c['data'],'')]
+         ('Alvo analistas',num(c['alvoAnalistas'],am) if c.get('alvoAnalistas') else 'não confirmado',''),('Última análise',c['data'],'')]
     ind=[[html.escape(a),html.escape(b),f'<span class="{x["k"]}">{html.escape(x["c"])}</span>'] for a,b,x in e['ind']]
     cmp_=[[html.escape(a),html.escape(b),html.escape(x)] for a,b,x in e['cmp']]
     val=[[html.escape(a),html.escape(b),html.escape(x)] for a,b,x in e['val']]

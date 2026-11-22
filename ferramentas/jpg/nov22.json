@@ -1,0 +1,1451 @@
+[
+ {
+  "ticker": "NVDA",
+  "resultados": [
+   "3.º trimestre fiscal de 2027 (reportado a 17 nov): receita de **$115,8 mil M** (+103%) contra $109,3 mil M esperados e EPS ajustado de **$2,68** contra $2,49. O Data Center fez $107,6 mil M e o Edge $8,2 mil M. A margem bruta deve descer de 74,9% para 71–72% no 4.º trimestre e a previsão não conta com vendas de chips para a China.",
+   "**Risco de liderança:** Jensen Huang demitiu-se a 12 nov. A CFO Colette Kress é CEO interina, ainda não há sucessor e há uma investigação independente em curso."
+  ],
+  "negocio": "Desenha os chips (GPUs) que treinam e fazem correr a inteligência artificial nos centros de dados, e também chips para jogos e equipamentos de ponta. É o fornecedor dominante deste mercado.",
+  "moat": [
+   "**Bom:** liderança tecnológica e um ecossistema de software próprio (CUDA) que prende os clientes.",
+   "**Bom:** balanço sem dívida e margens de 75% bruta e 62% líquida.",
+   "**Risco:** clientes muito concentrados e dependentes do investimento em IA; sem CEO definitivo e com perguntas sobre 2027."
+  ],
+  "ind": [
+   [
+    "Qualidade (Clareza)",
+    "84/100",
+    {
+     "c": "Rentabilidade 91, crescimento 95, balanço 92; consistência só 51",
+     "k": "g"
+    }
+   ],
+   [
+    "ROIC · margem líquida",
+    "62,8% · 62,5%",
+    {
+     "c": "Excecional",
+     "k": "g"
+    }
+   ],
+   [
+    "Margem bruta",
+    "74,9% (a descer para 71–72%)",
+    {
+     "c": "Muito alta, com ligeira pressão",
+     "k": "a"
+    }
+   ],
+   [
+    "Dívida / EBITDA",
+    "0,0x",
+    {
+     "c": "Sem dívida a pesar",
+     "k": "g"
+    }
+   ],
+   [
+    "P/L · PEG",
+    "13,4x · 0,15",
+    {
+     "c": "Muito baixo para o crescimento",
+     "k": "g"
+    }
+   ],
+   [
+    "Rendimento do fluxo de caixa livre",
+    "4,9%",
+    {
+     "c": "Acima dos 4% que consideramos bom",
+     "k": "g"
+    }
+   ],
+   [
+    "DCF do Raio-X",
+    "$237,93",
+    {
+     "c": "Conta (0,88x o alvo dos analistas)",
+     "k": "g"
+    }
+   ],
+   [
+    "Analistas",
+    "Comprar · alvo $269,06",
+    {
+     "c": "+114% sobre $125,53; alvo mínimo $78 e máximo $515",
+     "k": "a"
+    }
+   ],
+   [
+    "Insiders",
+    "0 compras · 58 vendas",
+    {
+     "c": "Vendas perto de $220",
+     "k": "a"
+    }
+   ]
+  ],
+  "cmp": [
+   [
+    "Qualidade",
+    "84/100, Excelente",
+    "Excelente: concordamos"
+   ],
+   [
+    "Preço",
+    "Muito barata, 89/100",
+    "Muito barata: as cinco verificações dizem barato"
+   ]
+  ],
+  "semdif": "**Semelhanças e diferenças:** concordamos na classificação. O nosso filtro mede lucros e preço, não mede risco de liderança: parte do desconto pode ser o mercado a cobrar a saída do CEO. Por isso o cartão leva um aviso. Se a qualidade descesse para Boa, o preço de entrada passava de ≈$242 para ≈$194.",
+  "val": [
+   [
+    "Cotação",
+    "$125,53 (−14% no dia)",
+    "Raio-X da Ação (Clareza), 22 nov 2026"
+   ],
+   [
+    "Alvo dos analistas",
+    "$269,06",
+    "Raio-X, 81 analistas"
+   ],
+   [
+    "Máximo histórico",
+    "$243,37 (6 out 2026, intradiário)",
+    "StockAnalysis, consultado a 18 nov"
+   ],
+   [
+    "52 semanas",
+    "mínimo anterior $148,80",
+    "A cotação de hoje está abaixo desse mínimo; novo mínimo não confirmado"
+   ],
+   [
+    "Preço vs máximo",
+    "−48%",
+    "Cálculo nosso"
+   ]
+  ],
+  "conclusao": [
+   "**Zona Buffett, com aviso de risco de liderança.** O negócio bateu as estimativas e subiu a previsão; o que mudou é a governação, que o filtro não mede. A cotação está abaixo do preço de entrada provisório (≈$242).",
+   "**Em carteira:** Zona Buffett com cotação abaixo do preço de entrada é sinal de reforço, mas as ETFs do S&P 500 e do mundo já contêm NVDA. Decide com calma: não é aconselhamento financeiro."
+  ],
+  "verif": {
+   "title": "Nota de verificação",
+   "lines": [
+    "**Verificação (secção 7):** receita ($115,8 mil M) e EPS ($2,68) do trimestre conferem com o comunicado oficial de 17 nov.",
+    "**Discrepâncias do Raio-X (originais mantidos):** a segmentação ainda mostra o trimestre anterior (Data Center $89,0 mil M e Edge $7,2 mil M); o dividend yield aparece como 0,41% e 0,61% no mesmo cartão (dividendo atual: $0,25 por trimestre)."
+   ]
+  },
+  "fontes": [
+   [
+    "Raio-X da Ação (Clareza), NVDA",
+    "Qualidade, preço, DCF, analistas",
+    "22 nov 2026"
+   ],
+   [
+    "Comunicado da NVIDIA, 3.º trim. FY2027",
+    "Receita, EPS, previsão",
+    "17 nov 2026"
+   ],
+   [
+    "StockAnalysis (pesquisa web)",
+    "Máximo e 52 semanas anteriores",
+    "18 nov 2026"
+   ],
+   [
+    "CNBC, MarketBeat, AP",
+    "Demissão do CEO e reação dos analistas",
+    "12–18 nov 2026"
+   ]
+  ]
+ },
+ {
+  "ticker": "PANW",
+  "resultados": [
+   "1.º trimestre fiscal de 2027 (reportado a 18 nov): receita de **$3,4 mil M** (+39%) contra $3,3 mil M esperados e EPS ajustado de **$1,05** contra $0,97. Bateu as estimativas de EPS nos últimos 7 trimestres. Próximo relatório: 16 fev 2027."
+  ],
+  "negocio": "Vende segurança informática a empresas: firewalls, proteção na nuvem e software que deteta ataques. É uma das maiores do setor.",
+  "moat": [
+   "**Bom:** plataforma que junta várias ferramentas de segurança, o que dificulta a troca de fornecedor.",
+   "**Bom:** balanço sem dívida e receita a crescer a 20% ao ano em 4 anos.",
+   "**Risco:** o lucro contabilístico é quase nulo (margem líquida de 3,7%) e o preço já pressupõe muito crescimento."
+  ],
+  "ind": [
+   [
+    "Qualidade (Clareza)",
+    "60/100",
+    {
+     "c": "Rentabilidade 40, crescimento 65, balanço 90, consistência 47",
+     "k": "a"
+    }
+   ],
+   [
+    "ROIC · margem líquida",
+    "1,2% · 3,7%",
+    {
+     "c": "Fraco: o lucro contabilístico é quase nulo",
+     "k": "r"
+    }
+   ],
+   [
+    "Margem bruta",
+    "68,9%",
+    {
+     "c": "Abaixo da mediana dos pares (75,2%)",
+     "k": "a"
+    }
+   ],
+   [
+    "Dívida / EBITDA",
+    "0,0x",
+    {
+     "c": "Sem dívida",
+     "k": "g"
+    }
+   ],
+   [
+    "P/S · P/L esperado",
+    "22,6x · 80,3x",
+    {
+     "c": "O dobro da mediana de 5 anos (P/S 11,7x)",
+     "k": "r"
+    }
+   ],
+   [
+    "Rendimento do fluxo de caixa livre",
+    "1,5%",
+    {
+     "c": "Muito abaixo dos 4% que consideramos bom",
+     "k": "r"
+    }
+   ],
+   [
+    "DCF do Raio-X",
+    "$260,96",
+    {
+     "c": "Conta (0,64x o alvo), mas dá 24% abaixo do preço",
+     "k": "a"
+    }
+   ],
+   [
+    "Analistas",
+    "Comprar · alvo $405,68",
+    {
+     "c": "+18% sobre $343,32; alvo mínimo $290 e máximo $525",
+     "k": "a"
+    }
+   ],
+   [
+    "Insiders",
+    "0 compras · 80 vendas",
+    {
+     "c": "Vendas do presidente da empresa",
+     "k": "a"
+    }
+   ]
+  ],
+  "cmp": [
+   [
+    "Qualidade",
+    "60/100, Boa",
+    "Boa: concordamos"
+   ],
+   [
+    "Preço",
+    "Muito cara, 8/100",
+    "Muito cara"
+   ]
+  ],
+  "semdif": "**Semelhanças e diferenças:** concordamos. O Clareza avisa que um dos pilares do preço ficou sem dados e o peso foi redistribuído pelos restantes.",
+  "val": [
+   [
+    "Cotação",
+    "$343,32 (−5% no dia)",
+    "Raio-X da Ação (Clareza), 22 nov 2026"
+   ],
+   [
+    "Alvo dos analistas",
+    "$405,68",
+    "Raio-X, 89 analistas"
+   ],
+   [
+    "Máximo histórico e 52 semanas",
+    "não confirmado",
+    "—"
+   ],
+   [
+    "Preço vs máximo",
+    "a confirmar",
+    "—"
+   ]
+  ],
+  "conclusao": [
+   "**Vigiar:** negócio de qualidade Boa, mas muito caro. O Clareza e nós concordamos.",
+   "**Preço de entrada provisório ≈$86 (20 × ≈$4,3).** O lucro ajustado exclui custos reais (ações dadas a funcionários, aquisições), por isso o número é otimista. Fica muito abaixo da cotação ($343), mas diz-te a que valor faria sentido entrar numa queda forte. Não é aconselhamento financeiro."
+  ],
+  "verif": {
+   "title": "Nota de verificação",
+   "lines": [
+    "**Verificação (secção 7):** receita ($3,4 mil M) e EPS ajustado ($1,05) conferem com o comunicado oficial de 18 nov.",
+    "**Discrepância do Raio-X (original mantido):** a segmentação mostra só \"Product, $595 M (100%)\" e falta a subscrição e suporte (≈$2,85 mil M)."
+   ]
+  },
+  "fontes": [
+   [
+    "Raio-X da Ação (Clareza), PANW",
+    "Qualidade, preço, DCF, analistas",
+    "22 nov 2026"
+   ],
+   [
+    "Comunicado da Palo Alto Networks",
+    "Receita, EPS",
+    "18 nov 2026"
+   ]
+  ]
+ },
+ {
+  "ticker": "INTU",
+  "resultados": [
+   "1.º trimestre fiscal de 2027 (reportado a 19 nov): receita de **$4,35 mil M** (+12%) contra $4,3 mil M esperados e EPS ajustado de **$2,91** contra $2,46. A ação caiu 13% no dia, para $270,44. Próximo relatório: 25 fev 2027.",
+   "**Atenção ao EPS:** a Intuit mudou a definição de lucro ajustado a 1 ago 2026 e passou a incluir a remuneração em ações. Por isso o \"−12,9%\" do Raio-X não é uma queda real."
+  ],
+  "negocio": "Faz o TurboTax (impostos), o QuickBooks (contabilidade de pequenas empresas) e o Credit Karma. Cobra subscrições e comissões a milhões de clientes.",
+  "moat": [
+   "**Bom:** clientes habituados e dados financeiros acumulados; custo de mudar de contabilidade é alto.",
+   "**Bom:** margem bruta de 80% e consistência de lucros (89/100).",
+   "**Risco:** receio de que a IA destrua o software tradicional; a ação perdeu 58% em 12 meses."
+  ],
+  "ind": [
+   [
+    "Qualidade (Clareza)",
+    "82/100",
+    {
+     "c": "Rentabilidade 81, crescimento 73, balanço 89, consistência 89",
+     "k": "g"
+    }
+   ],
+   [
+    "ROIC · margem líquida",
+    "17,6% · 22,0%",
+    {
+     "c": "Boa rentabilidade",
+     "k": "g"
+    }
+   ],
+   [
+    "Margem bruta",
+    "80,3%",
+    {
+     "c": "Em linha com os pares",
+     "k": "g"
+    }
+   ],
+   [
+    "Dívida / EBITDA",
+    "0,5x",
+    {
+     "c": "Dívida pequena",
+     "k": "g"
+    }
+   ],
+   [
+    "P/L · P/L esperado · PEG",
+    "15,4x · 11,8x · 0,69",
+    {
+     "c": "Baixo",
+     "k": "g"
+    }
+   ],
+   [
+    "Rendimento do fluxo de caixa livre",
+    "12,5%",
+    {
+     "c": "Inflacionado: FCF é 190% do lucro (remuneração em ações como caixa)",
+     "k": "a"
+    }
+   ],
+   [
+    "DCF do Raio-X",
+    "$881,17",
+    {
+     "c": "Não conta: 2,4x o alvo dos analistas",
+     "k": "r"
+    }
+   ],
+   [
+    "Analistas",
+    "Comprar · alvo $362,21",
+    {
+     "c": "+34% sobre $270,44; alvo mínimo $270",
+     "k": "g"
+    }
+   ]
+  ],
+  "cmp": [
+   [
+    "Qualidade",
+    "82/100, Excelente",
+    "Excelente: concordamos"
+   ],
+   [
+    "Preço",
+    "Muito barata, 93/100",
+    "Barata: o FCF yield e o DCF contam a remuneração em ações como caixa e inflacionam o \"muito barata\""
+   ]
+  ],
+  "semdif": "**Semelhanças e diferenças:** concordamos que o negócio é excelente e o preço está baixo. Descemos de Muito barata para Barata porque dois dos pilares (FCF yield e DCF) estão inflacionados. O P/L esperado de 11,8x e o PEG de 0,69 continuam a dizer barata.",
+  "val": [
+   [
+    "Cotação",
+    "$270,44 (−13% no dia)",
+    "Raio-X da Ação (Clareza), 22 nov 2026"
+   ],
+   [
+    "Alvo dos analistas",
+    "$362,21",
+    "Raio-X, 45 analistas"
+   ],
+   [
+    "Máximo histórico e 52 semanas",
+    "não confirmado",
+    "—"
+   ],
+   [
+    "Variação a 1 ano",
+    "−57,6%",
+    "Raio-X"
+   ]
+  ],
+  "conclusao": [
+   "**Zona Buffett:** negócio excelente a um preço baixo, com a ação a cair por receio da IA. O risco real é o negócio perder relevância, que o filtro não mede.",
+   "**Preço de entrada provisório ≈$575** (25 × $23,0, o meio da previsão da empresa; consenso não confirmado). Antes: $595. Não é aconselhamento financeiro."
+  ],
+  "verif": {
+   "title": "Nota de verificação",
+   "lines": [
+    "**Verificação (secção 7):** receita ($4,35 mil M) e EPS ajustado ($2,91) conferem com o comunicado oficial.",
+    "**Discrepâncias do Raio-X (originais mantidos):** \"EPS −12,9%\" por mudança de base; a segmentação (Global Business Solutions $3,1 mil M + Consumer $958 M = $4,06 mil M) não soma a receita de $4,35 mil M; DCF de $881 a 2,4x o alvo ($362)."
+   ]
+  },
+  "fontes": [
+   [
+    "Raio-X da Ação (Clareza), INTU",
+    "Qualidade, preço, DCF, analistas",
+    "22 nov 2026"
+   ],
+   [
+    "Comunicado da Intuit",
+    "Receita, EPS, mudança de definição",
+    "19 nov 2026"
+   ]
+  ]
+ },
+ {
+  "ticker": "POWL",
+  "banner": "**Dados de pesquisa web, não do Raio-X.** A classificação é nossa e fica provisória até haver Raio-X.",
+  "resultados": [
+   "4.º trimestre fiscal de 2026 (reportado a 16 nov): receita de **$397 M** (+33%) contra ≈$331 M esperados e EPS de **$2,23** contra ≈$1,52–1,56. Margem bruta de 34,9%. Novas encomendas de $710 M (1,8x a receita do trimestre) e carteira de encomendas de **$2,7 mil M** (+96%).",
+   "Ano fiscal 2026: receita de $1,26 mil M (+14%) e lucro de $221 M (+22%). Só $1,3 mil M da carteira se converte em receita em 2027; a maior parte fica para 2028. Sem previsão numérica para 2027."
+  ],
+  "negocio": "Constrói equipamento elétrico feito por encomenda (quadros e salas de comando elétricas) para empresas de eletricidade, gás natural liquefeito (GNL), petróleo e centros de dados. Cada projeto é feito à medida.",
+  "moat": [
+   "**Bom:** projetos feitos à medida, com segurança e fiabilidade que os clientes não arriscam trocar.",
+   "**Bom:** sem dívida e com $861 M em caixa.",
+   "**Risco:** a receita é irregular (depende de grandes projetos) e a maior parte da carteira só vira receita em 2028."
+  ],
+  "ind": [
+   [
+    "Qualidade (nossa leitura)",
+    "Boa (estimada)",
+    {
+     "c": "Sem Raio-X: baseada em margens, caixa e crescimento",
+     "k": "a"
+    }
+   ],
+   [
+    "Margem bruta",
+    "34,9% no trimestre",
+    {
+     "c": "Subiu face aos 31,4% do ano anterior",
+     "k": "g"
+    }
+   ],
+   [
+    "Dívida",
+    "Sem dívida; caixa $861 M",
+    {
+     "c": "Balanço forte",
+     "k": "g"
+    }
+   ],
+   [
+    "Fluxo de caixa operacional",
+    "$434 M no ano",
+    {
+     "c": "Contra $168 M no ano anterior",
+     "k": "g"
+    }
+   ],
+   [
+    "P/L esperado",
+    "≈21x (EPS esperado ≈$7,0)",
+    {
+     "c": "Estimativa nossa",
+     "k": "a"
+    }
+   ],
+   [
+    "Carteira de encomendas",
+    "$2,7 mil M (+96%)",
+    {
+     "c": "Dá visibilidade, mas a conversão é lenta",
+     "k": "g"
+    }
+   ]
+  ],
+  "cmp": [
+   [
+    "Qualidade",
+    "Sem Raio-X",
+    "Boa (estimada)"
+   ],
+   [
+    "Preço",
+    "Sem Raio-X",
+    "Neutra: ≈8% acima do preço de entrada"
+   ]
+  ],
+  "semdif": "**Semelhanças e diferenças:** sem Clareza para comparar. Os alvos dos analistas que encontrámos são anteriores ao relatório e à queda da ação, por isso não os usamos.",
+  "val": [
+   [
+    "Cotação",
+    "≈$151 (meados de nov)",
+    "Chartmill e Earnings Whispers; data por confirmar"
+   ],
+   [
+    "Alvo dos analistas",
+    "não confirmado",
+    "Os que encontrámos são anteriores à queda"
+   ],
+   [
+    "Máximo histórico e 52 semanas",
+    "não confirmado",
+    "A ação fez um desdobramento 3 por 1 este ano"
+   ],
+   [
+    "Preço vs máximo",
+    "a confirmar",
+    "—"
+   ]
+  ],
+  "conclusao": [
+   "**Vigiar (provisória):** bom negócio, relatório forte e sem dívida, mas a ação desceu na mesma e o preço só está um pouco acima do preço de entrada.",
+   "**Preço de entrada provisório ≈$140** (20 × ≈$7,0). O consenso de $6,66 para 2027 é anterior ao relatório; o ≈$7,0 é estimativa nossa. Não é aconselhamento financeiro."
+  ],
+  "verif": {
+   "title": "Nota de verificação",
+   "lines": [
+    "**Verificação (secção 7):** receita ($397 M) e EPS ($2,23) conferem com o comunicado oficial (8-K de 16 nov).",
+    "Sem Raio-X: cotação, máximos, mínimos e alvo dos analistas não confirmados."
+   ]
+  },
+  "fontes": [
+   [
+    "Powell Industries, comunicado (8-K)",
+    "Receita, EPS, encomendas, carteira",
+    "16 nov 2026"
+   ],
+   [
+    "24/7 Wall St, Zacks, Earnings Whispers",
+    "Estimativas, reação da ação, conversão da carteira",
+    "16–18 nov 2026"
+   ],
+   [
+    "Barchart",
+    "Consenso de EPS 2027 antes do relatório",
+    "2026"
+   ]
+  ]
+ },
+ {
+  "ticker": "AME",
+  "banner": "**Dados de pesquisa web, não do Raio-X.** A classificação é nossa e fica provisória até haver Raio-X.",
+  "resultados": [
+   "3.º trimestre de 2026 (reportado a 3 nov): receita recorde de **$2,22 mil M** (+17%) e EPS ajustado de **$2,21** (+17%); contabilístico $1,85. Previsão do ano: EPS ajustado de $8,53–8,57. Margem operacional ajustada de 26,8% e margem de fluxo de caixa livre de 23,8%."
+  ],
+  "negocio": "Fabrica instrumentos e componentes eletrónicos para indústria, aeroespacial, saúde e laboratórios. Cresce por compras sucessivas de pequenas empresas especializadas.",
+  "moat": [
+   "**Bom:** produtos especializados e difíceis de substituir em equipamentos onde a falha custa caro.",
+   "**Bom:** margens altas e caixa forte, que financiam as aquisições.",
+   "**Risco:** o lucro ajustado exclui custos de aquisições (≈$0,36 por ação por trimestre)."
+  ],
+  "ind": [
+   [
+    "Qualidade (nossa leitura)",
+    "Excelente (estimada)",
+    {
+     "c": "Sem Raio-X: margens, crescimento e caixa",
+     "k": "g"
+    }
+   ],
+   [
+    "Margem operacional ajustada",
+    "26,8%",
+    {
+     "c": "Alta e estável",
+     "k": "g"
+    }
+   ],
+   [
+    "Margem de caixa livre",
+    "23,8%",
+    {
+     "c": "Muito boa",
+     "k": "g"
+    }
+   ],
+   [
+    "EPS: ajustado vs contabilístico",
+    "$2,21 vs $1,85",
+    {
+     "c": "Diferença de ≈16%: custos de aquisições",
+     "k": "a"
+    }
+   ],
+   [
+    "P/L esperado",
+    "≈27,6x",
+    {
+     "c": "Exige continuar a crescer",
+     "k": "a"
+    }
+   ],
+   [
+    "Analistas (S&P Global)",
+    "alvo médio ≈$278",
+    {
+     "c": "≈+18%; pode ser anterior ao relatório",
+     "k": "a"
+    }
+   ]
+  ],
+  "cmp": [
+   [
+    "Qualidade",
+    "Sem Raio-X",
+    "Excelente (estimada)"
+   ],
+   [
+    "Preço",
+    "Sem Raio-X",
+    "Neutra: ≈10% acima do preço de entrada"
+   ]
+  ],
+  "semdif": "**Semelhanças e diferenças:** sem Clareza para comparar. A classificação é nossa e provisória.",
+  "val": [
+   [
+    "Cotação",
+    "$235,61",
+    "18 nov 2026 (pesquisa web)"
+   ],
+   [
+    "Alvo dos analistas",
+    "≈$278,33",
+    "S&P Global; pode ser anterior ao relatório"
+   ],
+   [
+    "Máximo histórico e 52 semanas",
+    "não confirmado",
+    "—"
+   ],
+   [
+    "Preço vs máximo",
+    "a confirmar",
+    "—"
+   ]
+  ],
+  "conclusao": [
+   "**Vigiar (provisória):** excelente negócio a um preço neutro. Espera-se por uma descida até ao preço de entrada.",
+   "**Preço de entrada provisório ≈$214** (25 × $8,55, o meio da previsão da empresa; consenso não confirmado). Com o lucro contabilístico desceria para ≈$178. Não é aconselhamento financeiro."
+  ],
+  "verif": {
+   "title": "Nota de verificação",
+   "lines": [
+    "**Verificação (secção 7):** receita ($2,22 mil M) e EPS ajustado ($2,21) conferem com o comunicado oficial de 3 nov.",
+    "Sem Raio-X: máximos e mínimos de 52 semanas não confirmados."
+   ]
+  },
+  "fontes": [
+   [
+    "AMETEK, comunicado do 3.º trimestre",
+    "Receita, EPS, previsão",
+    "3 nov 2026"
+   ],
+   [
+    "S&P Global via Trefis/Investing.com",
+    "Alvo dos analistas",
+    "2026"
+   ],
+   [
+    "Pesquisa web",
+    "Cotação",
+    "18 nov 2026"
+   ]
+  ]
+ },
+ {
+  "ticker": "ROP",
+  "banner": "**Dados de pesquisa web, não do Raio-X.** A classificação é nossa e fica provisória até haver Raio-X.",
+  "resultados": [
+   "3.º trimestre de 2026 (reportado a 22 out): EPS ajustado de **$5,89** (+15%); contabilístico $4,88. Previsão do ano: EPS ajustado de $22,35–22,40.",
+   "O EPS cresce sobretudo por recompras de ações: o lucro ajustado total subiu só 5% e as recompras estão agora suspensas."
+  ],
+  "negocio": "Compra e gere empresas de software e tecnologia especializadas (por exemplo, para saúde, transportes e indústria). Vive de subscrições e de nichos onde tem pouca concorrência.",
+  "moat": [
+   "**Bom:** software especializado, com clientes que raramente mudam.",
+   "**Bom:** margens altas e muito caixa gerado.",
+   "**Risco:** crescimento da receita de cerca de 7% e pedidos novos a abrandar; o EPS depende de recompras."
+  ],
+  "ind": [
+   [
+    "Qualidade (nossa leitura)",
+    "Boa (estimada)",
+    {
+     "c": "Sem Raio-X: margens ótimas, mas crescimento só de 7%",
+     "k": "a"
+    }
+   ],
+   [
+    "EPS: ajustado vs contabilístico",
+    "$5,89 vs $4,88",
+    {
+     "c": "Diferença de ≈17%",
+     "k": "a"
+    }
+   ],
+   [
+    "Crescimento do lucro ajustado total",
+    "+5%",
+    {
+     "c": "O EPS (+15%) sobe com recompras",
+     "k": "a"
+    }
+   ],
+   [
+    "P/L esperado",
+    "≈21x",
+    {
+     "c": "Razoável para o crescimento",
+     "k": "a"
+    }
+   ]
+  ],
+  "cmp": [
+   [
+    "Qualidade",
+    "Sem Raio-X",
+    "Boa (estimada), no limite"
+   ],
+   [
+    "Preço",
+    "Sem Raio-X",
+    "Neutra: ≈5% acima do preço de entrada"
+   ]
+  ],
+  "semdif": "**Semelhanças e diferenças:** sem Clareza para comparar. No limite: se a qualidade fosse Excelente, o preço de entrada seria ≈$559 e a empresa passava a Zona Buffett.",
+  "val": [
+   [
+    "Cotação",
+    "$470,87",
+    "18 nov 2026 (pesquisa web)"
+   ],
+   [
+    "Alvo dos analistas",
+    "não confirmado",
+    "As fontes têm datas diferentes"
+   ],
+   [
+    "Máximo histórico e 52 semanas",
+    "não confirmado",
+    "—"
+   ],
+   [
+    "Preço vs máximo",
+    "a confirmar",
+    "—"
+   ]
+  ],
+  "conclusao": [
+   "**Vigiar (provisória):** boa empresa, mas o crescimento abranda e o EPS é ajudado por recompras.",
+   "**Preço de entrada provisório ≈$447** (20 × $22,38, o meio da previsão da empresa; consenso não confirmado). Se Excelente: ≈$559. Não é aconselhamento financeiro."
+  ],
+  "verif": {
+   "title": "Nota de verificação",
+   "lines": [
+    "**Verificação (secção 7):** EPS ajustado ($5,89) confere com o comunicado oficial de 22 out.",
+    "Sem Raio-X: alvo dos analistas, máximos e mínimos não confirmados."
+   ]
+  },
+  "fontes": [
+   [
+    "Roper Technologies, comunicado do 3.º trimestre",
+    "EPS, previsão",
+    "22 out 2026"
+   ],
+   [
+    "Pesquisa web",
+    "Cotação",
+    "18 nov 2026"
+   ]
+  ]
+ },
+ {
+  "ticker": "ROK",
+  "banner": "**Dados de pesquisa web, não do Raio-X.** A classificação é nossa e fica provisória até haver Raio-X.",
+  "resultados": [
+   "4.º trimestre fiscal de 2026 (reportado a 5 nov): receita de **$2,33 mil M** (+1%; orgânico +3%) e EPS ajustado de **$3,88**; contabilístico $3,11. O trimestre vem distorcido por reembolsos de tarifas (≈$0,11 por ação) e o crescimento da receita recorrente abrandou de 7% para 5%.",
+   "Previsão do ano fiscal 2027: EPS ajustado de $14,50–15,50."
+  ],
+  "negocio": "Fabrica sistemas de automação para fábricas (controladores, software e sensores). Vende a quem produz carros, alimentos, medicamentos e baterias.",
+  "moat": [
+   "**Bom:** equipamento instalado nas fábricas, com contratos de manutenção e software.",
+   "**Risco:** negócio cíclico: depende do investimento das fábricas.",
+   "**Risco:** crescimento fraco (+1%) e valorização exigente."
+  ],
+  "ind": [
+   [
+    "Qualidade (nossa leitura)",
+    "Boa (estimada)",
+    {
+     "c": "Sem Raio-X: margens e caixa boas, crescimento fraco",
+     "k": "a"
+    }
+   ],
+   [
+    "EPS: ajustado vs contabilístico",
+    "$3,88 vs $3,11",
+    {
+     "c": "Diferença de ≈25%",
+     "k": "a"
+    }
+   ],
+   [
+    "P/L esperado",
+    "≈27x",
+    {
+     "c": "Caro para um crescimento de 1–3%",
+     "k": "r"
+    }
+   ],
+   [
+    "Analistas (Benzinga)",
+    "alvo médio ≈$426",
+    {
+     "c": "Anterior ao relatório",
+     "k": "a"
+    }
+   ]
+  ],
+  "cmp": [
+   [
+    "Qualidade",
+    "Sem Raio-X",
+    "Boa (estimada)"
+   ],
+   [
+    "Preço",
+    "Sem Raio-X",
+    "Cara: ≈34% acima do preço de entrada"
+   ]
+  ],
+  "semdif": "**Semelhanças e diferenças:** sem Clareza para comparar. As fontes dão cotações entre ≈$385 e $402.",
+  "val": [
+   [
+    "Cotação",
+    "$402,46",
+    "13 nov 2026 (pesquisa web; fontes entre $385 e $402)"
+   ],
+   [
+    "Alvo dos analistas",
+    "≈$426",
+    "Benzinga, set 2026; anterior ao relatório"
+   ],
+   [
+    "Máximo histórico e 52 semanas",
+    "não confirmado",
+    "—"
+   ],
+   [
+    "Preço vs máximo",
+    "a confirmar",
+    "—"
+   ]
+  ],
+  "conclusao": [
+   "**Vigiar (provisória):** boa empresa, cíclica, a um preço alto para o crescimento que mostra.",
+   "**Preço de entrada provisório ≈$300** (20 × $15,0, o meio da previsão da empresa; consenso não confirmado). Não é aconselhamento financeiro."
+  ],
+  "verif": {
+   "title": "Nota de verificação",
+   "lines": [
+    "**Verificação (secção 7):** receita ($2,33 mil M) e EPS ajustado ($3,88) conferem com o comunicado oficial de 5 nov.",
+    "Sem Raio-X: máximos e mínimos de 52 semanas não confirmados."
+   ]
+  },
+  "fontes": [
+   [
+    "Rockwell Automation, comunicado do 4.º trimestre",
+    "Receita, EPS, previsão",
+    "5 nov 2026"
+   ],
+   [
+    "Benzinga",
+    "Alvo dos analistas",
+    "set 2026"
+   ],
+   [
+    "Pesquisa web",
+    "Cotação",
+    "13 nov 2026"
+   ]
+  ]
+ },
+ {
+  "ticker": "EDP",
+  "banner": "**Dados de pesquisa web, não do Raio-X.** A classificação é nossa e fica provisória até haver Raio-X.",
+  "resultados": [
+   "9 meses de 2026 (reportado a 6 nov): lucro líquido de **€1,194 mil M** (+25%), dívida líquida de €16,8 mil M e fluxo de caixa operacional −18%. A empresa reviu pela 3.ª vez em alta o lucro recorrente de 2026, para **€1,4–1,5 mil M**. O CEO sai depois da assembleia de 2027."
+  ],
+  "negocio": "Produz e distribui eletricidade em Portugal, Espanha, Brasil e EUA, com muita energia renovável (vento e sol). É uma empresa de serviços essenciais, de receitas estáveis.",
+  "moat": [
+   "**Bom:** receitas reguladas e estáveis, com procura que não desaparece.",
+   "**Bom:** peso grande de renováveis e crescimento do lucro.",
+   "**Risco:** dívida elevada (€16,8 mil M) e fluxo de caixa a cair; sai o CEO."
+  ],
+  "ind": [
+   [
+    "Qualidade (nossa leitura)",
+    "Razoável (estimada)",
+    {
+     "c": "Estável, mas com muita dívida",
+     "k": "a"
+    }
+   ],
+   [
+    "Lucro líquido (9 meses)",
+    "€1,194 mil M (+25%)",
+    {
+     "c": "Em subida",
+     "k": "g"
+    }
+   ],
+   [
+    "Dívida líquida",
+    "€16,8 mil M",
+    {
+     "c": "Pesada",
+     "k": "r"
+    }
+   ],
+   [
+    "Fluxo de caixa operacional",
+    "−18%",
+    {
+     "c": "A piorar",
+     "k": "r"
+    }
+   ],
+   [
+    "Lucro recorrente de 2026",
+    "€1,4–1,5 mil M",
+    {
+     "c": "Previsão revista em alta pela 3.ª vez",
+     "k": "g"
+    }
+   ],
+   [
+    "Analistas",
+    "alvo médio €5,05",
+    {
+     "c": "Praticamente igual à cotação",
+     "k": "a"
+    }
+   ]
+  ],
+  "cmp": [
+   [
+    "Qualidade",
+    "Sem Raio-X",
+    "Razoável (estimada)"
+   ],
+   [
+    "Preço",
+    "Sem Raio-X",
+    "Neutra: cotação ligeiramente abaixo da referência"
+   ]
+  ],
+  "semdif": "**Semelhanças e diferenças:** sem Clareza para comparar. Os dados vêm da imprensa financeira; o comunicado oficial não foi aberto.",
+  "val": [
+   [
+    "Cotação",
+    "≈€5,0",
+    "Meados de nov (fontes entre €4,86 e €5,04)"
+   ],
+   [
+    "Alvo dos analistas",
+    "€5,05",
+    "Pesquisa web"
+   ],
+   [
+    "Máximo histórico e 52 semanas",
+    "não confirmado",
+    "—"
+   ],
+   [
+    "Preço vs máximo",
+    "a confirmar",
+    "—"
+   ]
+  ],
+  "conclusao": [
+   "**Vigiar (provisória):** negócio estável a um preço neutro. Para quem tem a empresa: manter sem reforçar.",
+   "**Referência ≈€5,30** (15 × ≈€0,35 de lucro por ação; €1,4–1,5 mil M a dividir por ≈4,1 mil M de ações, número não confirmado). É só referência, não é recomendação de compra."
+  ],
+  "verif": {
+   "title": "Nota de verificação",
+   "lines": [
+    "Dados da imprensa financeira; o comunicado oficial da EDP não foi aberto. Número de ações, máximos e mínimos de 52 semanas não confirmados."
+   ]
+  },
+  "fontes": [
+   [
+    "Imprensa financeira (pesquisa web)",
+    "Resultados de 9 meses, previsão",
+    "6–18 nov 2026"
+   ]
+  ]
+ },
+ {
+  "ticker": "SKHY",
+  "banner": "**Dados de pesquisa web, não do Raio-X.** A classificação é nossa e fica provisória até haver Raio-X.",
+  "resultados": [
+   "3.º trimestre de 2026 (reportado a 28 out): receita de 105 biliões de wons e margem operacional de **80%**. Previsão do lucro por ADR em 2026: $27,42 (Yahoo) ou $25,12 (FactSet). Próximo relatório: 27 jan 2027."
+  ],
+  "negocio": "Fabrica chips de memória (DRAM e memória para IA) na Coreia do Sul. O ADR é o título negociado em Nova Iorque que representa as ações coreanas e acompanha também Seul e o câmbio won/dólar.",
+  "moat": [
+   "**Bom:** é um dos poucos fabricantes mundiais de memória de alto desempenho para IA.",
+   "**Bom:** margem operacional de 80% neste momento.",
+   "**Risco:** memória é cíclica: os lucros de hoje são de pico. O lucro por ADR era −$10,14 em 2023."
+  ],
+  "ind": [
+   [
+    "Qualidade (nossa leitura)",
+    "Fraca (ciclo)",
+    {
+     "c": "Substituição manual: lucros previsíveis falham",
+     "k": "r"
+    }
+   ],
+   [
+    "Lucro por ADR",
+    "2023 −$10,14 · 2024 $2,11 · 2025 $4,37 · 2026 $27,42 (prev.)",
+    {
+     "c": "Multiplicou por 6 num ano",
+     "k": "r"
+    }
+   ],
+   [
+    "P/L esperado",
+    "≈4,8x",
+    {
+     "c": "Baixo só porque o lucro está no pico",
+     "k": "a"
+    }
+   ],
+   [
+    "Analistas (FactSet)",
+    "alvo médio ≈$222",
+    {
+     "c": "Anterior ao relatório",
+     "k": "a"
+    }
+   ]
+  ],
+  "cmp": [
+   [
+    "Qualidade",
+    "Sem Raio-X",
+    "Fraca (ciclo): substituição manual"
+   ],
+   [
+    "Preço",
+    "Sem Raio-X",
+    "Barata"
+   ]
+  ],
+  "semdif": "**Semelhanças e diferenças:** sem Clareza para comparar. Em 17 nov tratámos a SKHY como \"Excelente, provisória\" na lista de trading. Para a app aplicamos o mesmo critério da Micron e da SanDisk (secção 4).",
+  "val": [
+   [
+    "Cotação",
+    "$131,79",
+    "13 nov 2026 (pesquisa web)"
+   ],
+   [
+    "Alvo dos analistas",
+    "≈$222",
+    "FactSet; anterior ao relatório"
+   ],
+   [
+    "Máximo histórico e 52 semanas",
+    "não confirmado",
+    "—"
+   ],
+   [
+    "Preço vs máximo",
+    "a confirmar",
+    "—"
+   ]
+  ],
+  "conclusao": [
+   "**Armadilha de Valor, por substituição manual.** O negócio é excelente hoje, mas os lucros são de pico de ciclo, como na Micron.",
+   "**Referência ≈$59** (10 × a média de 4 anos do lucro por ADR: 2023 a 2026, ≈$5,94). Fica ≈55% abaixo da cotação: só chega lá numa queda muito grande. É só referência, não é recomendação de compra."
+  ],
+  "verif": {
+   "title": "Nota de verificação",
+   "lines": [
+    "As previsões de EPS divergem entre fontes ($25,12 a $27,42). Máximos e mínimos de 52 semanas não confirmados. Sem Raio-X."
+   ]
+  },
+  "fontes": [
+   [
+    "SK hynix, resultados do 3.º trimestre",
+    "Receita, margem",
+    "28 out 2026"
+   ],
+   [
+    "Yahoo Finance, FactSet via Cnyes",
+    "Previsões e histórico de EPS por ADR",
+    "2026"
+   ],
+   [
+    "Chartmill",
+    "Cotação",
+    "13 nov 2026"
+   ]
+  ]
+ },
+ {
+  "ticker": "MU",
+  "resultados": [
+   "Quarto trimestre fiscal de 2026 (reportado a 30 de setembro): receita de **$54,23 mil M** (+379% face ao ano anterior) contra $51,3 mil M esperados, e EPS ajustado de **$33,42** contra $31,77. No ano fiscal, receita de **$133,2 mil M** (contra $37,4 mil M) e lucro líquido de **$85,0 mil M** (contra $8,5 mil M). Previsão para o 1.º trimestre fiscal de 2027: receita de $61,5 mil M e EPS ajustado de $38,15, cerca de 8% acima do esperado, mas com margem bruta ligeiramente mais baixa (86,25% contra 87%) por custos a subir. Próximo relatório: **dezembro**. A segmentação DRAM/NAND do Raio-X ainda é do 2.º trimestre, por isso não a usamos."
+  ],
+  "negocio": "Fabrica chips de memória (DRAM e NAND), que existem em servidores de inteligência artificial, computadores, telemóveis e automóveis. É um de três grandes fabricantes mundiais. O produto é quase igual entre fabricantes, por isso o preço depende da oferta e da procura: com procura forte e pouca oferta ganha fortunas, quando a oferta sobe perde dinheiro.",
+  "moat": [
+   "**Bom:** tecnologia de ponta em memória de alta largura de banda (HBM), essencial para a inteligência artificial, e barreiras de entrada enormes (fábricas de milhares de milhões).",
+   "**Bom:** contratos de fornecimento de longo prazo com clientes, que dão uma visibilidade pouco habitual neste setor.",
+   "**Risco:** a vantagem não protege o preço. Em memória, o lucro depende do ciclo, e em 2023 a Micron perdeu $5,8 mil M, com margem bruta de 2,7%."
+  ],
+  "ind": [
+   [
+    "Qualidade (Clareza)",
+    "79/100",
+    {
+     "c": "Crescimento 96, rentabilidade 91 e balanço 93; consistência só 21",
+     "k": "a"
+    }
+   ],
+   [
+    "Margem bruta",
+    "87,0% no último trimestre (80,7% no ano)",
+    {
+     "c": "Excecional, mas no pico do ciclo: era 2,7% em 2023",
+     "k": "a"
+    }
+   ],
+   [
+    "Margem líquida (4/10) · ROIC",
+    "63,8% · 50,4%",
+    {
+     "c": "Excecional; a S&P dá um ROIC de 93,4% (discrepância)",
+     "k": "g"
+    }
+   ],
+   [
+    "Dívida / EBITDA",
+    "-0,3x",
+    {
+     "c": "Caixa líquida: sem dívida a pesar",
+     "k": "g"
+    }
+   ],
+   [
+    "Lucro líquido por ano fiscal",
+    "-5,8 · 0,8 · 8,5 · 85,0 mil M$",
+    {
+     "c": "2023 a 2026: multiplicou por 10 num ano, não é o normal da empresa",
+     "k": "r"
+    }
+   ],
+   [
+    "P/L esperado (preço a dividir pelo lucro de 2027)",
+    "≈5x (EPS esperado $176,55)",
+    {
+     "c": "Baixo só porque o lucro está no pico; depois só mais 15,8%",
+     "k": "a"
+    }
+   ],
+   [
+    "Rendimento do fluxo de caixa livre (4/10)",
+    "4,36%",
+    {
+     "c": "Acima dos 4% que consideramos bom",
+     "k": "g"
+    }
+   ],
+   [
+    "DCF do Raio-X",
+    "$1.533,97",
+    {
+     "c": "Conta (0,97x o alvo), mas passou de -61% em junho a +75%: segue o lucro",
+     "k": "a"
+    }
+   ],
+   [
+    "Analistas",
+    "Comprar · alvo $1.588,85",
+    {
+     "c": "+81% sobre $878,84; alvo mínimo $1.200 no Raio-X contra $361 na S&P",
+     "k": "a"
+    }
+   ]
+  ],
+  "cmp": [
+   [
+    "Qualidade",
+    "79/100, Excelente (consistência 21, estabilidade da margem 0)",
+    "Fraca (ciclo): substituição manual, porque a nota média esconde que os lucros não são previsíveis"
+   ],
+   [
+    "Preço",
+    "Barata, 78/100",
+    "Barata: os cinco indicadores dizem barato, mas todos partem de lucros de pico"
+   ]
+  ],
+  "semdif": "**Semelhanças e diferenças:** concordamos que a ação está barata em números. Discordamos da qualidade: o Clareza premeia o lucro de hoje, o nosso filtro exige lucros previsíveis, e a Micron falha aí. É uma substituição manual (regra da secção 4), explicada neste relatório.",
+  "entrada": "**Preço de entrada:** Sem preço. A fórmula (25 x lucro esperado) daria bem acima de $2.000 para uma ação a $879, um número sem sentido que diria \"compra\" quando as margens já estiverem a cair. Critério próprio para cíclicas a definir depois do relatório de dezembro.",
+  "val": [
+   [
+    "Preço (Raio-X)",
+    "$878,84",
+    "Raio-X de 16/10/2026 (cartão de 18/10)"
+   ],
+   [
+    "Cotação recente",
+    "≈$778 (por confirmar)",
+    "financialcontent.com, pesquisa web 17/11/2026; hora exata não indicada"
+   ],
+   [
+    "Alvo dos analistas",
+    "$1.588,85",
+    "Raio-X; +81% sobre $878,84"
+   ],
+   [
+    "Máximo histórico",
+    "$1.255,00",
+    "Pesquisa web 17/11/2026 (financialcontent, Yahoo Finance); junho de 2026"
+   ],
+   [
+    "52 semanas",
+    "$192,59 – $1.255,00",
+    "financialcontent, 17/11/2026; o mínimo está por confirmar (outra fonte dá $103,38)"
+   ],
+   [
+    "Preço vs. máximo",
+    "-30% (≈-38% com $778)",
+    "Cálculo com os valores acima"
+   ]
+  ],
+  "conclusao": [
+   "**Armadilha de Valor, por substituição manual.** O negócio é excelente hoje, mas os lucros de hoje não são os normais: um ano a ganhar $85 mil M contra $8,5 mil M no anterior. O P/L de 5x é o mercado a dizer que isto é o pico do ciclo. Não é uma previsão de queda: a procura de inteligência artificial pode manter a memória escassa durante anos e os analistas têm um alvo muito acima do preço. Mas o filtro premeia lucros previsíveis, e a Micron falha aí.",
+   "**Em carteira:** reavaliar, não vender por reflexo. Preço de entrada de referência ≈$650 (10 × a média de 4 anos do lucro por ação: $1,30, $7,68, $75,52 e $176,50 previstos). Inclui anos fracos e o pico, por isso não paga o pico do ciclo. Relatório a 15 dez (a confirmar). Não é aconselhamento financeiro."
+  ],
+  "verif": {
+   "title": "Nota de verificação",
+   "lines": [
+    "**Verificação (secção 7):** receita ($54,23 mil M) e EPS ajustado ($33,42) do último trimestre conferem com o comunicado oficial da Micron.",
+    "**Discrepâncias do Raio-X (originais mantidos):** ROIC de 50,4% contra 93,4% na S&P; alvo mínimo dos analistas $1.200 contra $361; segmentação de receita ainda do 2.º trimestre. O DCF não é erro de dados: está coerente com o alvo, mas muda de sinal com o lucro."
+   ]
+  },
+  "fontes": [
+   [
+    "Raio-X da Ação (Ser Riquinho / Clareza)",
+    "Notas, preço, DCF, consenso",
+    "16–18/10/2026"
+   ],
+   [
+    "Raio-X da Ação, versão de 4/10",
+    "Margem líquida, rendimento do fluxo de caixa livre, dívida",
+    "04/10/2026"
+   ],
+   [
+    "Comunicado oficial da Micron",
+    "Receita, EPS, previsão do trimestre",
+    "30/09/2026"
+   ],
+   [
+    "financialcontent.com, Yahoo Finance (pesquisa web)",
+    "Máximo, mínimo de 52 semanas, cotação recente",
+    "17/11/2026"
+   ],
+   [
+    "S&P Capital IQ (registo de discrepâncias)",
+    "ROIC e alvo mínimo",
+    "18/10/2026"
+   ],
+   [
+    "Micron, comunicado do ano fiscal 2024; 247wallst",
+    "Lucros de 2024 a 2027 para a média de 4 anos",
+    "nov 2026"
+   ]
+  ]
+ },
+ {
+  "ticker": "SNDK",
+  "resultados": [
+   "A SanDisk faturou **$11,03 mil milhões** no 1.º trimestre fiscal (+23% face ao trimestre anterior; +378% face a há um ano). O lucro por ação ajustado (EPS) foi de **$49,51 contra $46,67 esperados**; pelas regras contabilísticas foi de $52,60. Centros de dados: $4,8 mil M (+61% face ao trimestre anterior). Recomprou $5 mil M em ações.",
+   "Para o trimestre seguinte prevê receita de $12,2–12,6 mil M e EPS ajustado de $55–57. Anunciou um **desdobramento de 8 por 1** (cada ação passa a oito): a negociação ajustada começa a 20 de novembro e a cotação de $1.151 passou a cerca de $144 (as contas abaixo estão ajustadas).",
+   "Mesmo assim a ação caiu 13% no dia e 33% no mês."
+  ],
+  "negocio": "Fabrica memória flash NAND: a memória que guarda dados em discos SSD, telemóveis, cartões e, cada vez mais, centros de dados de IA. Separou-se da Western Digital em 2025. Receita do último trimestre: Edge (PC, telemóveis e equipamento de consumo profissional) $5,8 mil M, Datacenter $4,8 mil M e Consumer $0,4 mil M.",
+  "moat": [
+   "**Escala de produção** e tecnologia própria de memória NAND, numa indústria com poucos fabricantes.",
+   "**A procura de IA** faz subir preços e volumes de memória.",
+   "**Riscos:** memória é um negócio cíclico: os preços sobem e caem em ciclos de 4 a 5 anos, e os lucros de hoje são de pico. Como empresa independente só tem cerca de um ano de lucros."
+  ],
+  "ind": [
+   [
+    "Qualidade (Clareza)",
+    "87 / 100",
+    {
+     "c": "Excelente no papel, mas de pico",
+     "k": "a"
+    }
+   ],
+   [
+    "ROIC",
+    "92,4%",
+    {
+     "c": "Extraordinário porque o lucro está no pico",
+     "k": "a"
+    }
+   ],
+   [
+    "Margem líquida · bruta",
+    "67,0% · 80,0%",
+    {
+     "c": "Margens de pico do ciclo",
+     "k": "a"
+    }
+   ],
+   [
+    "Dívida / EBITDA",
+    "−0,2x",
+    {
+     "c": "Mais caixa do que dívida",
+     "k": "g"
+    }
+   ],
+   [
+    "P/L · P/L esperado",
+    "8,7x · 5,1x",
+    {
+     "c": "Barato só se os lucros se mantiverem",
+     "k": "a"
+    }
+   ],
+   [
+    "FCF yield",
+    "10,4%",
+    {
+     "c": "Alto, mas também de pico",
+     "k": "a"
+    }
+   ],
+   [
+    "Previsão do próximo trimestre",
+    "EPS $55–57 (pré-desdobramento)",
+    {
+     "c": "Ainda em subida",
+     "k": "g"
+    }
+   ]
+  ],
+  "cmp": [
+   [
+    "Qualidade",
+    "Excelente (87), top 1%",
+    "Fraca (ciclo): substituição manual"
+   ],
+   [
+    "Preço",
+    "Barato (73/100)",
+    "Barata"
+   ]
+  ],
+  "semdif": "**Semelhanças:** os dois dizem que o preço é baixo. **Diferenças:** o Clareza lê a qualidade como Excelente; nós trocamos para Fraca por ser memória cíclica, como a MU. O P/L de 8,7x vem de lucros de pico; se o ciclo virar, o lucro cai depressa. O DCF (≈$12 contra um alvo de ≈$277, valores ajustados ao desdobramento) não faz sentido e não conta.",
+  "val": [
+   [
+    "Cotação (30 out), ajustada ao desdobramento",
+    "≈$143,86 ($1.150,89 ÷ 8)",
+    "Raio-X (Clareza); cálculo nosso"
+   ],
+   [
+    "Alvo médio dos analistas",
+    "≈$276,83 ($2.214,67 ÷ 8)",
+    "Raio-X (Clareza)"
+   ],
+   [
+    "Variação a 1 mês · 1 ano",
+    "−33,1% · +487,7%",
+    "Raio-X (Clareza)"
+   ],
+   [
+    "Máximo histórico e de 52 semanas",
+    "não confirmado",
+    "—"
+   ],
+   [
+    "Preço vs máximo",
+    "a confirmar",
+    "—"
+   ]
+  ],
+  "conclusao": [
+   "Negócio com resultados extraordinários, mas num ciclo de memória que está no pico. O P/L baixo engana: é barato sobre lucros que podem não se repetir. Fica em **Armadilha de Valor**, por substituição manual.",
+   "**Referência ≈$89** (10 × a média de 4 anos do lucro por ação: 2024 −$3,46, 2025 $2,99, 2026 $70,88 e 2027 previsto $213,90, antes do desdobramento, a dividir por 8). Como empresa independente só tem cerca de um ano de lucros e os de 2024 e 2025 são de antes da separação. É só referência, não é recomendação de compra. Não é aconselhamento financeiro."
+  ],
+  "verif": {
+   "title": "",
+   "lines": [
+    "Receita ($11,03 mil M), EPS ajustado ($49,51), previsão e desdobramento conferem com o comunicado de 29 out. **Discrepância (valor original do Raio-X mantido):** a segmentação mostra Datacenter $4,8 mil M + Consumer $397 M (soma $5,2 mil M) e falta o segmento Edge ($5,8 mil M); a receita real é $11,03 mil M."
+   ]
+  },
+  "fontes": [
+   [
+    "Clareza, Raio-X SNDK",
+    "Qualidade, valuation, analistas",
+    "29 out – 1 nov 2026"
+   ],
+   [
+    "Comunicado T1 FY2027 (SanDisk)",
+    "Receita, EPS, previsão, desdobramento, segmentos",
+    "29 out 2026"
+   ],
+   [
+    "Sandisk, comunicados de 2025 e 2026; Yahoo Finance",
+    "Lucros por ação e previsão de 2027",
+    "nov 2026"
+   ]
+  ]
+ }
+]
