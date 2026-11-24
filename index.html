@@ -107,7 +107,7 @@
 <body>
 <div class="wrap">
   <div class="hdr-title">Qualidade & Preço</div>
-  <div class="hdr-sub">Raio-X (Clareza) + verificação externa — atualizado a <b>22 nov 2026</b> (NVDA, PANW, INTU, POWL, AME, ROP, ROK, EDP, SKHY, MU, SNDK) · <b>13 nov 2026</b> (NBIS) · <b>11 nov 2026</b> (QLYS, CHKP) · <b>9 nov 2026</b> (AMD, ARM, COHR, LITE, BRK-B) · <b>3 nov 2026</b> (MCO) · <b>1 nov 2026</b> (CL, IBM, ISRG, NVT, SNDK) · <b>30 out 2026</b> (GOOGL, MSFT, APH, MA, V, KO, PG, FTNT, AXTI, CRWD) · <b>18 out 2026</b> (INTU, AVGO, MU, COST, THEON, ASML, JNJ) · as restantes ficam com os dados de set até ao relatório seguinte</div>
+  <div class="hdr-sub">Raio-X (Clareza) + verificação externa — atualizado a <b>24 nov 2026</b> (nova linha «Relatório analisado» em todos os cartões e no Radar) · <b>22 nov 2026</b> (NVDA, PANW, INTU, POWL, AME, ROP, ROK, EDP, SKHY, MU, SNDK) · <b>13 nov 2026</b> (NBIS) · <b>11 nov 2026</b> (QLYS, CHKP) · <b>9 nov 2026</b> (AMD, ARM, COHR, LITE, BRK-B) · <b>3 nov 2026</b> (MCO) · <b>1 nov 2026</b> (CL, IBM, ISRG, NVT, SNDK) · <b>30 out 2026</b> (GOOGL, MSFT, APH, MA, V, KO, PG, FTNT, AXTI, CRWD) · <b>18 out 2026</b> (INTU, AVGO, MU, COST, THEON, ASML, JNJ) · as restantes ficam com os dados de set até ao relatório seguinte</div>
   <div class="tabs" id="tabs"></div>
   <div id="cards"></div>
   <div id="entradas" class="info" style="display:none"></div>
@@ -171,7 +171,7 @@
     <p>Este separador lista as empresas que já reportaram ou vão reportar e cujo cartão ainda tem dados antigos, com a data do relatório e o que falta trazer. Quando o Raio-X novo chega e o cartão é refeito, a empresa sai da lista. Inclui também as empresas que não estão no Clareza (SK hynix, AMETEK, Roper, Rockwell, Powell, EDP, AXT), que se analisam com dados da web e ficam marcadas como provisórias até haver Raio-X.</p>
 
     <h2>Copiar para o Radar</h2>
-    <p>No separador "Preços de entrada", o botão <b>Copiar para o Radar</b> copia a lista toda, pronta a colar no Excel do Radar: ticker do Yahoo Finance, nome, subsetor, qualidade, preço de compra, provisório, data da análise, zona e notas (com a watchlist de origem). As empresas sem preço ou ainda sem análise vão com o preço em branco; as de referência levam o preço e a nota "referência, não é recomendação de compra".</p>
+    <p>No separador "Preços de entrada", o botão <b>Copiar para o Radar</b> copia a lista toda, pronta a colar no Excel do Radar: ticker do Yahoo Finance, nome, subsetor, qualidade, preço de compra, provisório, data da análise, zona, notas (com a watchlist de origem) e relatório analisado (a data do relatório trimestral em que a análise se baseia; "por confirmar" quando ainda não temos a data). As empresas sem preço ou ainda sem análise vão com o preço em branco; as de referência levam o preço e a nota "referência, não é recomendação de compra".</p>
 
     <h2>Em carteira</h2>
     <p>Os cartões das empresas que a Isabel e o Rui Jorge têm mostram a etiqueta <b>Carteira Isabel</b> ou <b>Carteira Rui Jorge</b>. Para quem tem a empresa: Zona Buffett com a cotação abaixo do preço de entrada é sinal de reforço; Vigiar é manter sem reforçar até descer ao preço de entrada; Armadilha ou Descartada em carteira é reavaliar. As ações americanas grandes já contam indiretamente nos ETFs do S&amp;P 500 e do mundo.</p>
@@ -288,6 +288,7 @@ const CARTEIRA = {"GOOGL":["Isabel"],"APH":["Isabel"],"ASML":["Isabel"],"AVGO":[
 
 const PENDENTE = [{"ticker":"CRWD","nome":"CrowdStrike","tipo":"raiox","evento":"Relatório a 1 dez","quando":"Trazer o Raio-X a 2 dez"},{"ticker":"EDP","nome":"EDP","tipo":"web","evento":"Cartão de 22 nov feito com dados da web","quando":"Atualizar quando existir Raio-X"},{"ticker":"SKHY","nome":"SK hynix (ADR)","tipo":"web","evento":"Não está no Clareza; cartão de 22 nov com dados da web","quando":"Atualizar quando existir Raio-X"},{"ticker":"AME","nome":"AMETEK","tipo":"web","evento":"Não está no Clareza; cartão de 22 nov com dados da web","quando":"Atualizar quando existir Raio-X"},{"ticker":"ROP","nome":"Roper Technologies","tipo":"web","evento":"Não está no Clareza; cartão de 22 nov com dados da web","quando":"Atualizar quando existir Raio-X"},{"ticker":"ROK","nome":"Rockwell Automation","tipo":"web","evento":"Não está no Clareza; cartão de 22 nov com dados da web","quando":"Atualizar quando existir Raio-X"},{"ticker":"POWL","nome":"Powell Industries","tipo":"web","evento":"Não está no Clareza; cartão de 22 nov com dados da web","quando":"Atualizar quando existir Raio-X"},{"ticker":"AXTI","nome":"AXT Inc.","tipo":"web","evento":"Não está no Clareza; cartão de 30 out com dados da web","quando":"Atualizar quando existir Raio-X"}];
 
+const RELATORIO = {"AME":"03/11/2026","AMD":"03/11/2026","APH":"28/10/2026","ARM":"04/11/2026","ASML":"14/10/2026","AVGO":"02/09/2026","AXTI":"por confirmar","BRK-B":"07/11/2026","CHKP":"02/11/2026","CL":"30/10/2026","COHR":"04/11/2026","COST":"24/09/2026","CRWD":"26/08/2026","EDP":"06/11/2026","FTNT":"28/10/2026","GOOGL":"28/10/2026","IBM":"21/10/2026","INTU":"19/11/2026","IONQ":"por confirmar","ISRG":"20/10/2026","JNJ":"13/10/2026","KO":"27/10/2026","LITE":"02/11/2026","MA":"29/10/2026","MCO":"21/10/2026","MSFT":"28/10/2026","MU":"30/09/2026","NBIS":"12/11/2026","NVDA":"17/11/2026","NVT":"30/10/2026","PANW":"18/11/2026","PG":"22/10/2026","POWL":"16/11/2026","QLYS":"09/11/2026","RGTI":"por confirmar","ROK":"05/11/2026","ROP":"22/10/2026","SKHY":"28/10/2026","SNDK":"29/10/2026","THEON":"07/09/2026","V":"27/10/2026"};
 const RADAR = {"INTU":{"y":"INTU","nome":"Intuit","sub":"Software (TurboTax, QuickBooks)","notas":"Empresa nova; consenso não confirmado (meio da previsão da empresa)"},"AVGO":{"y":"AVGO","nome":"Broadcom","sub":"Semicondutores","notas":"Carteira Isabel"},"MU":{"y":"MU","nome":"Micron Technology","sub":"Memória (semicondutores)","notas":"Carteira Isabel; cíclica, classificação manual; média de 4 anos x10"},"COST":{"y":"COST","nome":"Costco","sub":"Consumo (retalho)","notas":"WL Valor e Qualidade"},"THEON":{"y":"THEON.AS","nome":"Theon International","sub":"Industriais (defesa)","notas":"Carteira Isabel"},"ASML":{"y":"ASML.AS","nome":"ASML","sub":"Semicondutores (equipamento)","notas":"Carteira Isabel"},"JNJ":{"y":"JNJ","nome":"Johnson & Johnson","sub":"Saúde","notas":"WL Valor e Qualidade"},"GOOGL":{"y":"GOOGL","nome":"Alphabet (Google)","sub":"Tecnologia (pesquisa, YouTube, nuvem)","notas":"Carteira Isabel, WL Vasco"},"MSFT":{"y":"MSFT","nome":"Microsoft","sub":"Tecnologia (software e nuvem)","notas":"Carteira Isabel"},"APH":{"y":"APH","nome":"Amphenol","sub":"Eletrónica (conectores e cabos)","notas":"Carteira Isabel"},"MA":{"y":"MA","nome":"Mastercard","sub":"Finanças (pagamentos)","notas":"WL Valor e Qualidade"},"V":{"y":"V","nome":"Visa","sub":"Finanças (pagamentos)","notas":"WL Valor e Qualidade"},"KO":{"y":"KO","nome":"Coca-Cola","sub":"Consumo (bebidas)","notas":"WL Valor e Qualidade"},"PG":{"y":"PG","nome":"Procter & Gamble","sub":"Consumo (bens do dia a dia)","notas":"WL Valor e Qualidade"},"FTNT":{"y":"FTNT","nome":"Fortinet","sub":"Cibersegurança","notas":"WL Robótica e Cibersegurança"},"AMD":{"y":"AMD","nome":"Advanced Micro Devices","sub":"Semicondutores","notas":"Carteira Rui Jorge"},"LITE":{"y":"LITE","nome":"Lumentum","sub":"Lasers e ótica para IA","notas":"Carteira Rui Jorge"},"AXTI":{"y":"AXTI","nome":"AXT Inc.","sub":"Substratos para lasers (IA)","notas":"Carteira Rui Jorge"},"CRWD":{"y":"CRWD","nome":"CrowdStrike","sub":"Cibersegurança","notas":"Carteira Rui Jorge"},"NBIS":{"y":"NBIS","nome":"Nebius Group","sub":"Nuvem para IA","notas":"Carteira Rui Jorge, WL Vasco"},"QLYS":{"y":"QLYS","nome":"Qualys","sub":"Cibersegurança","notas":"WL Robótica e Cibersegurança"},"ARM":{"y":"ARM","nome":"Arm Holdings","sub":"Semicondutores (design)","notas":"Carteira Rui Jorge, Tiago, WL Vasco"},"ISRG":{"y":"ISRG","nome":"Intuitive Surgical","sub":"Saúde (robótica cirúrgica)","notas":"WL Valor e Qualidade, WL Robótica e Cibersegurança"},"CHKP":{"y":"CHKP","nome":"Check Point","sub":"Cibersegurança","notas":"WL Robótica e Cibersegurança"},"PANW":{"y":"PANW","nome":"Palo Alto Networks","sub":"Cibersegurança","notas":"WL Robótica e Cibersegurança; lucro ajustado exclui custos reais (ações a funcionários, aquisições): preço otimista"},"NVDA":{"y":"NVDA","nome":"NVIDIA","sub":"Semicondutores (IA)","notas":"Carteira Isabel, Carteira Rui Jorge, WL Vasco; aviso de risco de liderança (Huang demitiu-se a 12 nov)"},"CL":{"y":"CL","nome":"Colgate-Palmolive","sub":"Consumo (higiene oral e casa)","notas":"WL Valor e Qualidade"},"BRK-B":{"y":"BRK-B","nome":"Berkshire Hathaway","sub":"Finanças / Diversificado","notas":"WL Valor e Qualidade"},"IONQ":{"y":"IONQ","nome":"IonQ","sub":"Tecnologia (computação quântica)","notas":"WL Vasco"},"RGTI":{"y":"RGTI","nome":"Rigetti Computing","sub":"Tecnologia (computação quântica)","notas":"WL Vasco"},"IBM":{"y":"IBM","nome":"IBM","sub":"Tecnologia (software e consultoria)","notas":"WL Vasco"},"NVT":{"y":"NVT","nome":"nVent Electric","sub":"Equipamento elétrico (centros de dados)","notas":"Empresa nova"},"SNDK":{"y":"SNDK","nome":"SanDisk","sub":"Memória (semicondutores)","notas":"Empresa nova; cíclica, classificação manual; média de 4 anos x10, ajustada ao desdobramento 8 por 1"},"COHR":{"y":"COHR","nome":"Coherent","sub":"Fotónica e lasers (IA)","notas":"Empresa nova"},"EDP":{"y":"EDP.LS","nome":"EDP","sub":"Energia elétrica","notas":"Carteira Isabel; dados web, sem Raio-X"},"SKHY":{"y":"SKHY","nome":"SK hynix (ADR)","sub":"Memória (semicondutores)","notas":"Tiago; dados web, sem Raio-X; cíclica; média de 4 anos x10"},"MCO":{"y":"MCO","nome":"Moody's","sub":"Finanças (ratings)","notas":"WL Valor e Qualidade"},"AME":{"y":"AME","nome":"AMETEK","sub":"Instrumentação industrial","notas":"WL Robótica e Cibersegurança; dados web, sem Raio-X; lucro ajustado exclui custos de aquisições"},"ROP":{"y":"ROP","nome":"Roper Technologies","sub":"Software e tecnologia industrial","notas":"WL Robótica e Cibersegurança; dados web, sem Raio-X; no limite (se Excelente ≈$559)"},"ROK":{"y":"ROK","nome":"Rockwell Automation","sub":"Automação industrial","notas":"WL Robótica e Cibersegurança; dados web, sem Raio-X; cíclica"},"POWL":{"y":"POWL","nome":"Powell Industries","sub":"Equipamento elétrico","notas":"Empresa nova; dados web, sem Raio-X"}};
 
 const DISCREP = [
@@ -444,7 +445,7 @@ function cardOldHtml(c, rank) {
     </div>
     ${distHtml}
     ${btnHtml(c)}
-    <div class="lastdt">Última análise: ${c.data} <span class="fmtant">· formato anterior</span></div>
+    <div class="lastdt">Última análise: ${c.data}${relTxt(c)} <span class="fmtant">· formato anterior</span></div>
   </div>`;
 }
 
@@ -468,7 +469,7 @@ function cardNewHtml(c, rank) {
     </div>
     ${c.avisoTermometro ? `<div class="warn2"><span>⚠</span><span>${c.avisoTermometro}</span></div>` : ""}
     ${btnHtml(c)}
-    <div class="lastdt">Última análise: ${c.data} <span class="fmtant">· formato anterior</span></div>
+    <div class="lastdt">Última análise: ${c.data}${relTxt(c)} <span class="fmtant">· formato anterior</span></div>
   </div>`;
 }
 
@@ -504,7 +505,7 @@ function cardV3Html(c, rank) {
     ${notas}
     ${ver}
     ${btnHtml(c)}
-    <div class="lastdt">Última análise: ${c.data} · preço de ${c.precoData || "16 out 2026"}</div>
+    <div class="lastdt">Última análise: ${c.data}${relTxt(c)} · preço de ${c.precoData || "16 out 2026"}</div>
   </div>`;
 }
 
@@ -527,6 +528,7 @@ function entradaRows() {
 }
 const ZONA_NOME = { buffett: "Zona Buffett", vigiar: "Vigiar", armadilha: "Armadilha de Valor", descartada: "Descartada" };
 const ZONA_COR = { buffett: "#0F6E56", vigiar: "#8A6300", armadilha: "#9C570F", descartada: "#A32D2D" };
+function relTxt(c) { const r = (typeof RELATORIO !== "undefined" && RELATORIO[c.ticker]) || ""; return r ? ` · Relatório analisado: ${r}` : ""; }
 const ZONA_RADAR = { buffett: "Buffett", vigiar: "Vigiar", armadilha: "Armadilha de valor", descartada: "Descartada" };
 const MESES = { jan:1, fev:2, mar:3, abr:4, mai:5, jun:6, jul:7, ago:8, set:9, out:10, nov:11, dez:12 };
 function dataRadar(s) {
@@ -539,12 +541,12 @@ function radarLista() {
   const linhas = [];
   Object.keys(RADAR).forEach(t => {
     const r = RADAR[t], c = COMPANIES.find(x => x.ticker === t), e = ENTRY[t];
-    if (!c) { linhas.push([r.y, r.nome, r.sub, "", "", "", "", "", r.notas].join("\t")); return; }
+    if (!c) { linhas.push([r.y, r.nome, r.sub, "", "", "", "", "", r.notas, (typeof RELATORIO !== "undefined" && RELATORIO[t]) || ""].join("\t")); return; }
     const q = (c.nosQ || "").replace(/ \(.*\)$/, "").split(" ")[0];
     let preco = "", prov = "", notas = r.notas;
     if (e) { preco = num(e.v); prov = e.prov ? "Sim" : ""; }
     if (e && e.ref) notas += "; referência ≈" + (e.m || "$") + num(e.v) + ", não é recomendação de compra";
-    linhas.push([r.y, r.nome, r.sub, q, preco, prov, dataRadar(c.data), ZONA_RADAR[c.quadrante] || "", notas].join("\t"));
+    linhas.push([r.y, r.nome, r.sub, q, preco, prov, dataRadar(c.data), ZONA_RADAR[c.quadrante] || "", notas, RELATORIO[t] || ""].join("\t"));
   });
   return linhas.join("\n");
 }
@@ -570,7 +572,7 @@ function renderEntradas() {
     </table></div>
     <h2 style="font-size:14px;color:#0C2340;margin:16px 0 4px">Sem preço de entrada (exceções)</h2>
     <div class="tscroll"><table class="t" style="min-width:560px"><tr><th>Ticker</th><th>Empresa</th><th colspan="5">Motivo</th></tr>${sem}</table></div>
-    <p style="font-size:11px;color:#8A8880;margin-top:8px">"Copiar lista" copia ticker e preço separados por tabulação (decimais com vírgula). "Copiar para o Radar" copia o bloco completo: Ticker Yahoo, Nome, Subsetor, Qualidade, Preço de compra, Provisório, Data, Zona e Notas; as empresas sem preço vão com o preço em branco e as referências levam a nota "referência". Ferramenta de estudo, não é aconselhamento financeiro.</p>`;
+    <p style="font-size:11px;color:#8A8880;margin-top:8px">"Copiar lista" copia ticker e preço separados por tabulação (decimais com vírgula). "Copiar para o Radar" copia o bloco completo: Ticker Yahoo, Nome, Subsetor, Qualidade, Preço de compra, Provisório, Data (da análise), Zona, Notas e Relatório analisado; as empresas sem preço vão com o preço em branco e as referências levam a nota "referência". Ferramenta de estudo, não é aconselhamento financeiro.</p>`;
   const lista = rows.map(c => c.ticker + "\t" + String(ENTRY[c.ticker].v).replace(".", ",")).join("\n");
   const tick = rows.map(c => c.ticker).join("\n");
   document.getElementById("cp1").onclick = function () { copiar(lista, this); };

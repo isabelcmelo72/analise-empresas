@@ -5,3 +5,4 @@
 
 - jpg/: gerador dos JPG de análise completa (formato Coca-Cola, 1080 px). Correr dentro de ferramentas/jpg: `python3 exportar_dados.py` (cria dados.json a partir do dados.js) e `python3 mkjpg.py ficheiro.json` (ent11.json, ent2.json, googl.json e rui.json são exemplos de conteúdo). Os JPG saem em jpg/out/; copiar para relatorios/TICKER.jpg. Os Word (word/) estão em stand-by.
 - Botão "Copiar para o Radar" (separador Preços de entrada): usa a lista RADAR do dados.js (ticker Yahoo, nome, subsetor, notas); qualidade, preço, data e zona vêm das empresas. Separador "Falta o Raio-X": lista PENDENTE do dados.js. Novo ticker = acrescentar nas duas.
+- RELATORIO (dados.js): data do relatório trimestral analisado por empresa (dd/mm/aaaa ou "por confirmar"). Aparece no rodapé do cartão ("Relatório analisado") e é a 10.ª coluna do "Copiar para o Radar". Empresa nova ou que reporta: acrescentar/atualizar aqui, além de COMPANIES, ENTRY e RADAR.
